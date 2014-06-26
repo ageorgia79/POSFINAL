@@ -23,9 +23,12 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
+
         <div class="login-container"></div>
         <div class="layout-container"></div>
-        <div class="order-container"></div>
+        <div class="order-container">
+        </div>
+            <div class="menucontainer"></div>
     
 
 
@@ -132,11 +135,32 @@
                             <li class="mmodal numberback">BACK</li>
                             <li class="mmodal numberenter">ENTER</li>
                         </ul>
-
                     </div>
                 </div>
-                <div class="main-menu">
-                    <ul class="mainmenu">
+            </div>
+                <div class="total-box">
+                    <div class="totalbox">
+                        <div class="itemizer"></div>
+                        <p>Subtotal:<input class="subtotal"></input></p>
+                        <p>Tax%:<input class="taxtotal"></input></p>
+                        <p>Total:<input class="totaltotal"></input></p>
+                    </div>
+                    <div class="sendmaster">
+                        <ul class="sendoptions">
+                            <li class="sent go-button">Send</li>
+                            <li class="sent gostaybutton">Send & Stay</li>
+                            <li class="void">Void</li>
+                        </ul>
+                    </div>
+                </div>
+        </script>
+
+               
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <script type="text/template" class="detail-template">
+              <ul class="mainmenu">
                     <li class="button appetizers-button">Appetizers</li>
                     <li class="button entrees-button">Entrees</li>
                     <li class="button salads-button">Salads</li>
@@ -158,28 +182,11 @@
                     
                 </ul>
 
-
-                </div>
-                <div class="total-box">
-                    <div class="totalbox">
-                        <div class="itemizer"></div>
-                        <p>Subtotal:<input class="subtotal"></input></p>
-                        <p>Tax%:<input class="taxtotal"></input></p>
-                        <p>Total:<input class="totaltotal"></input></p>
-                    </div>
-                    <div class="sendmaster">
-                        <ul class="sendoptions">
-                            <li class="sent go-button">Send</li>
-                            <li class="sent gostaybutton">Send & Stay</li>
-                            <li class="void">Void</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-
-
         </script>
+
+
+
+
 
        
 

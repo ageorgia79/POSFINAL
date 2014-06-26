@@ -22,7 +22,7 @@ var collection = new LoginCollection();
 
 var LoginView = Parse.View.extend({
 
-  className: "cool",
+  
 
   loginTemplate: _.template($('.login-template').text()),
 
@@ -61,7 +61,7 @@ var login = new LoginView();
 
 var LayoutView = Parse.View.extend({
 
-  className: "cooler",
+  
 
   layoutTemplate: _.template($('.layout-template').text()),
 
@@ -113,7 +113,7 @@ var LayoutView = Parse.View.extend({
 
 var OrderView = Parse.View.extend({
 
-  className: "coolest",
+  
 
   orderTemplate: _.template($('.order-template').text()),
 
@@ -166,3 +166,23 @@ var OrderView = Parse.View.extend({
 
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var DetailView = Parse.View.extend({
+
+
+  detailTemplate: _.template($('.detail-template').text()),
+
+  events: {
+
+  },
+
+  initialize: function(){
+    $('.menucontainer').append(this.el);
+    this.render();
+  },
+
+  render: function(){
+    var renderedTemplate = this.detailTemplate(this.model);
+    this.$el.html(renderedTemplate);
+  }
+});
+var detail = new DetailView();

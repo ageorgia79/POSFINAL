@@ -129,6 +129,8 @@ var OrderView = Parse.View.extend({
     $('.layout-container').empty();
     $('.order-container').append(this.el);
     this.render();
+    var product = new ProductView();
+
   },
 
   render: function(){
@@ -175,4 +177,3 @@ var ProductView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   }
 });
-var product = new ProductView();

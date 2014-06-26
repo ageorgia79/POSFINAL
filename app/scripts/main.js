@@ -120,12 +120,9 @@ var OrderView = Parse.View.extend({
   events: {
 
     "click .go-button": "showLoginView",
-    "click .entrees-button": "showEntreesView",
     "click .void": "showManagerModal",
-    "click .numberenter": "showOrderView",
-    "click .payment-button": "showPaymentView"
+    "click .numberenter": "showOrderView"
     
-
   },
 
   initialize: function(){
@@ -145,10 +142,6 @@ var OrderView = Parse.View.extend({
 
   },
 
-  showEntreesView: function(){
-    var entree = new EntreeView({model: this.model});
-  },
-
   showManagerModal: function(){
     var modal = document.getElementById('overlay');
     modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
@@ -157,19 +150,16 @@ var OrderView = Parse.View.extend({
   showOrderView: function(){
     this.remove();
     var order = new OrderView({model: this.model});
-  },
-
-  showPaymentView: function(){
-    this.remove();
-    var payment = new PaymentView({model: this.model});
   }
+
+ 
 
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var DetailView = Parse.View.extend({
+var ProductView = Parse.View.extend({
 
 
-  detailTemplate: _.template($('.detail-template').text()),
+  productTemplate: _.template($('.product-template').text()),
 
   events: {
 
@@ -181,8 +171,8 @@ var DetailView = Parse.View.extend({
   },
 
   render: function(){
-    var renderedTemplate = this.detailTemplate(this.model);
+    var renderedTemplate = this.productTemplate(this.model);
     this.$el.html(renderedTemplate);
   }
 });
-var detail = new DetailView();
+var product = new ProductView();

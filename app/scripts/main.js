@@ -2,21 +2,48 @@
 
 Parse.initialize("LFJ3QGbWShkk4EL9OPC9RBzsM1beJbuSzZ3m8F0f", "h9DNGD2Piozeww9Il1F9zS85gQh17uJXZnqf2l7V");
 
+var promisesPhase1 = [],
+    promisesPhase2 = [];
 
-var Login = Parse.Object.extend({
-  className: "Login"
+
+var Product = Parse.Object.extend({
+  className: "Product"
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-var LoginCollection = Parse.Collection.extend({
+var ProductCollection = Parse.Collection.extend({
 
-  model: Login,
+  model: Product,
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-var collection = new LoginCollection();
+var products = new ProductCollection(
+
+    [
+        {"categoryName": "Entrees", "categoryItem": "Prime Rib", "categoryTemperature": "Rare", "categorySide": "Fries"},
+        {"categoryName": "Entrees", "categoryItem": "NY Strip", "categoryTemperature": "Rare", "categorySide": "Fries"}
+    ]
+  );
+
+
+products.each(function(product){
+  promisesPhase1.push(product.save());
+});
+
+Parse.Promise.when(promisesPhase1).then(function() {
+  products.set();
+  products.each(function(product) {
+    promisesPhase2.push(product.save());
+  });
+});
+
+Parse.Promise.when(promisesPhase2).then(function(){
+  console.log('Database populated');
+});
+
+
 
 
 
@@ -162,8 +189,10 @@ var ProductView = Parse.View.extend({
 
 
   productTemplate: _.template($('.product-template').text()),
+  entreeTemplate: _.template($('.entree-template').text()),
 
   events: {
+    
 
   },
 
@@ -175,5 +204,35 @@ var ProductView = Parse.View.extend({
   render: function(){
     var renderedTemplate = this.productTemplate(this.model);
     this.$el.html(renderedTemplate);
-  }
+  },
+
 });
+
+/*var ProductRouter = Parse.Router.extend({
+
+  routes: {
+
+    "items": "showCategories",
+    "items/:categoryId": "showCategory"
+  },
+
+  showCategory: function(id){
+    categories[id].each(function(items){
+      new ProductView({model: items});
+    })
+  }
+
+})
+*/
+
+
+
+  
+
+
+  
+  
+   
+ 
+  
+

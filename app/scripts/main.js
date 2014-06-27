@@ -2,8 +2,6 @@
 
 Parse.initialize("LFJ3QGbWShkk4EL9OPC9RBzsM1beJbuSzZ3m8F0f", "h9DNGD2Piozeww9Il1F9zS85gQh17uJXZnqf2l7V");
 
-var promisesPhase1 = [],
-    promisesPhase2 = [];
 
 
 var Product = Parse.Object.extend({
@@ -19,32 +17,145 @@ var ProductCollection = Parse.Collection.extend({
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-var products = new ProductCollection(
-
-    [
-        {"categoryName": "Entrees", "categoryItem": "Prime Rib", "categoryTemperature": "Rare", "categorySide": "Fries"},
-        {"categoryName": "Entrees", "categoryItem": "NY Strip", "categoryTemperature": "Rare", "categorySide": "Fries"}
+    var categories = [
+      "Entrees",
+      "Appetizers"
     ]
-  );
+    
+    var items = [
+        {
+          "category": "Entrees",
+          "name": "Prime Rib", 
+          "price": "$21.95",
+          "options": [
+            "Rare",
+            "MedRare",
+            "Medium",
+            "MedWell",
+            "Well",
+            "Butterfly",
+            "Pittsburg"
+          ], 
+          "sides": [
+            "Fries",
+            "Green Beans",
+            "Baked Potato",
+            "Sweet Potato",
+            "Asparagus",
+            "Mashed Potatos",
+            "Snap Peas"
+          ]
+        },
+        {
+          "category": "Entrees",
+          "name": "NY Strip",  
+          "price": "$18.95",
+          "options": [
+            "Rare",
+            "MedRare",
+            "Medium",
+            "MedWell",
+            "Well",
+            "Butterfly",
+            "Pittsburg"
+          ], 
+          "sides": [
+            "Fries",
+            "Green Beans",
+            "Baked Potato",
+            "Sweet Potato",
+            "Asparagus",
+            "Mashed Potatos",
+            "Snap Peas"
+          ]
+        },
+        {
+          "category": "Entrees",
+          "name": "18oz Ribeye", 
+          "price": "$19.95",
+          "options": [
+            "Rare",
+            "MedRare",
+            "Medium",
+            "MedWell",
+            "Well",
+            "Butterfly",
+            "Pittsburg"
+          ], 
+          "sides": [
+            "Fries",
+            "Green Beans",
+            "Baked Potato",
+            "Sweet Potato",
+            "Asparagus",
+            "Mashed Potatos",
+            "Snap Peas"
+          ]
+        },
+        {
+          "category": "Entrees",
+          "name": "Filet Mignon",
+          "price": "$29.95",  
+          "options": [
+            "Rare",
+            "MedRare",
+            "Medium",
+            "MedWell",
+            "Well",
+            "Butterfly",
+            "Pittsburg"
+          ], 
+          "sides": [
+            "Fries",
+            "Green Beans",
+            "Baked Potato",
+            "Sweet Potato",
+            "Asparagus",
+            "Mashed Potatos",
+            "Snap Peas"
+          ]
+        },
+        {
+          "category": "Entrees",
+          "name": "Salmon",  
+          "price": "$17.95",
+          "options": [
+            "Rare",
+            "MedRare",
+            "Medium",
+            "MedWell",
+            "Well",
+            "Butterfly",
+            "Pittsburg"
+          ], 
+          "sides": [
+            "Fries",
+            "Green Beans",
+            "Baked Potato",
+            "Sweet Potato",
+            "Asparagus",
+            "Mashed Potatos",
+            "Snap Peas"
+          ]
+        },
+        {
+          "category": "Appetizers",
+          "name": "Old Fashion"
+        },
+        {
+          "category": "Appetizers",
+          "name": "Gin Fizz"
+        }
+    ]
 
 
-products.each(function(product){
-  promisesPhase1.push(product.save());
-});
-
-Parse.Promise.when(promisesPhase1).then(function() {
-  products.set();
-  products.each(function(product) {
-    promisesPhase2.push(product.save());
-  });
-});
-
-Parse.Promise.when(promisesPhase2).then(function(){
-  console.log('Database populated');
-});
+    
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 var LoginView = Parse.View.extend({

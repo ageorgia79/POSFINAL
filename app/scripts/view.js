@@ -37,7 +37,7 @@ var LoginView = Parse.View.extend({
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-var login = new LoginView();
+
 
 var LayoutView = Parse.View.extend({
 
@@ -141,19 +141,25 @@ var OrderView = Parse.View.extend({
 var ProductView = Parse.View.extend({
 
 
+
+
   productTemplate: _.template($('.product-template').text()),
   
 
   events: {
-    
+    "click .entrees-button"   : "showEntrees",
 
   },
 
   initialize: function(){
+    
   $('.menucontainer').append(this.el);
     this.render();
-    var product = new ProductView();
 
+  },
+
+  showEntrees: function () {
+      window.location = '/#entrees';
   },
 
   render: function(){
@@ -162,3 +168,4 @@ var ProductView = Parse.View.extend({
   },
 
 });
+    

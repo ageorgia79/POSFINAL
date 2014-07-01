@@ -4,34 +4,25 @@ Parse.initialize("LFJ3QGbWShkk4EL9OPC9RBzsM1beJbuSzZ3m8F0f", "h9DNGD2Piozeww9Il1
 
 
 
-var Product = Parse.Object.extend({
-  className: "Product"
-});
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-var ProductCollection = Parse.Collection.extend({
-
-  model: Product,
-});
-
-var collection = new ProductCollection();
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////     
 
 
  collection.on('add', function(model){
     
-    
+
+//actually fetching data from server  
   });
   collection.fetch({add:true}).done(function(){
     collection.each(function(productModel) {
       new ProductView({model: productModel})
     });
   })
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+var router = new ProductRouter();
+Parse.history.start();
 
 
 

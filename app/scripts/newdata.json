@@ -1,26 +1,7 @@
-
-
-   var categories = [
-      "Entrees",
-      "Appetizers",
-      "Salads",
-      "Soups",
-      "Baskets",
-      "Kids",
-      "Low Fat",
-      "SideItems",
-      "Dessert",
-      "Beverages",
-      "Beer",
-      "Wine",
-      "Liquor",
-      "Cocktails",
-    ]
-        ///////////////////////////////////////////////////ENTREES///////////////////////////////////////////////////////
-    var items = [
+ [
         {
           "category": "Entrees",
-          "name": "Prime Rib",        //Prime Rib
+          "name": "Prime Rib",  
           "price": "21.95",
           "options": [
             "Rare",
@@ -43,7 +24,7 @@
         },
         {
           "category": "Entrees",
-          "name": "NY Strip",         //NY Strip
+          "name": "NY Strip",
           "price": "18.95",
           "options": [
             "Rare",
@@ -66,7 +47,7 @@
         },
         {
           "category": "Entrees",
-          "name": "18oz Ribeye",        //Ribeye
+          "name": "18oz Ribeye",        
           "price": "19.95",
           "options": [
             "Rare",
@@ -89,7 +70,7 @@
         },
         {
           "category": "Entrees",
-          "name": "Filet Mignon",       //Filet
+          "name": "Filet Mignon",       
           "price": "29.95",  
           "options": [
             "Rare",
@@ -112,7 +93,7 @@
         },
         {
           "category": "Entrees",
-          "name": "Salmon",         //Salmon
+          "name": "Salmon",         
           "price": "17.95",
           "options": [
             "Rare",
@@ -133,92 +114,92 @@
             "Snap Peas"
           ]
         },
-        ///////////////////////////////////////////////////APPETIZERS///////////////////////////////////////////////////////////////////
+        
         {
-          "category": "Appetizers",       //Nachos
+          "category": "Appetizers",       
           "name": "Nachos",
           "price": "8.95"
         },
         {
-          "category": "Appetizers",       //Queso
+          "category": "Appetizers",       
           "name": "Queso",
           "price": "4.95"
         },
         {
-          "category": "Appetizers",       //Chips&Salso
+          "category": "Appetizers",       
           "name": "Chips & Salsa",
           "price": "4.95"
         },
         {
-          "category": "Appetizers",       //Wings
+          "category": "Appetizers",       
           "name": "Wings",
           "price": "7.95"
         },
         {
-          "category": "Appetizers",       //SpinDip
+          "category": "Appetizers",       
           "name": "SpinDip",
           "price": "7.95"
         },
         {
-          "category": "Appetizers",       //Quesadilla
+          "category": "Appetizers",       
           "name": "Quesadilla",
           "price": "7.95"
         },
-        /////////////////////////////////////////////////////SALADS///////////////////////////////////////////////////////////////
+        
         {
-          "category": "Salads",           //Caesar
+          "category": "Salads",           
           "name": "Caesar",
           "price": "9.95"
         },
         {
-          "category": "Salads",           //Ckn Caesar
+          "category": "Salads",           
           "name": "Ckn Caesar",
           "price": "11.95"
         },
         {
-          "category": "Salads",           //Chef Salad
+          "category": "Salads",           
           "name": "Chef Salad",
           "price": "10.95"
         },
         {
-          "category": "Salads",           //Oriental
+          "category": "Salads",           
           "name": "Oriental",
           "price": "10.95"
         },
         {
-          "category": "Salads",           //Cobb
+          "category": "Salads",           
           "name": "Cobb",
           "price": "11.50"
         },
         {
-          "category": "Salads",           //Wedge
+          "category": "Salads",           
           "name": "The Wedge",
           "price": "10.95"
         },
-        /////////////////////////////////////////////////////////SOUPS//////////////////////////////////////////////////////////
+        
         {
-          "category": "Soups",            //French Onion
+          "category": "Soups",            
           "name": "French Onion",
           "price": "4.95"
         },
         {
-          "category": "Soups",            //Vegetable
+          "category": "Soups",            
           "name": "Vegetable",
           "price": "4.95"
         },
         {
-          "category": "Soups",            //Gumbo
+          "category": "Soups",            
           "name": "Gumbo",
           "price": "4.95"
         },
         {
-          "category": "Soups",            //Broccoli Cheddar
+          "category": "Soups",            
           "name": "BrocCheddar",
           "price": "4.95"
         },
-        ////////////////////////////////////////////////////////BASKETS//////////////////////////////////////////////////////////
+        
         {
-          "category": "Baskets",          //Rib Basket
+          "category": "Baskets",          
           "name": "Ribs",
           "price": "9.95",
           "sides": [
@@ -232,7 +213,7 @@
           ]
         },
         {
-          "category": "Baskets",          //Ckn Tenders
+          "category": "Baskets",          
           "name": "Ckn Tenders",
           "price": "9.95",
           "sides": [
@@ -246,7 +227,7 @@
           ]
         },
         {
-          "category": "Baskets",          //Sampler
+          "category": "Baskets",          
           "name": "Sampler",
           "price": "10.95",
           "sides": [
@@ -260,7 +241,7 @@
           ]
         },
         {
-          "category": "Baskets",          //Burger
+          "category": "Baskets",          
           "name": "Burger",
           "price": "9.95",
           "sides": [
@@ -273,272 +254,268 @@
             "Snap Peas"
           ]
         },
-        /////////////////////////////////////////////////////////KIDS////////////////////////////////////////////////////
+        
         {
-          "category": "Kids",           //Corndog
+          "category": "Kids",           
           "name": "Corndog",
           "price": "4.95"
         },
         {
-          "category": "Kids",           //Nuggets
+          "category": "Kids",           
           "name": "Ckn Nuggets",
           "price": "4.95"
         },
         {
-          "category": "Kids",           //Mac and Cheese
+          "category": "Kids",           
           "name": "Mac & Chz",
           "price": "4.95"
         },
         {
-          "category": "Kids",           //Chz Quesadilla
+          "category": "Kids",           
           "name": "Chz Quesadilla",
           "price": "4.95"
         },
         {
-          "category": "Kids",           //Hotdog
+          "category": "Kids",           
           "name": "Hotdog",
           "price": "4.95"
         },
         {
-          "category": "Kids",           //Kid Burger
+          "category": "Kids",           
           "name": "Kid Burger",
           "price": "4.95"
         },
-        ///////////////////////////////////////////////////////LOWFAT////////////////////////////////////////////////////////
+        
         {
-          "category": "Low Fat",        //Veggie Pizza
+          "category": "Low Fat",        
           "name": "Veggie Pizza",
           "price": "12.95"
         },
         {
           "category": "Low Fat",
-          "name": "Turkey Burger",      //Turkery Burger
+          "name": "Turkey Burger",      
           "price": "8.95"
         },
         {
           "category": "Low Fat",
-          "name": "Lemonpepper Chicken",  //Lemonpepper Chicken
+          "name": "Lemonpepper Chicken",  
           "price": "13.95"
         },
         {
-          "category": "Low Fat",          //Hummice
+          "category": "Low Fat",          
           "name": "Pita & Hummice",
           "price": "9.95"
         },
-        /////////////////////////////////////////////////////SIDES////////////////////////////////////////////////////////////
+        
         {
-          "category": "SideItems",        //Fries
+          "category": "SideItems",        
           "name": "Fries",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Green Beans
+          "category": "SideItems",        
           "name": "Green Beans",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Baked Potato
+          "category": "SideItems",        
           "name": "Baked Potato",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Sweet Potato
+          "category": "SideItems",        
           "name": "Sweet Potato",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Asparagus
+          "category": "SideItems",        
           "name": "Asparagus",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Mashed Potatos
+          "category": "SideItems",        
           "name": "Mashed Potatos",
           "price": "3.95"
         },
         {
-          "category": "SideItems",        //Snap Peas
+          "category": "SideItems",        
           "name": "Snap Peas",
           "price": "3.95"
         },
-        ///////////////////////////////////////////////DESSERTS////////////////////////////////////////////////////////
+        
         {
           "category": "Dessert",
-          "name": "Ultimate Brownie",     //Ultimate Brownie
+          "name": "Ultimate Brownie",     
           "price": "6.95"
         },
         {
-          "category": "Dessert",          //Volcano
+          "category": "Dessert",          
           "name": "Volcano",
           "price": "6.95"
         },
         {
-          "category": "Dessert",          //Cheesecake
+          "category": "Dessert",          
           "name": "Cheesecake",
           "price": "7.95"
         },
         {
-          "category": "Dessert",          //Creme Brulee
+          "category": "Dessert",          
           "name": "Creme Brulee",
           "price": "7.95"
         },
-        ////////////////////////////////////////////////////BEVERAGES///////////////////////////////////////////////////
+        
         {
-          "category": "Beverages",        //Coke
+          "category": "Beverages",        
           "name": "Coke",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Diet Coke
+          "category": "Beverages",        
           "name": "Diet Coke",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Sprite
+          "category": "Beverages",        
           "name": "Sprite",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Lemonade
+          "category": "Beverages",        
           "name": "Lemonade",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Hi-C
+          "category": "Beverages",        
           "name": "Hi-C",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Dr Pepper
+          "category": "Beverages",        
           "name": "Dr. Pepper",
           "price": "2.95"
         },
         {
-          "category": "Beverages",        //Water
+          "category": "Beverages",        
           "name": "Water",
           "price": "0.00"
         },
-        //////////////////////////////////////////////////////////BEER/////////////////////////////////////////////////////////
+        
         {
-          "category": "Beer",           //Budweiser
+          "category": "Beer",           
           "name": "Budweiser",
           "price": "3.95"
         },
         {
-          "category": "Beer",           //Bud Light
+          "category": "Beer",           
           "name": "Bud Light",
           "price": "3.95"
         },
         {
-          "category": "Beer",           //Coors Light
+          "category": "Beer",           
           "name": "Coors Light",
           "price": "3.95"
         },
         {
           "category": "Beer",
-          "name": "Miller Lite",        //Miller Lite
+          "name": "Miller Lite",        
           "price": "3.95"
         },
         {
-          "category": "Beer",           //Corona
+          "category": "Beer",           
           "name": "Corona",
           "price": "3.95"
         },
         {
           "category": "Beer",
-          "name": "Corona Light",       //Corona Light
+          "name": "Corona Light",       
           "price": "3.95"
         },
         {
-          "category": "Beer",           //Samuel Adams
+          "category": "Beer",           
           "name": "Samuel Adams",
           "price": "4.95"
         },
         {
           "category": "Beer",
-          "name": "Newcastle",          //Newcastle
+          "name": "Newcastle",          
           "price": "4.95"
         },
-        /////////////////////////////////////////////////////////WINE///////////////////////////////////////////////////////
+        
         {
-          "category": "Wine",           //Chardonnay
+          "category": "Wine",           
           "name": "Chardonnay",
           "price": "5.95"
         },
         {
-          "category": "Wine",           //Pinot Grigio
+          "category": "Wine",           
           "name": "Pinot Grigio",
           "price": "5.95"
         },
         {
           "category": "Wine",
-          "name": "Riesling",           //Riesling
+          "name": "Riesling",           
           "price": "5.95"
         },
         {
           "category": "Wine",
-          "name": "Cabernet",           //Cabernet
+          "name": "Cabernet",           
           "price": "5.95"
         },
         {
           "category": "Wine",
-          "name": "Pinot Noir",         //Pinot Noir
+          "name": "Pinot Noir",         
           "price": "5.95"
         },
         {
-          "category": "Wine",           //Merlot
+          "category": "Wine",           
           "name": "Merlot",
           "price": "5.95"
         },
         {
           "category": "Wine",
-          "name": "Shiraz",           //Shiraz
+          "name": "Shiraz",           
           "price": "5.95"
         },
-        ///////////////////////////////////////////////////////LIQUOUR//////////////////////////////////////////////////////
+        
         {
-          "category": "Liquor",         //Vodka
+          "category": "Liquor",         
           "name": "Vodka",
           "price": "4.95"
         },
         {
           "category": "Liquor",
-          "name": "Gin",                //GIN
+          "name": "Gin",                
           "price": "4.95"
         },
         {
           "category": "Liquor",
-          "name": "Tequila",            //Tequila
+          "name": "Tequila",            
           "price": "4.95"
         },
         {
-          "category": "Liquor",           //Bourbon
+          "category": "Liquor",           
           "name": "Bourbon",
           "price": "4.95"
         },
         {
-          "category": "Liquor",         //Scotch
+          "category": "Liquor",         
           "name": "Scotch",
           "price": "4.95"
         },
-        ////////////////////////////////////////////////////COCKTAILS////////////////////////////////////////////////////////////
+        
         {
           "category": "Cocktails",
-          "name": "Screwdriver",        //Screwdriver
+          "name": "Screwdriver",        
           "price": "6.95"
         },
         {
           "category": "Cocktails",
-          "name": "Margarita",          //Margarita
+          "name": "Margarita",          
           "price": "6.95"
         },
         {
           "category": "Cocktails",
-          "name": "Long Island Tea",    //Long Island Tea
+          "name": "Long Island Tea",    
           "price": "6.95"
-        },
-        {
-          
         }
-
     ] 

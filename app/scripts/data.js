@@ -9,6 +9,12 @@
       "Kids",
       "Low Fat",
       "SideItems",
+      "Dessert",
+      "Beverages",
+      "Beer",
+      "Wine",
+      "Liquor",
+      "Cocktails",
     ]
         ///////////////////////////////////////////////////ENTREES///////////////////////////////////////////////////////
     var items = [
@@ -355,5 +361,184 @@
           "name": "Snap Peas",
           "price": "3.95"
         },
+        ///////////////////////////////////////////////DESSERTS////////////////////////////////////////////////////////
+        {
+          "category": "Dessert",
+          "name": "Ultimate Brownie",     //Ultimate Brownie
+          "price": "6.95"
+        },
+        {
+          "category": "Dessert",          //Volcano
+          "name": "Volcano",
+          "price": "6.95"
+        },
+        {
+          "category": "Dessert",          //Cheesecake
+          "name": "Cheesecake",
+          "price": "7.95"
+        },
+        {
+          "category": "Dessert",          //Creme Brulee
+          "name": "Creme Brulee",
+          "price": "7.95"
+        },
+        ////////////////////////////////////////////////////BEVERAGES///////////////////////////////////////////////////
+        {
+          "category": "Beverages",        //Coke
+          "name": "Coke",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Diet Coke
+          "name": "Diet Coke",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Sprite
+          "name": "Sprite",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Lemonade
+          "name": "Lemonade",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Hi-C
+          "name": "Hi-C",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Dr Pepper
+          "name": "Dr. Pepper",
+          "price": "2.95"
+        },
+        {
+          "category": "Beverages",        //Water
+          "name": "Water",
+          "price": "0.00"
+        },
+        //////////////////////////////////////////////////////////BEER/////////////////////////////////////////////////////////
+        {
+          "category": "Beer",           //Budweiser
+          "name": "Budweiser",
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",           //Bud Light
+          "name": "Bud Light",
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",           //Coors Light
+          "name": "Coors Light",
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",
+          "name": "Miller Lite",        //Miller Lite
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",           //Corona
+          "name": "Corona",
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",
+          "name": "Corona Light",       //Corona Light
+          "price": "3.95"
+        },
+        {
+          "category": "Beer",           //Samuel Adams
+          "name": "Samuel Adams",
+          "price": "4.95"
+        },
+        {
+          "category": "Beer",
+          "name": "Newcastle",          //Newcastle
+          "price": "4.95"
+        },
+        /////////////////////////////////////////////////////////WINE///////////////////////////////////////////////////////
+        {
+          "category": "Wine",           //Chardonnay
+          "name": "Chardonnay",
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",           //Pinot Grigio
+          "name": "Pinot Grigio",
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",
+          "name": "Riesling",           //Riesling
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",
+          "name": "Cabernet",           //Cabernet
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",
+          "name": "Pinot Noir",         //Pinot Noir
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",           //Merlot
+          "name": "Merlot",
+          "price": "5.95"
+        },
+        {
+          "category": "Wine",
+          "name": "Shiraz",           //Shiraz
+          "price": "5.95"
+        },
+        ///////////////////////////////////////////////////////LIQUOUR//////////////////////////////////////////////////////
+        {
+          "category": "Liquor",         //Vodka
+          "name": "Vodka",
+          "price": "4.95"
+        },
+        {
+          "category": "Liquor",
+          "name": "Gin",                //GIN
+          "price": "4.95"
+        },
+        {
+          "category": "Liquor",
+          "name": "Tequila",            //Tequila
+          "price": "4.95"
+        },
+        {
+          "category": "Liquor",           //Bourbon
+          "name": "Bourbon",
+          "price": "4.95"
+        },
+        {
+          "category": "Liquor",         //Scotch
+          "name": "Scotch",
+          "price": "4.95"
+        },
+        ////////////////////////////////////////////////////COCKTAILS////////////////////////////////////////////////////////////
+        {
+          "category": "Cocktails",
+          "name": "Screwdriver",        //Screwdriver
+          "price": "6.95"
+        },
+        {
+          "category": "Cocktails",
+          "name": "Margarita",          //Margarita
+          "price": "6.95"
+        },
+        {
+          "category": "Cocktails",
+          "name": "Long Island Tea",    //Long Island Tea
+          "price": "6.95"
+        },
+        {
+          
+        }
 
     ] 

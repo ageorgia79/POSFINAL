@@ -7,6 +7,24 @@ body {
     color: #333;
 }
 
+.category {
+    height: 100px;
+    width: 175px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid blue;
+    font-size: 20px;
+    float: left;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    border-radius: 18px;
+    background-image: url(http://blog.learntoprogram.tv/wp-content/uploads/2013/12/Button.png);
+    position: relative;
+    left: 20px;
+}
+
 .login-container {
     width: 100%;
 }
@@ -409,7 +427,7 @@ body {
 
 .menucontainer {
     width: 60%;
-    border: 1px solid blue;
+    //border: 1px solid blue;
     float: left;
 }
 

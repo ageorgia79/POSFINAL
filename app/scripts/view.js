@@ -157,9 +157,7 @@ var ProductView = Parse.View.extend({
   },
 
   initialize: function(){
- 
-  
-  $('.buttons').append(this.el);
+    $('.buttons').append(this.el);
     this.render();
 
   },
@@ -171,19 +169,13 @@ var ProductView = Parse.View.extend({
   },
 
   
-
-
-
-
-
 });
 
-    // collection.on('change', function(model){});
-    //   collection.fetch({add:true}).done(function(){
-    //     collection.each(function(productModel) {
-    //       new ProductView({model: productModel})
-    //     });
-    //   })
+
+
+
+
+
 
 
 

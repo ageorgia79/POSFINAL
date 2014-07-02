@@ -4,18 +4,26 @@ var ProductRouter = Parse.Router.extend({
 
   routes: {
 
-    "" : "loginPage",
-    "floor" : "layoutPage",
-    "order" : "orderPage",
-    "product" : "productButtons",
+    ""        : "loginPage",
+    "floor"   : "layoutPage",
+    "order"   : "orderPage",
+    
+    
     
     
   },
     
 
   initialize: function(){
+    var collection = new ProductCollection();
+    // collection.on('add', function(model){});
+    // collection.fetch({add:true}).done(function(){
+    //    collection.each(function(productModel) {
+    //    });
+    // })
+    // new ProductView({model: productModel})
 
-    // this.currentView = null;
+     
   },
 
   loginPage: function(){
@@ -31,18 +39,28 @@ var ProductRouter = Parse.Router.extend({
   orderPage: function(){
     $('.container').html('')
     new OrderView();
+    var query = new Parse.Query(Data);
+    query.equalTo("category", "Entrees");
+    query.find({
+      success: function(results) {
+        alert("found" + results.length + "entrees");
+      }
+    })
+  
+
   },
 
-  productButtons: function(){
-    $('.buttons').html('')
-    new ProductView();
-  },
+ 
+
+});
+
+
 
 
 
 
       
-});
+ 
     
 
 var router = new ProductRouter();

@@ -6,6 +6,7 @@ var ProductRouter = Parse.Router.extend({
     "" : "loginPage",
     "floor" : "layoutPage",
     "order" : "orderPage",
+    "product" : "productButtons",
     
     
 
@@ -34,6 +35,11 @@ var ProductRouter = Parse.Router.extend({
   orderPage: function(){
     $('.order-container').html('')
     new OrderView();
+  },
+
+  productButtons: function(){
+    $('.buttons').html('')
+    new ProductView();
   },
 
 

@@ -147,7 +147,7 @@ var ProductView = Parse.View.extend({
   
 
   events: {
-    "click .entrees-button"   : "showEntrees",
+    
 
   },
 
@@ -158,18 +158,16 @@ var ProductView = Parse.View.extend({
 
   },
 
-  showEntrees: function () {
-      window.location = '/#entrees';
-  },
-
+  
   render: function(){
-    var renderedTemplate = this.productTemplate(this.model);
+    var renderedTemplate = this.productTemplate(this.model.attributes);
     this.$el.html(renderedTemplate);
   },
 
 });
 
 
+ 
  collection.on('add', function(model){
     
 

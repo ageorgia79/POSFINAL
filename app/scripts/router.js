@@ -26,7 +26,7 @@ var ProductRouter = Parse.Router.extend({
     query.equalTo("category", "Entrees");
     query.find({
       success: function(results) {
-        console.log("successfully retrieved" + results.length + "entrees.");
+        alert("successfully retrieved" + results.length + "entrees.");
       },
       error: function(error) {
        alert("Error: " + error.code + " " + error.message);
@@ -49,20 +49,9 @@ var ProductRouter = Parse.Router.extend({
  })
 
 
-// var query = new Parse.Query(Data);
-// query.equalTo("category", "Entrees");
-// query.find({
-  
-//   success: function(results) {
-//     alert("Successfully retrieved " + results.length + " Entrees.");
-//     // Do something with the returned Parse.Object values
+
     
-    
-//   },
-//   error: function(error) {
-//     alert("Error: " + error.code + " " + error.message);
-//   }
-// });
+
 
 
  

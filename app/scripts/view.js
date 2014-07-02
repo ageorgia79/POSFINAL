@@ -24,8 +24,8 @@ var LoginView = Parse.View.extend({
 
   showLayoutView: function(){
     console.log('button is working')
-    console.log(this.model)
-    new LayoutView();
+    router.navigate("#/floor", {trigger: true});
+
     // $('.container').append(layout);
   },
 
@@ -35,6 +35,7 @@ var LoginView = Parse.View.extend({
 
   }
 });
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -82,10 +83,13 @@ var LayoutView = Parse.View.extend({
 
 
   showOrderView: function(){
-    var order = new OrderView({model: this.model});
-    //$('.container').append(order);
-  }
+    console.log('button is working')
+    router.navigate("#/order", {trigger: true});
 
+    //$('.container').append(order);
+  },
+
+ 
 
 });
 
@@ -93,7 +97,7 @@ var LayoutView = Parse.View.extend({
 
 var OrderView = Parse.View.extend({
 
-  
+  className: 'order',
 
   orderTemplate: _.template($('.order-template').text()),
 
@@ -101,7 +105,8 @@ var OrderView = Parse.View.extend({
 
     "click .go-button": "showLoginView",
     "click .void": "showManagerModal",
-    "click .numberenter": "showOrderView"
+    "click .numberenter": "showOrderView",
+    
     
   },
 
@@ -132,7 +137,9 @@ var OrderView = Parse.View.extend({
   showOrderView: function(){
     this.remove();
     var order = new OrderView({model: this.model});
-  }
+  },
+
+ 
 
  
 
@@ -141,7 +148,7 @@ var OrderView = Parse.View.extend({
 var ProductView = Parse.View.extend({
 
 
-
+  className: 'products',
 
   productTemplate: _.template($('.product-template').text()),
   
@@ -153,7 +160,7 @@ var ProductView = Parse.View.extend({
 
   initialize: function(){
     
-  $('.menucontainer').append(this.el);
+  $('.order-container').append(this.el);
     this.render();
 
   },
@@ -164,18 +171,17 @@ var ProductView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   },
 
+
+
 });
+
+ // collection.on('add', function(model){});
+ //  collection.fetch({add:true}).done(function(){
+ //    collection.each(function(productModel) {
+ //      new ProductView({model: productModel})
+ //    });
+ //  })
+
 
 
  
- collection.on('add', function(model){
-    
-
-  
-  });
-  collection.fetch({add:true}).done(function(){
-    collection.each(function(productModel) {
-      new ProductView({model: productModel})
-    });
-  })
-    

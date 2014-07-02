@@ -3,68 +3,57 @@
 var ProductRouter = Parse.Router.extend({
 
   routes: {
+    "" : "loginPage",
+    "floor" : "layoutPage",
+    "order" : "orderPage",
+    
+    
 
-    ''        : "loginView",
-    'products': 'showProducts',
-    "entrees" : "showEntrees",
     
   },
 
-
+    
   initialize: function(){
-    this.$el = $('.menucontainer');
-    this.currentView = null;
+
+    // this.currentView = null;
   },
 
-  loginView: function() {
-    this.swap( new LoginView() );
-
-  }, 
-
-
-  showProducts: function(){
-    var query = new Parse.Query(Data);
-    query.equalTo("category");
-    query.find({
-      success: function(results) {
-        alert("successfully retrieved" + results.length + "entrees.");
-      },
-      error: function(error) {
-       alert("Error: " + error.code + " " + error.message);
-      }
-    });
+  loginPage: function(){
+    $('.login-container').html('')
+    $('.layout-container').html('')
+    $('.order-container').html('')
+    new LoginView();
   },
-  
 
-  showEntrees: function() {
-    this.swap( new ProductView() );  
-    },
+  layoutPage: function(){
+    $('.layout-container').html('')
+    $('.order-container').html('')
+     new LayoutView();
+  },
 
-
-  swap: function(view) {
-    if(this.currentView) this.currentView.remove();
-    this.currentView = view;
-    this.currentView.render();
-
-  }
-
- })
+  orderPage: function(){
+    $('.order-container').html('')
+    new OrderView();
+  },
 
 
-  
+      
+});
+
 
 
 
 
 var router = new ProductRouter();
 Parse.history.start();
+  
+
+  
 
 
 
 
-
-    
-
+  
 
 
- 
+

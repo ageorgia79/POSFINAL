@@ -16,14 +16,15 @@ var ProductRouter = Parse.Router.extend({
     this.currentView = null;
   },
 
+
   showProducts: function() {
     this.swap( new ProductView() );  
     },
 
+
   showEntrees: function(){
-    
     var query = new Parse.Query(Data);
-    query.equalTo("category", "Entrees");
+    query.equalTo("category");
     query.find({
       success: function(results) {
         alert("successfully retrieved" + results.length + "entrees.");
@@ -34,10 +35,12 @@ var ProductRouter = Parse.Router.extend({
     });
   },
 
+
   loginView: function() {
     this.swap( new LoginView() );
 
   }, 
+
 
   swap: function(view) {
     if(this.currentView) this.currentView.remove();
@@ -47,6 +50,12 @@ var ProductRouter = Parse.Router.extend({
   }
 
  })
+
+
+var router = new ProductRouter();
+Parse.history.start();
+
+
 
 
 

@@ -168,4 +168,16 @@ var ProductView = Parse.View.extend({
   },
 
 });
+
+
+ collection.on('add', function(model){
+    
+
+  
+  });
+  collection.fetch({add:true}).done(function(){
+    collection.each(function(productModel) {
+      new ProductView({model: productModel})
+    });
+  })
     

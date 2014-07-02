@@ -3,37 +3,33 @@
 var ProductRouter = Parse.Router.extend({
 
   routes: {
+
     "" : "loginPage",
     "floor" : "layoutPage",
     "order" : "orderPage",
     "product" : "productButtons",
     
     
-
-    
   },
-
     
+
   initialize: function(){
 
     // this.currentView = null;
   },
 
   loginPage: function(){
-    $('.login-container').html('')
-    $('.layout-container').html('')
-    $('.order-container').html('')
+    $('.container').html('')
     new LoginView();
   },
 
   layoutPage: function(){
-    $('.layout-container').html('')
-    $('.order-container').html('')
+    $('.container').html('')
      new LayoutView();
   },
 
   orderPage: function(){
-    $('.order-container').html('')
+    $('.container').html('')
     new OrderView();
   },
 
@@ -43,16 +39,21 @@ var ProductRouter = Parse.Router.extend({
   },
 
 
+
+
       
 });
-
-
-
-
+    
 
 var router = new ProductRouter();
 Parse.history.start();
   
+    
+
+
+
+
+
 
   
 

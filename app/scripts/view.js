@@ -13,7 +13,7 @@ var LoginView = Parse.View.extend({
   },
 
   initialize: function(){
-    $('.login-container').append(this.el);
+    $('.container').append(this.el);
     this.render();
   },
 
@@ -23,7 +23,6 @@ var LoginView = Parse.View.extend({
   },
 
   showLayoutView: function(){
-    console.log('button is working')
     router.navigate("#/floor", {trigger: true});
 
     // $('.container').append(layout);
@@ -70,8 +69,8 @@ var LayoutView = Parse.View.extend({
   },
 
   initialize: function(){
-    $('.login-container').empty();
-    $('.layout-container').append(this.el);
+    $('.container').empty();
+    $('.container').append(this.el);
     this.render();
   },
 
@@ -83,7 +82,6 @@ var LayoutView = Parse.View.extend({
 
 
   showOrderView: function(){
-    console.log('button is working')
     router.navigate("#/order", {trigger: true});
 
     //$('.container').append(order);
@@ -111,8 +109,8 @@ var OrderView = Parse.View.extend({
   },
 
   initialize: function(){
-    $('.layout-container').empty();
-    $('.order-container').append(this.el);
+    $('.container').empty();
+    $('.container').append(this.el);
     this.render();
   
 
@@ -124,8 +122,8 @@ var OrderView = Parse.View.extend({
   },
 
   showLoginView: function(){
-    this.remove();
-    var login = new LoginView({model: this.model});
+    router.navigate("#", {trigger: true});
+  
 
   },
 
@@ -159,7 +157,8 @@ var ProductView = Parse.View.extend({
   },
 
   initialize: function(){
-    
+ 
+  
   $('.buttons').append(this.el);
     this.render();
 
@@ -171,16 +170,20 @@ var ProductView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   },
 
+  
+
+
+
 
 
 });
 
- // collection.on('add', function(model){});
- //   collection.fetch({add:true}).done(function(){
- //     collection.each(function(productModel) {
- //       new ProductView({model: productModel})
- //     });
- //   })
+    // collection.on('change', function(model){});
+    //   collection.fetch({add:true}).done(function(){
+    //     collection.each(function(productModel) {
+    //       new ProductView({model: productModel})
+    //     });
+    //   })
 
 
 

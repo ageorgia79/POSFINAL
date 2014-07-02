@@ -42,10 +42,9 @@ var ProductRouter = Parse.Router.extend({
     $('.container').html('')
     new OrderView();
     var query = new Parse.Query(Data);
-    query.equalTo("category", "Entrees");
     query.find({
       success: function(results) {
-        alert("found" + results.length + "entrees");
+        alert("found " + results.length + " categories");
       }
     })
   

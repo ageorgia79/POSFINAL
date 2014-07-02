@@ -16,13 +16,15 @@ var ProductRouter = Parse.Router.extend({
 
   initialize: function(){
     var collection = new ProductCollection();
-    // collection.on('add', function(model){});
-    // collection.fetch({add:true}).done(function(){
-    //    collection.each(function(productModel) {
-    //    });
-    // })
-    // new ProductView({model: productModel})
 
+    collection.on('add', function(model){});
+
+    collection.fetch({add:true}).done(function(){
+      collection.each(function(object){
+        console.warn(object);
+      })
+    })
+   
      
   },
 
@@ -53,6 +55,7 @@ var ProductRouter = Parse.Router.extend({
  
 
 });
+
 
 
 

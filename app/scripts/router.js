@@ -2,6 +2,8 @@
 
 var ProductRouter = Parse.Router.extend({
 
+
+
   routes: {
 
     ""        : "loginPage",
@@ -50,10 +52,10 @@ var ProductRouter = Parse.Router.extend({
         })
         window.categoryArray = _.union(categoryArray) 
         console.log(categoryArray)
-      }
-    })
         categoryArray.forEach(function(result){
         $('.menu-buttons').append(result)})
+      }
+    })
   },//separation of route functions//do not delete//
   
 });//end of router//do not delete//

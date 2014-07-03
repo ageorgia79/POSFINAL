@@ -4,15 +4,15 @@ Parse.initialize("LFJ3QGbWShkk4EL9OPC9RBzsM1beJbuSzZ3m8F0f", "h9DNGD2Piozeww9Il1
 
 
 
-//model
+
 var Data = Parse.Object.extend("Data");
 
-//collection of data
+
 var ProductCollection = Parse.Collection.extend({
   model: 'Data',
 });
 
-//instance of your collection
+
 var collection = new ProductCollection();
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////   
+  

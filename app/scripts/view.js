@@ -82,17 +82,14 @@ var LayoutView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   },
 
-
-
   showOrderView: function(){
     router.navigate("#/order", {trigger: true});
 
     //$('.container').append(order);
   },
 
- 
-
 });
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -140,11 +137,11 @@ var OrderView = Parse.View.extend({
     var order = new OrderView({model: this.model});
   },
 
- 
-
- 
-
 });
+ 
+
+ 
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var ProductView = Parse.View.extend({
 
@@ -160,7 +157,7 @@ var ProductView = Parse.View.extend({
   },
 
   initialize: function(){
-    $('.buttons').append(this.el);
+    $('.menu-buttons').append(this.el);
     this.render();
 
   },
@@ -173,6 +170,7 @@ var ProductView = Parse.View.extend({
 
   
 });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

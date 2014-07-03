@@ -19,7 +19,7 @@ var ProductRouter = Parse.Router.extend({
 
     collection.on('add', function(model){});
 
-    collection.fetch({add:true}).done(function(){
+    collection.fetch({add:true}).done(function(){//FETCHES THE COLLECTION ON ROUTER INITIALIZATION
       collection.each(function(object){
         
       })
@@ -42,20 +42,43 @@ var ProductRouter = Parse.Router.extend({
     $('.container').html('')
     new OrderView();
     var query = new Parse.Query(Data);
-    query.find({
+    window.categoryArray = [];
+    console.log(categoryArray)
+    query.find({        //CREATES AN ARRAY OF 75 "RESULTS" OF PARSE.OBJECT
       success: function(results) {
-        alert("found " + results.length + " categories");
+        results.forEach(function(result){  //ITERATES OVER THE 75 OBJECTS IN THE ARRAY
+          categoryArray.push(result.attributes.category)
+        })
         
-      
+        window.categoryArray = _.union(categoryArray) 
+        console.log(categoryArray)
       }
     })
+    categoryArray.forEach
+
+  },//separation of route functions//do not delete//
+  //NEXT ROUTE FUNCTION GOES HERE IDIOT!!//
+});//end of router//do not delete//
+        
+        
+
+var router = new ProductRouter();
+Parse.history.start();
   
 
-  },
+        
+      
+
+
+
+
+        
+      
+  
+
 
  
 
-});
 
 
 
@@ -67,9 +90,6 @@ var ProductRouter = Parse.Router.extend({
  
     
 
-var router = new ProductRouter();
-Parse.history.start();
-  
     
 
 

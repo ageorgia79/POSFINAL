@@ -21,7 +21,7 @@ var ProductRouter = Parse.Router.extend({
 
     collection.fetch({add:true}).done(function(){
       collection.each(function(object){
-        console.warn(object);
+        
       })
     })
    
@@ -45,6 +45,8 @@ var ProductRouter = Parse.Router.extend({
     query.find({
       success: function(results) {
         alert("found " + results.length + " categories");
+        
+      
       }
     })
   

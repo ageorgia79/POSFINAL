@@ -8,8 +8,9 @@ var LoginView = Parse.View.extend({
 
   events: {
 
-    "click .submit": "showClockinModal",
-    "click .yes": "showLayoutView"
+    "click .submit"  : "showClockinModal",
+    "click .yes"     : "showLayoutView",
+    
   },
 
   initialize: function(){
@@ -32,7 +33,9 @@ var LoginView = Parse.View.extend({
     var modal = document.getElementById('clockinoverlay');
     modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
 
-  }
+  },
+
+ 
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

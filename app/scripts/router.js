@@ -43,27 +43,28 @@ var ProductRouter = Parse.Router.extend({
     new OrderView();
     var query = new Parse.Query(Data);
     window.categoryArray = [];
-    console.log(categoryArray)
-    query.find({        //CREATES AN ARRAY OF 75 "RESULTS" OF PARSE.OBJECT
+    query.find({        
       success: function(results) {
-        results.forEach(function(result){  //ITERATES OVER THE 75 OBJECTS IN THE ARRAY
+        results.forEach(function(result){  
           categoryArray.push(result.attributes.category)
         })
-        
         window.categoryArray = _.union(categoryArray) 
         console.log(categoryArray)
       }
     })
-    categoryArray.forEach
-
+        categoryArray.forEach(function(result){
+        $('.menu-buttons').append(result)})
   },//separation of route functions//do not delete//
-  //NEXT ROUTE FUNCTION GOES HERE IDIOT!!//
+  
 });//end of router//do not delete//
-        
         
 
 var router = new ProductRouter();
 Parse.history.start();
+
+        
+        
+
   
 
         

@@ -10,6 +10,9 @@ var ProductRouter = Parse.Router.extend({
     "floor"   : "layoutPage",
     "categories"   : "categoriesPage",
     "categories/:category"   : "categoryPage",
+    
+   
+    
   
     
   },
@@ -42,9 +45,7 @@ var ProductRouter = Parse.Router.extend({
   categoriesPage: function(){
     $('.container').html('')
     new OrderView();
-    // new ButtonView();
     var query = new Parse.Query(Data);
-    // console.log(Data)
     window.categoryArray = [];
     query.find({        
       success: function(results) {
@@ -67,18 +68,15 @@ var ProductRouter = Parse.Router.extend({
   categoryPage: function(category){
     $('.container').html('')
     new OrderView();
-    //new ButtonView
     var query = new Parse.Query(Data);
-    window.entreesArray = [];
-    query.equalTo("category", "Entrees")
+    window.categoryArray = [];
+    query.equalTo("category", category);
     query.find({
       success: function(results) {
         results.forEach(function(result){
-          entreesArray.push(result.attributes.name)
+          categoryArray.push(result.attributes.name)
         })
-        window.entreesArray = _.union(entreesArray)
-        console.log(entreesArray)
-        entreesArray.forEach(function(name){
+        categoryArray.forEach(function(name){
 
           var div = '<a href="#/name/' + name + '">' +
                     '<div class="button ' + name + '">' + name + '</div></a>'
@@ -88,6 +86,17 @@ var ProductRouter = Parse.Router.extend({
       }
     })
   },
+
+
+
+
+
+
+
+   
+
+
+  
    
    
 

@@ -146,11 +146,11 @@ var OrderView = Parse.View.extend({
 var ButtonView = Parse.View.extend({
 
 
-  productTemplate: _.template($('.product-template').text()),
+  buttonTemplate: _.template($('.button-template').text()),
   
 
   events: {
-    
+    "click .button.Entrees": "showEntreenames",
 
   },
 
@@ -161,10 +161,18 @@ var ButtonView = Parse.View.extend({
 
   
   render: function(){
-    var renderedTemplate = this.productTemplate(this.model);
-    this.$el.html(renderedTemplate);
+    var renderedTemplate = this.buttonTemplate(this.model);
+    this.$el.html(buttonTemplate);
 
   },
+
+  showEntreenames: function(){
+    router.navigate("#/entreeName", {trigger: true});
+
+
+  }
+
+
 
   
 });

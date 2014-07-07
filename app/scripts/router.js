@@ -10,6 +10,7 @@ var ProductRouter = Parse.Router.extend({
     "floor"   : "layoutPage",
     "categories"   : "categoriesPage",
     "categories/:category"   : "categoryPage",
+  
     
   },
     
@@ -41,8 +42,9 @@ var ProductRouter = Parse.Router.extend({
   categoriesPage: function(){
     $('.container').html('')
     new OrderView();
-    // new ButtonsView();
+    // new ButtonView();
     var query = new Parse.Query(Data);
+    // console.log(Data)
     window.categoryArray = [];
     query.find({        
       success: function(results) {
@@ -60,7 +62,38 @@ var ProductRouter = Parse.Router.extend({
         }) 
       }
     })
-  },//separation of route functions//do not delete//
+  },
+
+  categoryPage: function(category){
+    $('.container').html('')
+    new OrderView();
+    //new ButtonView
+    var query = new Parse.Query(Data);
+    window.entreesArray = [];
+    query.equalTo("category", "Entrees")
+    query.find({
+      success: function(results) {
+        results.forEach(function(result){
+          entreesArray.push(result.attributes.name)
+        })
+        window.entreesArray = _.union(entreesArray)
+        console.log(entreesArray)
+        entreesArray.forEach(function(name){
+
+          var div = '<a href="#/name/' + name + '">' +
+                    '<div class="button ' + name + '">' + name + '</div></a>'
+          console.log(div)  
+          $('.menu-buttons').append(div)
+        })
+      }
+    })
+  },
+   
+   
+
+
+
+ 
   
   
   

@@ -10,12 +10,11 @@ var ProductRouter = Parse.Router.extend({
     "floor"   : "layoutPage",
     "categories"   : "categoriesPage",
     "categories/:category"   : "categoryPage",
+    "options": "optionsPage",
     
-    
-    
- 
  },
-
+    
+    
   initialize: function(){
     var collection = new ProductCollection();
 
@@ -29,12 +28,12 @@ var ProductRouter = Parse.Router.extend({
    
      
   },
-
+    
   loginPage: function(){
     $('.container').html('')
     new LoginView();
   },
-
+ 
   layoutPage: function(){
     $('.container').html('')
      new LayoutView();
@@ -44,20 +43,18 @@ var ProductRouter = Parse.Router.extend({
     $('.container').html('')
     new OrderView();
     var query = new Parse.Query(Data);
-    window.categoryArray = [];
+    var categoryArray = [];
     query.find({        
       success: function(results) {
         results.forEach(function(result){  
           categoryArray.push(result.attributes.category)
-          console.log(result)
         })
-        window.categoryArray = _.union(categoryArray) 
-        console.log(categoryArray)
+        categoryArray = _.union(categoryArray) 
         categoryArray.forEach(function(category){
             
           var div = '<a href="#/categories/' + category + '">' +
                     '<div class="button ' + category + '">' + category + '</div></a>'
-          console.log(div)
+          
           $('.menu-buttons').append(div)
         }) 
       }
@@ -68,42 +65,57 @@ var ProductRouter = Parse.Router.extend({
     $('.container').html('')
     new OrderView();
     var query = new Parse.Query(Data);
-    window.categoryArray = [];
+    var entreesArray = [];
     query.equalTo("category", category);
     query.find({
       success: function(results) {
         results.forEach(function(result){
-          categoryArray.push(result.attributes.name)
+          
+          entreesArray.push(result.attributes)
+
         })
+        entreesArray.forEach(function(entree){
 
-        categoryArray.forEach(function(name){
+          console.log(entree)
+          new ButtonView({model: entree})   
 
-          var div = '<a href="#/categories/' + name + '">' +
-                    '<div class="button ' + name + '">' + name + '</div></a>'
-          console.log(div)  
-          $('.menu-buttons').append(div)
+          
         })
       }
     })
   },
 
-
-
-  
-
-
- 
  
 
 
-  
+          
 });//end of router//do not delete//
 
 
-
-
+ 
 var router = new ProductRouter();
 Parse.history.start();
+
+  
+ 
+
+
+
+   
+
+      
+
+
+
+  
+ 
+
+
+  
+
+
+
+
 
 
 

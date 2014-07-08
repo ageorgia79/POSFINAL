@@ -3,7 +3,7 @@
           "category": "Entrees",
           "name": "Prime Rib",  
           "price": "21.95",
-          "options": [
+          "options": [{
             "Rare",
             "MedRare",                            
             "Medium",
@@ -11,7 +11,7 @@
             "Well",
             "Butterfly",
             "Pittsburg"
-          ], 
+          }] 
           "sides": [
             "Fries",
             "Green Beans",

@@ -10,7 +10,7 @@ var LoginView = Parse.View.extend({
 
     "click .submit"  : "showClockinModal",
     "click .yes"     : "showLayoutView",
-    
+    "click .number.nine": "showNine",
     
   },
 
@@ -27,7 +27,7 @@ var LoginView = Parse.View.extend({
   showLayoutView: function(){
     router.navigate("#/floor", {trigger: true});
 
-    // $('.container').append(layout);
+   
   },
 
   showClockinModal: function(){
@@ -36,16 +36,16 @@ var LoginView = Parse.View.extend({
 
   },
 
- 
-
-
+  showNine: function(){
+    console.log('button works')
+    
+  }
 
  
 });
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var LayoutView = Parse.View.extend({
 
@@ -57,22 +57,10 @@ var LayoutView = Parse.View.extend({
 
     "click .hightop1": "showOrderView",
     "click .hightop2": "showOrderView",
-    "click .table-101": "showOrderView",
-    "click .table-102": "showOrderView",
-    "click .table-103": "showOrderView",
-    "click .table-104": "showOrderView",
-    "click .booth-1": "showOrderView",
-    "click .booth-2": "showOrderView",
-    "click .booth-3": "showOrderView",
-    "click .booth-4": "showOrderView",
-    "click .stool-1": "showOrderView",
-    "click .stool-2": "showOrderView",
-    "click .stool-3": "showOrderView",
-    "click .stool-4": "showOrderView",
-    "click .stool-5": "showOrderView",
-    "click .stool-6": "showOrderView",
-    "click .stool-7": "showOrderView",
-    "click .stool-8": "showOrderView"
+    "click .table": "showOrderView",
+    "click .booth": "showOrderView",
+    "click .stool": "showOrderView",
+    
 
   },
 
@@ -95,8 +83,9 @@ var LayoutView = Parse.View.extend({
 
 });
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 var OrderView = Parse.View.extend({
 
@@ -109,13 +98,14 @@ var OrderView = Parse.View.extend({
     "click .go-button": "showLoginView",
     "click .void": "showManagerModal",
     "click .numberenter": "showOrderView",
-    
+   
     
   },
 
   initialize: function(){
     $('.container').empty();
     $('.container').append(this.el);
+
     this.render();
   
 
@@ -137,26 +127,27 @@ var OrderView = Parse.View.extend({
     modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
   },
 
-  showOrderView: function(){
+  showOrderView: function(){//Makes Modal go away//
     this.remove();
     var order = new OrderView({model: this.model});
   },
 
+ 
+
 });
- 
-
- 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 var ButtonView = Parse.View.extend({
 
+  className: 'button',
 
   buttonTemplate: _.template($('.button-template').text()),
+  optionsTemplate: _.template($('.options-template').text()),
   
-
   events: {
-    "click .button.Entrees": "showEntreenames",
-
+    'click' : 'showOptions',
   },
 
   initialize: function(){
@@ -167,21 +158,46 @@ var ButtonView = Parse.View.extend({
   
   render: function(){
     var renderedTemplate = this.buttonTemplate(this.model);
-    this.$el.html(buttonTemplate);
+    this.$el.html(renderedTemplate);
 
   },
 
-  showEntreenames: function(){
-    router.navigate("#/entreeName", {trigger: true});
+  showRender: function(){
+    var showTemplate = this.optionsTemplate(this.model);
+    this.$el.html(showTemplate);
+  },
 
+  showOptions: function(){
+      $('.menu-buttons').html('');
+    console.log(this.model.options)
+    var cooloptions = this.model.options;
+    cooloptions.forEach(function(optionName){
+      console.log(optionName)
+      var div = '<a href="#/categories/' + optionName + '">' +
+                    '<div class="button ' + optionName + '">' + optionName + '</div></a>'
+      $('.menu-buttons').append(div);
+      
+    })
+    //console.log('button works')
+  },
+    
 
-  }
 
 
 
   
 });
+ 
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+ 
+
+ 
+
 
 
 

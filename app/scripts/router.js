@@ -11,12 +11,10 @@ var ProductRouter = Parse.Router.extend({
     "categories"   : "categoriesPage",
     "categories/:category"   : "categoryPage",
     
-   
     
-  
     
-  },
-    
+ 
+ },
 
   initialize: function(){
     var collection = new ProductCollection();
@@ -51,6 +49,7 @@ var ProductRouter = Parse.Router.extend({
       success: function(results) {
         results.forEach(function(result){  
           categoryArray.push(result.attributes.category)
+          console.log(result)
         })
         window.categoryArray = _.union(categoryArray) 
         console.log(categoryArray)
@@ -76,9 +75,10 @@ var ProductRouter = Parse.Router.extend({
         results.forEach(function(result){
           categoryArray.push(result.attributes.name)
         })
+
         categoryArray.forEach(function(name){
 
-          var div = '<a href="#/name/' + name + '">' +
+          var div = '<a href="#/categories/' + name + '">' +
                     '<div class="button ' + name + '">' + name + '</div></a>'
           console.log(div)  
           $('.menu-buttons').append(div)
@@ -89,6 +89,21 @@ var ProductRouter = Parse.Router.extend({
 
 
 
+  
+
+
+ 
+ 
+
+
+  
+});//end of router//do not delete//
+
+
+
+
+var router = new ProductRouter();
+Parse.history.start();
 
 
 
@@ -105,12 +120,7 @@ var ProductRouter = Parse.Router.extend({
  
   
   
-  
-});//end of router//do not delete//
         
-
-var router = new ProductRouter();
-Parse.history.start();
 
 
 

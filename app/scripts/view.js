@@ -148,6 +148,13 @@ var ButtonView = Parse.View.extend({
   
   events: {
     'click' : 'showOptions',
+    'click .button.Rare': 'showSides',
+    'click .button.MedRare': "showSides",
+    'click .button.Medium': "showSides",
+    'click .button.MedWell': "showSides",
+    'click .button.Well': "showSides",
+    'click .button.Butterfly': "showSides",
+    'click .button.Pittsburg': "showSides",
   },
 
   initialize: function(){
@@ -180,6 +187,12 @@ var ButtonView = Parse.View.extend({
     })
     //console.log('button works')
   },
+
+  showSides: function(){
+
+  }
+
+
     
 
 

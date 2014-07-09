@@ -8,8 +8,8 @@ var LoginView = Parse.View.extend({
 
   events: {
 
-    "click .submit"  : "showClockinModal",
-    "click .yes"     : "showLayoutView",
+    "click .submit"     : "showClockinModal",
+    "click .yes"        : "showLayoutView",
     "click .number.nine": "showNine",
     
   },
@@ -55,11 +55,11 @@ var LayoutView = Parse.View.extend({
 
   events: {
 
-    "click .hightop1": "showOrderView",
-    "click .hightop2": "showOrderView",
-    "click .table": "showOrderView",
-    "click .booth": "showOrderView",
-    "click .stool": "showOrderView",
+    "click .hightop1" : "showOrderView",
+    "click .hightop2" : "showOrderView",
+    "click .table"    : "showOrderView",
+    "click .booth"    : "showOrderView",
+    "click .stool"    : "showOrderView",
     
 
   },
@@ -95,8 +95,8 @@ var OrderView = Parse.View.extend({
 
   events: {
 
-    "click .go-button": "showLoginView",
-    "click .void": "showManagerModal",
+    "click .go-button"  : "showLoginView",
+    "click .void"       : "showManagerModal",
     "click .numberenter": "showOrderView",
    
     
@@ -142,22 +142,17 @@ var OrderView = Parse.View.extend({
 var ButtonView = Parse.View.extend({
 
   className: 'button',
-
+  
   buttonTemplate: _.template($('.button-template').text()),
-  optionsTemplate: _.template($('.options-template').text()),
   
   events: {
-    'click' : 'showOptions',
-    'click .button.Rare': 'showSides',
-    'click .button.MedRare': "showSides",
-    'click .button.Medium': "showSides",
-    'click .button.MedWell': "showSides",
-    'click .button.Well': "showSides",
-    'click .button.Butterfly': "showSides",
-    'click .button.Pittsburg': "showSides",
+    
+    
+  
   },
 
   initialize: function(){
+
     $('.menu-buttons').append(this.el);
     this.render();
   },
@@ -169,28 +164,17 @@ var ButtonView = Parse.View.extend({
 
   },
 
-  showRender: function(){
-    var showTemplate = this.optionsTemplate(this.model);
-    this.$el.html(showTemplate);
-  },
+ 
 
-  showOptions: function(){
-      $('.menu-buttons').html('');
-    console.log(this.model.options)
-    var cooloptions = this.model.options;
-    cooloptions.forEach(function(optionName){
-      console.log(optionName)
-      var div = '<a href="#/categories/' + optionName + '">' +
-                    '<div class="button ' + optionName + '">' + optionName + '</div></a>'
-      $('.menu-buttons').append(div);
-      
-    })
-    //console.log('button works')
-  },
+    
+    
+  
 
-  showSides: function(){
 
-  }
+
+
+
+
 
 
     

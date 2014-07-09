@@ -6,11 +6,12 @@ var ProductRouter = Parse.Router.extend({
 
   routes: {
 
-    ""        : "loginPage",
-    "floor"   : "layoutPage",
-    "categories"   : "categoriesPage",
-    "categories/:category"   : "categoryPage",
-    "options": "optionsPage",
+    ""                        : "loginPage",
+    "floor"                   : "layoutPage",
+    "categories"              : "categoriesPage",
+    "categories/:category"    : "categoryPage",
+    "categories/:category/:options"    : "categoryPage",
+    
     
  },
     
@@ -50,40 +51,41 @@ var ProductRouter = Parse.Router.extend({
           categoryArray.push(result.attributes.category)
         })
         categoryArray = _.union(categoryArray) 
+        console.log(categoryArray)
         categoryArray.forEach(function(category){
-            
-          var div = '<a href="#/categories/' + category + '">' +
-                    '<div class="button ' + category + '">' + category + '</div></a>'
+          console.log(category)
+            new ButtonView({model: category})
           
-          $('.menu-buttons').append(div)
+
         }) 
       }
     })
   },
 
-  categoryPage: function(category){
-    $('.container').html('')
-    new OrderView();
-    var query = new Parse.Query(Data);
-    var entreesArray = [];
-    query.equalTo("category", category);
-    query.find({
-      success: function(results) {
-        results.forEach(function(result){
+  // categoryPage: function(category){
+  //   $('.container').html('')
+  //   new OrderView();
+  //   var query = new Parse.Query(Data);
+  //   var entreesArray = [];
+  //   query.equalTo("category", category);
+  //   query.find({
+  //     success: function(results) {
+  //       results.forEach(function(result){
           
-          entreesArray.push(result.attributes)
+  //         entreesArray.push(result.attributes)
 
-        })
-        entreesArray.forEach(function(entree){
-
-          console.log(entree)
-          new ButtonView({model: entree})   
+  //       })
+  //       entreesArray.forEach(function(entree){
+  //         console.log(entree)
+  //         new ButtonView({model: entree})   
 
           
-        })
-      }
-    })
-  },
+  //       })
+  //     }
+  //   })
+  // },
+
+
 
  
 

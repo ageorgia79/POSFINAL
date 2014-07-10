@@ -53,7 +53,7 @@ var ProductRouter = Parse.Router.extend({
           //console.log(categoryArray)
         })
         categoryArray = _.union(categoryArray) 
-        console.log(categoryArray)
+        //console.log(categoryArray)
         categoryArray.forEach(function(category){
           //console.log(category)
             new ButtonView({model: category})
@@ -74,12 +74,15 @@ var ProductRouter = Parse.Router.extend({
       success: function(results) {
         console.log(results)
         results.forEach(function(result){
+          console.log(result)
           nameArray.push(result.attributes.name)
+          console.log(result.attributes)
+          new EntreeView({model: result.attributes});
         })
-        nameArray.forEach(function(entreeName){
-          console.log(entreeName)
-            new EntreeView({model: entreeName});
-        })
+        // nameArray.forEach(function(entreeName){
+          // console.log(entreeName)
+
+        // })
       }
     })
   },

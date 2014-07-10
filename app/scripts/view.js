@@ -11,6 +11,15 @@ var LoginView = Parse.View.extend({
     "click .submit"     : "showClockinModal",
     "click .yes"        : "showLayoutView",
     "click .number.nine": "showNine",
+    "click .number.eight": "showEight",
+    "click .number.seven": "showSeven",
+    "click .number.six": "showSix",
+    "click .number.five": "showFive",
+    "click .number.four": "showFour",
+    "click .number.three": "showThree",
+    "click .number.two": "showTwo",
+    "click .number.one": "showOne",
+    "click .number.zero": "showZero",
     
   },
 
@@ -38,8 +47,46 @@ var LoginView = Parse.View.extend({
 
   showNine: function(){
     console.log('button works')
-    
-  }
+    var numbernine = $('.number.nine').val();
+    $('.loginpassword').append(numbernine)
+  },
+
+  showEight: function(){
+    var numbereight = $('.number.eight').val();
+    $('.loginpassword').append(numbereight)
+  },
+  showSeven: function(){
+    var numberseven = $('.number.seven').val();
+    $('.loginpassword').append(numberseven)
+  },
+  showSix: function(){
+    var numbersix = $('.number.six').val();
+    $('.loginpassword').append(numbersix)
+  },
+  showFive: function(){
+    var numberfive = $('.number.five').val();
+    $('.loginpassword').append(numberfive)
+  },
+  showFour: function(){
+    var numberfour = $('.number.four').val();
+    $('.loginpassword').append(numberfour)
+  },
+  showThree: function(){
+    var numberthree = $('.number.three').val();
+    $('.loginpassword').append(numberthree)
+  },
+  showTwo: function(){
+    var numbertwo = $('.number.two').val();
+    $('.loginpassword').append(numbertwo)
+  },
+  showOne: function(){
+    var numberone = $('.number.one').val();
+    $('.loginpassword').append(numberone)
+  },
+  showZero: function(){
+    var numberzero = $('.number.zero').val();
+    $('.loginpassword').append(numberzero)
+  },
 
  
 });
@@ -198,10 +245,11 @@ var EntreeView = Parse.View.extend({
 
   showPricing: function(){
   console.log('the button works')
-  
-  
-
-    
+    $('.itemizer').append(this.model.name)
+   $('.itemizer').append(this.model.price)
+   $('.subtotal').append(this.model.price)
+   console.log(this.model.name)
+  console.log(this.model.price)  
   }
 });
 

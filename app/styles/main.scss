@@ -473,6 +473,7 @@ body {
 }
 
 .itemizer {
+    font-size: 30px;
     margin: 0 auto;
     margin-top: 8px;
     width: 365px;
@@ -481,26 +482,41 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     position: relative;
     overflow: scroll;
+    color: red;
 
+}
+
+span {
+    margin-left: 15px;
+    color: black;
+    font-weight: bolder;
 }
 
 .subtotal {
     height: 25px;
+    width: 125px;
     border: 1px solid black;
     background: rgb(206,220,231);
+    margin-left: 15px;
+    color: red;
+    text-indent: 10px;
+
+
 
 }
 
 .taxtotal {
     height: 25px;
-    margin-left: 20px;
+    width: 125px;
+    margin-left: 15px;
     border: 1px solid black;
     background: rgb(206,220,231);
 }
 
 .totaltotal {
     height: 25px;
-    margin-left: 25px;
+    width: 125px;
+    margin-left: 15px;
     border: 1px solid black;
     background: rgb(206,220,231);
 }

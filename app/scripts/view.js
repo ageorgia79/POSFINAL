@@ -245,12 +245,19 @@ var EntreeView = Parse.View.extend({
 
   showPricing: function(){
   console.log('the button works')
+    
     $('.itemizer').append(this.model.name)
-   $('.itemizer').append(this.model.price)
-   $('.subtotal').append(this.model.price)
-   console.log(this.model.name)
-  console.log(this.model.price)  
-  }
+    $('.itemizer').append(this.model.price)
+    $('.subtotal').append(this.model.price)
+    var tax = $('.subtotal').val() *10; 
+    console.log(tax)
+    $('.taxtotal').append(tax); 
+    
+ 
+
+
+     
+  },
 });
 
     

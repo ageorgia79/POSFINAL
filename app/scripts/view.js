@@ -146,7 +146,7 @@ var ButtonView = Parse.View.extend({
   buttonTemplate: _.template($('.button-template').text()),
   
   events: {
-    
+    'click': "showCategoryName",
     
   
   },
@@ -164,26 +164,64 @@ var ButtonView = Parse.View.extend({
 
   },
 
+  showCategoryName: function(){
  
+    router.navigate("#/categories/" + this.model, {trigger: true});
+  },
 
-    
-    
-  
-
-
-
-
-
-
-
-
-    
-
-
-
-
-  
+ 
 });
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+var EntreeView = Parse.View.extend({
+
+  className: 'button',
+
+  entreeTemplate: _.template($('.entree-template').text()),
+
+  events: {
+    "click": "showPricing",
+
+  },
+
+  initialize: function(){
+    $('.menu-buttons').append(this.el);
+    this.render();
+  },
+
+  render: function(){
+    var renderedTemplate = this.entreeTemplate(this.model);
+    this.$el.html(renderedTemplate);
+  },
+
+  showPricing: function(){
+  console.log('the button works')
+  
+  
+
+    
+  }
+});
+
+    
+    
+  
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  
  
 
 

@@ -6,11 +6,12 @@ var ProductRouter = Parse.Router.extend({
 
   routes: {
 
-    ""                        : "loginPage",
-    "floor"                   : "layoutPage",
-    "categories"              : "categoriesPage",
-    "categories/:category"    : "categoryPage",
-    "categories/:category/:options"    : "categoryPage",
+    ""                                         : "loginPage",
+    "floor"                                    : "layoutPage",
+    "categories"                               : "categoriesPage",
+    "categories/:category"                     : "categoryPage",
+    
+    
     
     
  },
@@ -49,11 +50,12 @@ var ProductRouter = Parse.Router.extend({
       success: function(results) {
         results.forEach(function(result){  
           categoryArray.push(result.attributes.category)
+          //console.log(categoryArray)
         })
         categoryArray = _.union(categoryArray) 
         console.log(categoryArray)
         categoryArray.forEach(function(category){
-          console.log(category)
+          //console.log(category)
             new ButtonView({model: category})
           
 
@@ -62,32 +64,26 @@ var ProductRouter = Parse.Router.extend({
     })
   },
 
-  // categoryPage: function(category){
-  //   $('.container').html('')
-  //   new OrderView();
-  //   var query = new Parse.Query(Data);
-  //   var entreesArray = [];
-  //   query.equalTo("category", category);
-  //   query.find({
-  //     success: function(results) {
-  //       results.forEach(function(result){
-          
-  //         entreesArray.push(result.attributes)
+  categoryPage: function(category){
+    $('.menu-buttons').html('')
+    var query = new Parse.Query(Data);
+    var nameArray = [];
+    //console.log(category)
+    query.equalTo("category", category);
+    query.find({
+      success: function(results) {
+        console.log(results)
+        results.forEach(function(result){
+          nameArray.push(result.attributes.name)
+        })
+        nameArray.forEach(function(entreeName){
+          console.log(entreeName)
+            new EntreeView({model: entreeName});
+        })
+      }
+    })
+  },
 
-  //       })
-  //       entreesArray.forEach(function(entree){
-  //         console.log(entree)
-  //         new ButtonView({model: entree})   
-
-          
-  //       })
-  //     }
-  //   })
-  // },
-
-
-
- 
 
 
           

@@ -96,7 +96,6 @@ var LoginView = Parse.View.extend({
 
 var LayoutView = Parse.View.extend({
 
-  
 
   layoutTemplate: _.template($('.layout-template').text()),
 
@@ -123,12 +122,17 @@ var LayoutView = Parse.View.extend({
   },
 
   showOrderView: function(){
+    //console.log('button works')
+    //$('.table101').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
     router.navigate("#/categories", {trigger: true});
 
-    //$('.container').append(order);
+   
   },
 
 });
+  
+
+    
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -143,7 +147,7 @@ var OrderView = Parse.View.extend({
   events: {
 
     "click .go-button"  : "showLoginView",
-    "click .void"       : "showManagerModal",
+    "click .pay"       : "showPaymentView",
     "click .numberenter": "showOrderView",
    
     
@@ -169,10 +173,10 @@ var OrderView = Parse.View.extend({
 
   },
 
-  showManagerModal: function(){
-    var modal = document.getElementById('overlay');
-    modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
+  showPaymentView: function(){
+    router.navigate("#/payment", {trigger: true});
   },
+  
 
   showOrderView: function(){//Makes Modal go away//
     this.remove();
@@ -245,44 +249,39 @@ var EntreeView = Parse.View.extend({
 
   showPricing: function(){
   console.log('the button works')
-    
-    $('.itemizer').append(this.model.name)
-    $('.itemizer').append(this.model.price)
+
+    $('.itemizer').append(this.model.name + ' ' +  this.model.price)
     $('.subtotal').append(this.model.price)
-    var tax = $('.subtotal').val() *10; 
-    console.log(tax)
-    $('.taxtotal').append(tax); 
-    
- 
+    var tax = this.model.price;
+    var taxafter = (tax * 6 / 100).toFixed(2); 
+    var total = parseFloat(tax) + parseFloat(taxafter);
+    $('.taxtotal').append(taxafter);
+    $('.totaltotal').append(total);    
 
-
-     
   },
 });
-
     
-    
-  
-
-
-
-
-
-
-
-
-    
-
-
-
-
-  
- 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+var PaymentView = Parse.View.extend({
 
+  paymentTemplate: _.template($('.payment-template').text()),
+
+  events: {
+
+  },
+
+  initialize: function(){
+    $('.container').empty();
+    $('.container').append(this.el);
+    this.render();
+  },
+
+  render: function(){
+    var renderedTemplate = this.paymentTemplate(this.model);
+    this.$el.html(renderedTemplate);
+  },
+})
 
  
 

@@ -10,6 +10,7 @@ var LoginView = Parse.View.extend({
 
     "click .submit"     : "showClockinModal",
     "click .yes"        : "showLayoutView",
+    'click .no'         : "showAlert",
     "click .number.nine": "showNine",
     "click .number.eight": "showEight",
     "click .number.seven": "showSeven",
@@ -37,6 +38,10 @@ var LoginView = Parse.View.extend({
     router.navigate("#/floor", {trigger: true});
 
    
+  },
+
+  showAlert: function(){
+    alert('YOU MUST CLOCK IN TO PROCEED')
   },
 
   showClockinModal: function(){
@@ -123,7 +128,8 @@ var LayoutView = Parse.View.extend({
 
   showOrderView: function(){
     //console.log('button works')
-    //$('.table101').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
+    $('.table101').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
+
     router.navigate("#/categories", {trigger: true});
 
    
@@ -250,17 +256,22 @@ var EntreeView = Parse.View.extend({
   showPricing: function(){
   console.log('the button works')
 
-    $('.itemizer').append(this.model.name + ' ' +  this.model.price)
+    $('.itemizer').append(this.model.name + ' ' +  '$'+this.model.price)
+    $('.itemizer').append('<br>','<br>')
     $('.subtotal').append(this.model.price)
     var tax = this.model.price;
-    var taxafter = (tax * 6 / 100).toFixed(2); 
+    var taxafter = (tax * 6.75 / 100).toFixed(2); 
     var total = parseFloat(tax) + parseFloat(taxafter);
     $('.taxtotal').append(taxafter);
-    $('.totaltotal').append(total);    
+    $('.totaltotal').append(total);   
+
+    
+
+
+    
 
   },
 });
-    
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var PaymentView = Parse.View.extend({
@@ -268,6 +279,7 @@ var PaymentView = Parse.View.extend({
   paymentTemplate: _.template($('.payment-template').text()),
 
   events: {
+    "click .credit-amex": "showLoginView",
 
   },
 
@@ -281,6 +293,10 @@ var PaymentView = Parse.View.extend({
     var renderedTemplate = this.paymentTemplate(this.model);
     this.$el.html(renderedTemplate);
   },
+
+  showLoginView: function(){
+    router.navigate("#", {trigger: true});
+  }
 })
 
  

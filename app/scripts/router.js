@@ -47,6 +47,8 @@ var ProductRouter = Parse.Router.extend({
     new PaymentView();
   },
 
+ 
+
   categoriesPage: function(){
     $('.container').html('')
     new OrderView();
@@ -83,7 +85,7 @@ var ProductRouter = Parse.Router.extend({
           console.log(result)
           nameArray.push(result.attributes.name)
           console.log(result.attributes)
-          new EntreeView({model: result.attributes});
+          new EntreeView({model: result.attributes}); 
         })
         // nameArray.forEach(function(entreeName){
           // console.log(entreeName)

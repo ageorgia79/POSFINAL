@@ -258,12 +258,16 @@ var EntreeView = Parse.View.extend({
 
     $('.itemizer').append(this.model.name + ' ' +  '$'+this.model.price)
     $('.itemizer').append('<br>','<br>')
-    $('.subtotal').append(this.model.price)
-    var tax = this.model.price;
-    var taxafter = (tax * 6.75 / 100).toFixed(2); 
-    var total = parseFloat(tax) + parseFloat(taxafter);
-    $('.taxtotal').append(taxafter);
-    $('.totaltotal').append(total);   
+    var subtotal = this.model.price;
+    var tax = (subtotal * 6.75 / 100).toFixed(2); 
+    var total = parseFloat(subtotal) + parseFloat(tax);
+    $('.subtotal').val();
+    $('.subtotal').append(subtotal)
+    $('.taxtotal').append(tax);
+    $('.totaltotal').append(total);  
+
+
+  
 
     
 

@@ -154,7 +154,7 @@ var OrderView = Parse.View.extend({
 
     "click .go-button"  : "showLoginView",
     "click .pay"       : "showPaymentView",
-    "click .numberenter": "showOrderView",
+    
    
     
   },
@@ -184,14 +184,11 @@ var OrderView = Parse.View.extend({
   },
   
 
-  showOrderView: function(){//Makes Modal go away//
-    this.remove();
-    var order = new OrderView({model: this.model});
-  },
-
+ 
  
 
 });
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -209,7 +206,6 @@ var ButtonView = Parse.View.extend({
   },
 
   initialize: function(){
-
     $('.menu-buttons').append(this.el);
     this.render();
   },
@@ -256,23 +252,18 @@ var EntreeView = Parse.View.extend({
   showPricing: function(){
   console.log('the button works')
 
+    
     $('.itemizer').append(this.model.name + ' ' +  '$'+this.model.price)
     $('.itemizer').append('<br>','<br>')
-    var subtotal = this.model.price;
+
+    var subtotal = $('.subtotal').val() + this.model.price;
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
     var total = parseFloat(subtotal) + parseFloat(tax);
-    $('.subtotal').val();
-    $('.subtotal').append(subtotal)
+
+    $('.subtotal').append(subtotal);
     $('.taxtotal').append(tax);
-    $('.totaltotal').append(total);  
-
-
-  
-
-    
-
-
-    
+    $('.totaltotal').append(total); 
+    router.navigate("#/refresh", {trigger: true});
 
   },
 });

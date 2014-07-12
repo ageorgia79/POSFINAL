@@ -9,6 +9,7 @@ var ProductRouter = Parse.Router.extend({
     ""                                         : "loginPage",
     "payment"                                  : "paymentPage",
     "floor"                                    : "layoutPage",
+    "refresh"                                  : "refreshPage",
     "categories"                               : "categoriesPage",
     "categories/:category"                     : "categoryPage",
     
@@ -45,6 +46,23 @@ var ProductRouter = Parse.Router.extend({
   paymentPage: function(){
     $('.container').html('')
     new PaymentView();
+  },
+
+  refreshPage: function(){
+    $('.menu-buttons').html('')
+    var query = new Parse.Query(Data);
+    var categoryArray = [];
+    query.find({
+      success: function(results) {
+        results.forEach(function(result){
+          categoryArray.push(result.attributes.category)
+        })
+        categoryArray = _.union(categoryArray)
+        categoryArray.forEach(function(category){
+          new ButtonView({model: category})
+        })
+      }
+    })
   },
 
  
@@ -87,6 +105,7 @@ var ProductRouter = Parse.Router.extend({
           console.log(result.attributes)
           new EntreeView({model: result.attributes}); 
         })
+        
         // nameArray.forEach(function(entreeName){
           // console.log(entreeName)
 

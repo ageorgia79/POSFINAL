@@ -45,26 +45,15 @@ body {
     width: 100%;
     height: 130px;
     span {
-        font-family: 'Audiowide', cursive;
-        //color: rgb(91, 153, 229);
-        //color: #660099;
-        //color: #FF3300;
+        font-family: 'Permanent Marker', cursive;
         font-size: 100px;
         margin: 0 auto;
         margin-left: 30px;
-        //text-shadow: 1px 1px 80px blue;
         text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
-        //text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-    }
-    span2 {
-        font-size: 60px;
-        font-family: 'Permanent Marker', cursive;
-        //text-shadow: 1px 1px 120px #99FF00;
         text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
-        //text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-        color: black;
-        
+   
     }
+   
 }
 
 .order-header {
@@ -74,25 +63,14 @@ body {
     height: 130px;
     float: left;
     span {
-        font-family: 'Audiowide', cursive;
-        //color: rgb(91, 153, 229);
-        //color: #FF3300;
-        //color: #660099;
-        font-size: 100px;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 90px;
         margin: 0 auto;
         margin-left: 30px;
-        //text-shadow: 1px 1px 80px blue;
         text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
-        //text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+        
     }
-    span2 {
-        font-size: 60px;
-        font-family: 'Permanent Marker', cursive;
-        //text-shadow: 1px 1px 120px #99FF00;
-        text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
-        //text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-        color: black;
-    }
+   
 }
 
 #overlay {
@@ -142,12 +120,17 @@ body {
     width:600px;
     height: 300px;
      margin: 100px auto;
-     background-image: url(https://cdn.tutsplus.com/active/uploads/legacy/flashtuts/030_BlurryLights/2.jpg);
+     background-image: url(http://slodive.com/wp-content/uploads/2011/07/grunge-backgrounds/red-gruge-background.jpg);
      padding:15px;
      text-align:center;
-     border: 5px solid #000033;
+     border: 2px solid red;
      position: relative;
      top: 80px;
+     span {
+        color: white;
+        -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+     }
 
      
 
@@ -169,6 +152,7 @@ body {
     right: 25px;
     top: 30px;
     box-shadow: 0 8px 6px -6px black;
+
 }
      
 
@@ -731,8 +715,13 @@ span {
     -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
    box-shadow: inset 0 0 15px #000000;
+   transition: All 0.5s ease;
 
     
+}
+
+.button:hover {
+    background-image: url(http://media.tumblr.com/3835a698ad0155fc3240c9e81c07b95c/tumblr_inline_mqaogeq7xE1qz4rgp.jpg);
 }
 
 

@@ -297,6 +297,8 @@ var EntreeView = Parse.View.extend({
 
   },
 
+
+
   initialize: function(){
     $('.menu-buttons').append(this.el);
     this.render();
@@ -313,6 +315,8 @@ var EntreeView = Parse.View.extend({
     
     $('.itemizer').append(this.model.name + ' ' +  '$'+this.model.price)
     $('.itemizer').append('<br>','<br>')
+
+
 
     var subtotal = $('.subtotal').val() + this.model.price;
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
@@ -361,6 +365,7 @@ var AdminView = Parse.View.extend({
   events: {
 
     "click .codeenter": "signUpUser",
+    
 
   },
 
@@ -397,6 +402,10 @@ var AdminView = Parse.View.extend({
       } 
     })
   },
+
+
+
+
 })
 
  

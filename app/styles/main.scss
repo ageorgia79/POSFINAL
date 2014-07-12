@@ -497,7 +497,7 @@ body {
 .totalbox {
     border: 4px solid orange;
     width: 400px;
-    height: 680px;
+    height: 685px;
     margin: 0 auto;
     background-image: url(http://www.graphicpanic.com/images/minimalist-orange-background.jpg);
     //  box-shadow: inset 0px 20px 40px -14px black,
@@ -551,12 +551,14 @@ span {
     //color: red;
     //text-indent: 10px;
     line-height: 25px;
+    display: block;
 
 
 
 }
 
 .taxtotal {
+    display: block;
     height: 25px;
     width: 125px;
     margin-left: 15px;
@@ -570,6 +572,7 @@ span {
 }
 
 .totaltotal {
+    display: block;
     height: 25px;
     width: 125px;
     margin-left: 15px;
@@ -790,16 +793,41 @@ span {
     }
 }
 
+.addamenu {
+    h1 {
+        color: white;
+    }
+}   
+
+
 .code {
     height: 50px;
     width: 500px;
     font-size: 30px;
 }
 
+.categorytitle {
+    height: 50px;
+    width: 325px;
+    font-size: 30px;
+}
+
+.categoryname {
+    height: 50px;
+    width: 325px;
+    font-size: 30px;
+}
+
+.price {
+    height: 50px;
+    width: 325px;
+    font-size: 30px;
+}
+
 .codeenter {
 
     height: 50px;
-    width: 100px;
+    width: 175px;
     //border: 1px solid white;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png);
     border-radius: 8px;
@@ -810,6 +838,20 @@ span {
     top: 10px;
     box-shadow: inset 0 0 10px #000000;
 
+}
+
+.menuenter {
+      height: 50px;
+    width: 175px;
+    //border: 1px solid white;
+    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 45px;
+    position: relative;
+    top: 10px;
+    box-shadow: inset 0 0 10px #000000;
 }
 
 .userpassword {

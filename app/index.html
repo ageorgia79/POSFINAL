@@ -33,42 +33,35 @@
     <script type="text/template" class="login-template">
          <div class="header">
                 <span>Andy's Chargrille</span>
+        <div class="admin">Admin</div>
         </div>
-         <div id="clockinoverlay">
-                <div id="clockinmodal">
-                    <span>Clock In?</span>
-                    <ul class="yesorno">
-                        <li class="clockin yes">Yes</li>
-                        <li class="clockin no">No</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="login">
-                <div class="loginpassword"></div>
-                <ul class="entry-pad">
-                    <li class="number nine" value="9">9</li>
-                    <li class="number eight" value="8">8</li>
-                    <li class="number seven" value="7">7</li>
-                    <br>
-                    <li class="number six" value="6">6</li>
-                    <li class="number five" value="5">5</li>
-                    <li class="number four" value="4">4</li>
-                    <br>
-                    <li class="number three" value="3">3</li>
-                    <li class="number two" value="2">2</li>
-                    <li class="number one" value="1">1</li>
-                    <br>
-                    <li class="number zero" value="0">0</li>
-                    <li class="number back">BACK</li>
-                    
-                    
-                </ul>
-                <ul class="login-submit">
-                    <li class="submit">Login</li>
-                </ul>
-            </div>
+        
+            
+                <input class="userlogin" placeholder="Username"></input>
+                <input class="loginpassword" placeholder="4-Digit Password"></input>
+            
+                    <div class="submit">Login</div>
+                
+              
+            
     </script>
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <script type="text/template" class="admin-template">
+    <div class='admin-header'>
+        <span>Andy's Chargrille</span>
+    <div>
+
+    <div class="userfield">
+        <h1>Add New User:</h1>
+        <input class="code" placeholder="Add Username"></input>
+        <input class="userpassword" placeholder="Add Four Digit Password"></div>
+        <div class="codeenter">Enter</div>
+    </div>
+    </script>
+
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
       <script type="text/template" class="layout-template">
             <div class="bar">  
@@ -116,7 +109,7 @@
                 <div class="total-box">
                     <div class="totalbox">
                         <div class="itemizer"></div>
-                        <span>Subtotal:<div class="subtotal">$</div></span>
+                        <span>Subtotal:<div class="subtotal">$</div>
                         <span>Tax%:<div class="taxtotal">$</div></span>
                         <span>Total:<div class="totaltotal">$</div></span>
                     </div>
@@ -176,6 +169,8 @@
                 <%= this.model.name %>
 
         </script>
+
+
 
       
 

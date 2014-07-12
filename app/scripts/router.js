@@ -9,6 +9,7 @@ var ProductRouter = Parse.Router.extend({
     ""                                         : "loginPage",
     "payment"                                  : "paymentPage",
     "floor"                                    : "layoutPage",
+    "admin"                                    : "adminPage",
     "refresh"                                  : "refreshPage",
     "categories"                               : "categoriesPage",
     "categories/:category"                     : "categoryPage",
@@ -29,6 +30,7 @@ var ProductRouter = Parse.Router.extend({
         
       })
     })
+
    
      
   },
@@ -46,6 +48,11 @@ var ProductRouter = Parse.Router.extend({
   paymentPage: function(){
     $('.container').html('')
     new PaymentView();
+  },
+
+  adminPage: function(){
+    $('.container').html('')
+    new AdminView();
   },
 
   refreshPage: function(){

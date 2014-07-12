@@ -11,14 +11,14 @@ var User = Parse.Object.extend("User");
 
 
 var ProductCollection = Parse.Collection.extend({
-  model: 'Data',
+  model: Data
 });
 
 
 //var collection = new ProductCollection();
 
 var UserCollection = Parse.Collection.extend({
-  model: 'User',
+  model: User
 });
 
 

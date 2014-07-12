@@ -1,5 +1,7 @@
 "use strict";
 
+var currentUser;
+
 var LoginView = Parse.View.extend({
 
   
@@ -8,9 +10,10 @@ var LoginView = Parse.View.extend({
 
   events: {
 
-    "click .submit"     : "showClockinModal",
-    "click .yes"        : "showLayoutView",
-    'click .no'         : "showAlert",
+    "click .submit"     : "showLayoutView",
+    //"click .yes"        : "showLayoutView",
+    //'click .no'         : "showAlert",
+    "click .admin"      : "showAdminView",
     "click .number.nine": "showNine",
     "click .number.eight": "showEight",
     "click .number.seven": "showSeven",
@@ -27,6 +30,7 @@ var LoginView = Parse.View.extend({
   initialize: function(){
     $('.container').append(this.el);
     this.render();
+
   },
 
   render: function(){
@@ -34,21 +38,68 @@ var LoginView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   },
 
-  showLayoutView: function(){
-    router.navigate("#/floor", {trigger: true});
+  showLayoutView: function() {
+
+    var user = new Parse.User();
+
+    Parse.User.logIn($('.userlogin').val(), $('.loginpassword').val(), {
+      success: function(user) {
+        user.set("username", $('.userlogin').val())
+        user.set("password", $('.loginpassword').val())
+        user.save(null, {
+          success: function(user) {
+            var query = new Parse.Query(Parse.User);
+                query.get(user.id, {
+                  success: function() {
+                    console.log("yeah user set!")
+                  },
+                  error: function() {
+                    console.log("failed")
+                  }
+                })
+          },
+          error: function(user, error) {
+            console.log("nope")
+          }
+        })
+        currentUser = Parse.User.current();
+        var token = Parse.User.current()._sessionToken;
+        if (currentUser) {
+
+          Parse.User.become(currentUser._sessionToken).then(function(user) {
+            Parse.User._saveCurrentUser(user);
+              console.log(user.id)
+          }, function (error) {
+              console.log("user not set")
+          });
+
+          router.navigate('#/floor', {trigger: true});
+          console.log(currentUser, currentUser._sessionToken, currentUser.attributes.score)
+
+          console.log(currentUser.attributes.username)
+
+        } else {
+          console.log("what?")
+        }
+      },
+      error: function(user, error) {
+        alert("Error" + error.code + " " + error.message)
+      }
+    })  
+  },
 
    
-  },
+  
 
-  showAlert: function(){
-    alert('YOU MUST CLOCK IN TO PROCEED')
-  },
+  // showAlert: function(){
+  //   alert('YOU MUST CLOCK IN TO PROCEED')
+  // },
 
-  showClockinModal: function(){
-    var modal = document.getElementById('clockinoverlay');
-    modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
+  // showClockinModal: function(){
+  //   var modal = document.getElementById('clockinoverlay');
+  //   modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
 
-  },
+  // },
 
   showNine: function(){
     console.log('button works')
@@ -93,8 +144,14 @@ var LoginView = Parse.View.extend({
     $('.loginpassword').append(numberzero)
   },
 
+  showAdminView: function(){
+    router.navigate('#/admin', {trigger:true});
+  }
+
  
 });
+
+
 
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -174,6 +231,7 @@ var OrderView = Parse.View.extend({
   },
 
   showLoginView: function(){
+    Parse.User.logOut();
     router.navigate("#", {trigger: true});
   
 
@@ -292,6 +350,53 @@ var PaymentView = Parse.View.extend({
   showLoginView: function(){
     router.navigate("#", {trigger: true});
   }
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var AdminView = Parse.View.extend({
+
+  adminTemplate: _.template($('.admin-template').text()),
+
+  events: {
+
+    "click .codeenter": "signUpUser",
+
+  },
+
+  initialize: function(){
+    $('.container').empty();
+    $('.container').append(this.el);
+    this.render();
+  },
+
+  render: function(){
+    var renderedTemplate = this.adminTemplate(this.model);
+    this.$el.html(renderedTemplate);
+    return this;
+  },
+
+  signUpUser: function() {
+    var user = new Parse.User();
+    user.set("username", $('.code').val())
+    user.set('password', $('.userpassword').val())
+    
+
+    user.signUp(null, {
+      success: function(user) {
+        var currentUser = Parse.User.current();
+        if (currentUser) {
+          router.navigate('#', {trigger: true});
+          console.log(currentUser)
+        } else {
+          console.log("did not sign up")
+        }
+      },
+      error: function(user, error) {
+        alert("Error" + error.code + " " + error.message);
+      } 
+    })
+  },
 })
 
  

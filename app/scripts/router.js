@@ -8,7 +8,7 @@ var ProductRouter = Parse.Router.extend({
 
     ""                                         : "loginPage",
     "payment"                                  : "paymentPage",
-    "floor"                                    : "layoutPage",
+    "tables"                                    : "layoutPage",
     "admin"                                    : "adminPage",
     "refresh"                                  : "refreshPage",
     "categories"                               : "categoriesPage",

@@ -34,13 +34,16 @@
          <div class="header">
                 <span>Andy's Chargrille</span>
         <div class="admin">Admin</div>
+        <div class="checkout">Checkout</div>
         </div>
         
-            
+            <div class="loginbox">
                 <input class="userlogin" placeholder="Username"></input>
                 <input class="loginpassword" placeholder="4-Digit Password"></input>
             
                     <div class="submit">Login</div>
+
+            </div>
                 
               
             
@@ -72,11 +75,13 @@
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
       <script type="text/template" class="layout-template">
-            <div class="bar">  
+            <div class="bar"> 
+
             <ul class="hightops">
                 <li class="hightop1">301</li>
                 <li class="hightop2">302</li>
             </ul>
+            
             <ul class="stools">
                 <li class="stool stool1">1</li>
                 <li class="stool stool2">2</li>
@@ -86,7 +91,9 @@
                 <li class="stool stool6">6</li>
                 <li class="stool stool7">7</li>
                 <li class="stool stool8">8</li>
+
             </ul>
+
             </div>
             <ul class="angletables">
                 <li class="table table101">
@@ -136,7 +143,13 @@
             <div class="header">
                 <span>Andy's Chargrille</span>
             </div>
-            <div class="finalbalance"></div>
+                <div id="overlay">
+                    <div id="modaloverlay">
+                        <input class="modalpassword" placeholder="Enter Amount"></input>
+                        <div class="number numberenter">Enter</div>
+                    </div>
+                </div>
+            <textarea class="finalbalance"></textarea>
             <ul class="payments">
                 <li class="payment ten">$10</li>
                 <li class="payment twenty">$20</li>
@@ -154,6 +167,8 @@
                 <li class="credit-amex"></li>
             </ul>
         </script>
+                       
+
 
             
             

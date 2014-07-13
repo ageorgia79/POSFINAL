@@ -109,6 +109,7 @@ body {
 
 #modaloverlay {
     width:900px;
+    height: 500px;
      margin: 100px auto;
      background-color: #fff;
      border:1px solid #000;
@@ -118,6 +119,12 @@ body {
      background-image: url(http://www.smoothcolors.com/gray_light.jpg);
      position: relative;
      bottom: 60px;
+     input {
+        height: 100px;
+        width: 600px;
+        margin-top: 150px;
+        font-size: 50px;
+     }
 }
 
 #clockinoverlay {
@@ -203,7 +210,7 @@ body {
     box-shadow: inset 0 0 10px black;
     line-height: 55px;
     text-align: center;
-    margin-left: 400px;
+    margin-left: 125px;
     position: relative;
     top: 150px;
     
@@ -213,7 +220,7 @@ body {
 .userlogin {
     //left: 70px;
     display: block;
-    margin-left: 400px;
+    margin-left: 125px;
     width: 550px;
     height: 60px;
     font-size: 30px;
@@ -228,7 +235,7 @@ body {
 }
 
 .modalpassword {
-       width: 350px;
+    width: 500px;
     height: 50px;
     position: relative;
     font-size: 30px;
@@ -252,7 +259,7 @@ body {
     box-shadow: inset 0 0 15px #000000;
     font-weight: bold;
     transition: All 0.5s ease;
-    margin: 0 auto;
+    margin-left: 350px;
     position: relative;
     top: 200px;
     right: 40px;
@@ -266,23 +273,24 @@ body {
 }
 
 .number {
-    list-style-type: none;
-    display: inline-block;
-    margin-bottom: 25px;
-    margin-right: 30px;
+    //list-style-type: none;
+    display: block;
+    //margin-bottom: 25px;
+    //margin-right: 30px;
     position: relative;
     cursor: pointer;
-    top: 24px;
-    left: 45px;
-    width: 80px;
-    height: 80px;
-    font-size: 25px;
+    top: 30px;
+    //left: 45px;
+    width: 175px;
+    height: 100px;
+    font-size: 30px;
     border: 2px solid black;
-    line-height: 75px;
+    line-height: 100px;
     text-align: center;
     color: white;
     background-image: url(http://www.noah.org/backgrounds/red_curtain.gif);
     box-shadow: inset 0 0 15px black;
+    margin: 0 auto;
 
 }
 
@@ -315,15 +323,10 @@ body {
     float: right;
     width: 200px;
     height: 600px;
-    border: 1px solid black;
+    //border: 1px solid white;
     background-image: url(http://www.krworkshops.com/images/BackgroundLeft2.gif);
-    h1 {
-        color: white;
-        text-align: center;
-        position: relative;
-        top: 230px;
-        
-    }
+
+
 }
 
 .stool {
@@ -340,7 +343,7 @@ body {
     line-height: 45px;
     position: relative;
     right: 110px;
-    bottom: 320px;
+    bottom: 300px;
     border-radius: 100px;
     box-shadow: 3px 3px 0px 0px #996600;
 
@@ -495,7 +498,7 @@ body {
 }
 
 .totalbox {
-    border: 4px solid orange;
+    border: 1px solid red;
     width: 400px;
     height: 685px;
     margin: 0 auto;
@@ -598,7 +601,7 @@ span {
 .go-button {
     height: 45px;
     width: 120px;
-    border: 2px solid green;
+    border: 1px solid black;
     list-style-type: none;
     text-align: center;
     line-height: 40px;
@@ -606,6 +609,7 @@ span {
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
     bottom: 15px;
+    box-shadow: inset 0 0 10px black;
 
 
 }
@@ -613,7 +617,7 @@ span {
 .gostaybutton {
     height: 45px;
     width: 120px;
-    border: 2px solid green;
+    border: 1px solid black;
     list-style-type: none;
     text-align: center;
     line-height: 40px;
@@ -621,6 +625,7 @@ span {
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
     bottom: 15px;
+    box-shadow: inset 0 0 10px black;
 }
 
 .pay{
@@ -683,7 +688,7 @@ span {
     height: 100px;
     text-align: center;
     border: 1px solid green;
-    background-image: url(http://www.market-bridge.com/wp-content/uploads/mastercard2.jpg);
+    background-image: url(http://consero.com/wp-content/uploads/2013/02/Mastercard-Logo-website.jpg);
     line-height: 100px;
     font-size: 30px;
     position: relative;
@@ -742,6 +747,7 @@ span {
 
 .button {
      list-style-type: none;
+     color: white;
     cursor: pointer;
     height: 100px;
     width: 175px;
@@ -750,14 +756,14 @@ span {
     font-size: 28px;
     //color: white;
     text-align: center;
-    border: 3px solid black;
+    //border: 1px solid blue;
     //background-image: url(http://blog.learntoprogram.tv/wp-content/uploads/2013/12/Button.png);
-    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png);
+    background-image: url(http://www.promotionalscratchcards.co.uk/images/GameBackgrounds/plain/plain_red_SM.jpg);
     line-height: 100px;
     margin-right: 19px;
     margin-top: 20px;
-    -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+   //  -webkit-text-stroke-width: 1px;
+   // -webkit-text-stroke-color: black;
    box-shadow: inset 0 0 15px #000000;
    transition: All 0.5s ease;
 
@@ -780,6 +786,24 @@ span {
     box-shadow: inset 0 0 15px #000000;
     font-weight: bold;
     transition: All 0.5s ease;
+
+}
+
+.checkout {
+    float: left;
+    height: 100px;
+    width: 175px;
+    border-radius: 18px;
+    font-size: 28px;
+    text-align: center;
+    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
+    line-height: 100px;
+    box-shadow: inset 0 0 15px #000000;
+    font-weight: bold;
+    transition: All 0.5s ease;
+    position: relative;
+    bottom: 145px;
+
 }
 
 .admin:hover {
@@ -858,6 +882,16 @@ span {
     height: 50px;
     width: 500px;
     font-size: 30px;
+}
+
+.loginbox {
+    border: 1px solid white;
+    height: 450px;
+    margin: 0 auto;
+    width: 800px;
+    position: relative;
+    //top: 100px;
+    background-image: url();
 }
 
 

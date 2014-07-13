@@ -14,16 +14,7 @@ var LoginView = Parse.View.extend({
     //"click .yes"        : "showLayoutView",
     //'click .no'         : "showAlert",
     "click .admin"      : "showAdminView",
-    "click .number.nine": "showNine",
-    "click .number.eight": "showEight",
-    "click .number.seven": "showSeven",
-    "click .number.six": "showSix",
-    "click .number.five": "showFive",
-    "click .number.four": "showFour",
-    "click .number.three": "showThree",
-    "click .number.two": "showTwo",
-    "click .number.one": "showOne",
-    "click .number.zero": "showZero",
+   
     
   },
 
@@ -70,16 +61,16 @@ var LoginView = Parse.View.extend({
             Parse.User._saveCurrentUser(user);
               console.log(user.id)
           }, function (error) {
-              console.log("user not set")
+              
           });
 
-          router.navigate('#/floor', {trigger: true});
+          router.navigate('#/tables', {trigger: true});
           console.log(currentUser, currentUser._sessionToken, currentUser.attributes.score)
 
           console.log(currentUser.attributes.username)
 
         } else {
-          console.log("what?")
+          
         }
       },
       error: function(user, error) {
@@ -88,68 +79,15 @@ var LoginView = Parse.View.extend({
     })  
   },
 
-   
-  
-
-  // showAlert: function(){
-  //   alert('YOU MUST CLOCK IN TO PROCEED')
-  // },
-
-  // showClockinModal: function(){
-  //   var modal = document.getElementById('clockinoverlay');
-  //   modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
-
-  // },
-
-  showNine: function(){
-    console.log('button works')
-    var numbernine = $('.number.nine').val();
-    $('.loginpassword').append(numbernine)
-  },
-
-  showEight: function(){
-    var numbereight = $('.number.eight').val();
-    $('.loginpassword').append(numbereight)
-  },
-  showSeven: function(){
-    var numberseven = $('.number.seven').val();
-    $('.loginpassword').append(numberseven)
-  },
-  showSix: function(){
-    var numbersix = $('.number.six').val();
-    $('.loginpassword').append(numbersix)
-  },
-  showFive: function(){
-    var numberfive = $('.number.five').val();
-    $('.loginpassword').append(numberfive)
-  },
-  showFour: function(){
-    var numberfour = $('.number.four').val();
-    $('.loginpassword').append(numberfour)
-  },
-  showThree: function(){
-    var numberthree = $('.number.three').val();
-    $('.loginpassword').append(numberthree)
-  },
-  showTwo: function(){
-    var numbertwo = $('.number.two').val();
-    $('.loginpassword').append(numbertwo)
-  },
-  showOne: function(){
-    var numberone = $('.number.one').val();
-    $('.loginpassword').append(numberone)
-  },
-  showZero: function(){
-    var numberzero = $('.number.zero').val();
-    $('.loginpassword').append(numberzero)
-  },
-
   showAdminView: function(){
     router.navigate('#/admin', {trigger:true});
   }
 
  
 });
+   
+
+
 
 
 
@@ -321,10 +259,13 @@ var EntreeView = Parse.View.extend({
     var subtotal = $('.subtotal').val() + this.model.price;
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
     var total = parseFloat(subtotal) + parseFloat(tax);
+    var updatetotal = $('.finalbalance').val() + total;
+
 
     $('.subtotal').append(subtotal);
     $('.taxtotal').append(tax);
     $('.totaltotal').append(total); 
+    $('.finalbalance').append(updatetotal);
     router.navigate("#/refresh", {trigger: true});
 
   },
@@ -337,6 +278,16 @@ var PaymentView = Parse.View.extend({
 
   events: {
     "click .credit-amex": "showLoginView",
+    "click .credit-visa": "showLoginView",
+    "click .credit-master": "showLoginView",
+    "click .credit-discover": "showLoginView",
+    "click .cash": "showCashModal",
+    "click .numberenter": "showPaymentView",
+    "click .check": "showCashModal",
+    "click .gift": "showCashModal",
+    "click .manager": "showCashModal",
+    
+
 
   },
 
@@ -353,7 +304,19 @@ var PaymentView = Parse.View.extend({
 
   showLoginView: function(){
     router.navigate("#", {trigger: true});
-  }
+  },
+
+  showCashModal: function(){
+     var modal = document.getElementById('overlay');
+    modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
+  },
+
+  showPaymentView: function(){
+    var modal = document.getElementById('overlay');
+    modal.style.visibility = "hidden";
+  },
+
+ 
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

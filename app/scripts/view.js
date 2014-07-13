@@ -123,7 +123,7 @@ var LayoutView = Parse.View.extend({
 
   showOrderView: function(){
     //console.log('button works')
-    $('.table101').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
+    $('.table').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)', 'color', 'black')
 
     router.navigate("#/categories", {trigger: true});
 

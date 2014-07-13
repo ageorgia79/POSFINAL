@@ -49,7 +49,7 @@ body {
         font-family: 'Permanent Marker', cursive;
         font-size: 100px;
         margin: 0 auto;
-        margin-left: 240px;
+        margin-left: 280px;
         text-shadow: blue -1px -2px 10px,0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
        
 
@@ -67,7 +67,7 @@ body {
         font-family: 'Permanent Marker', cursive;
         font-size: 90px;
         margin: 0 auto;
-        margin-left: 30px;
+        margin-left: 55px;
         text-shadow: blue -1px -2px 10px,0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
         
     }
@@ -124,6 +124,7 @@ body {
         width: 600px;
         margin-top: 150px;
         font-size: 50px;
+        text-align: center;
      }
 }
 
@@ -210,9 +211,9 @@ body {
     box-shadow: inset 0 0 10px black;
     line-height: 55px;
     text-align: center;
-    margin-left: 125px;
+    margin-left: 200px;
     position: relative;
-    top: 150px;
+    top: 60px;
     
 
 }
@@ -220,7 +221,7 @@ body {
 .userlogin {
     //left: 70px;
     display: block;
-    margin-left: 125px;
+    margin-left: 200px;
     width: 550px;
     height: 60px;
     font-size: 30px;
@@ -231,7 +232,7 @@ body {
     line-height: 55px;
     text-align: center;
     position: relative;
-    top: 100px;
+    top: 50px;
 }
 
 .modalpassword {
@@ -250,6 +251,7 @@ body {
 .submit {
 
     height: 100px;
+    cursor: pointer;
     width: 175px;
     border-radius: 18px;
     font-size: 28px;
@@ -259,10 +261,11 @@ body {
     box-shadow: inset 0 0 15px #000000;
     font-weight: bold;
     transition: All 0.5s ease;
-    margin-left: 350px;
+    margin-left: 390px;
     position: relative;
-    top: 200px;
-    right: 40px;
+    top: 80px;
+
+    //right: 40px;
     
 
 }
@@ -295,18 +298,19 @@ body {
 }
 
 .table {
+    color: white;
     list-style-type: none;
     cursor: pointer;
     height: 100px;
     width: 100px;
     display: block;
     margin-top: 60px;
-    background-image: url(http://cdn.thumbr.io/aa94cbf2ddf4e398a0084f83f89fd28b/KhPZbWboUluRxv8PG87L/i.istockimg.com/file_thumbview_approve/19079506/3/stock-illustration-19079506-wooden-background.jpg/100/thumb.jpg);
+    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
     text-align: center;
     border: 1px solid black;
     transform: rotate(45deg);
     position: relative;
-    box-shadow: 3px 3px 10px 2px #996600;
+    box-shadow: 3px 3px 10px 2px orange;
     
 }
 
@@ -330,7 +334,7 @@ body {
 }
 
 .stool {
-    color: white;
+    //color: white;
     list-style-type: none;
     height: 45px;
     width: 45px;
@@ -339,13 +343,13 @@ body {
     font-size: 30px;
     cursor: pointer;
     border: 1px solid black;
-    background-image: url(http://img.stockfresh.com/files/c/clearviewstock/x/82/705015_13436385.jpg);
+    background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     line-height: 45px;
     position: relative;
     right: 110px;
     bottom: 300px;
     border-radius: 100px;
-    box-shadow: 3px 3px 0px 0px #996600;
+    box-shadow: 3px 3px 0px 0px red;
 
   
 }
@@ -360,12 +364,12 @@ body {
     cursor: pointer;
     width: 90px;
     border: 1px solid black;
-    background-image: url(http://cdn.thumbr.io/aa94cbf2ddf4e398a0084f83f89fd28b/KhPZbWboUluRxv8PG87L/i.istockimg.com/file_thumbview_approve/19079506/3/stock-illustration-19079506-wooden-background.jpg/100/thumb.jpg);
-    //color: white;
+    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
+    color: white;
     font-size: 30px;
     line-height: 150px;
     text-align: center;
-    box-shadow: 2px 3px 6px 2px #996600;
+    box-shadow: 2px 3px 6px 2px orange;
     
 }
 
@@ -377,20 +381,20 @@ body {
 
 .hightop1 {
     list-style-type: none;
-    //color: white;
+    color: white;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
     line-height: 150px;
     position: relative;
-    background-image: url(http://cdn.thumbr.io/aa94cbf2ddf4e398a0084f83f89fd28b/KhPZbWboUluRxv8PG87L/i.istockimg.com/file_thumbview_approve/19079506/3/stock-illustration-19079506-wooden-background.jpg/100/thumb.jpg);
+    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
     right: 550px;
     top: 50px;
     height: 150px;
     width: 150px;
     border: 1px solid black;
     border-radius: 100px;
-    box-shadow: 2px 2px 9px 0px #996600;
+    box-shadow: 2px 3px 9px 0px orange;
 }
 
 .hightop2 {
@@ -402,13 +406,13 @@ body {
     width: 150px;
     border: 1px solid black;
     border-radius: 100px;
-    background-image: url(http://cdn.thumbr.io/aa94cbf2ddf4e398a0084f83f89fd28b/KhPZbWboUluRxv8PG87L/i.istockimg.com/file_thumbview_approve/19079506/3/stock-illustration-19079506-wooden-background.jpg/100/thumb.jpg);
+    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
     list-style-type: none;
-    //color: white;
+    color: white;
     font-size: 30px;
     text-align: center;
     line-height: 150px;
-    box-shadow: 2px 2px 9px 0px #996600;
+    box-shadow: 2px 3px 9px 0px orange;
 }
 
 #overlay {
@@ -600,7 +604,7 @@ span {
 
 .go-button {
     height: 45px;
-    width: 120px;
+    width: 130px;
     border: 1px solid black;
     list-style-type: none;
     text-align: center;
@@ -608,15 +612,18 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 15px;
+    bottom: 10px;
+    left: 12px;
     box-shadow: inset 0 0 10px black;
+    cursor: pointer;
 
 
 }
 
 .gostaybutton {
     height: 45px;
-    width: 120px;
+    cursor: pointer;
+    width: 130px;
     border: 1px solid black;
     list-style-type: none;
     text-align: center;
@@ -624,13 +631,15 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 15px;
+    bottom: 10px;
+    left: 12px;
     box-shadow: inset 0 0 10px black;
 }
 
 .pay{
     height: 45px;
-    width: 120px;
+    cursor: pointer;
+    width: 130px;
     border: 1px solid black;
     list-style-type: none;
     text-align: center;
@@ -638,7 +647,8 @@ span {
     color: white;
     background-color: red;
     position: relative;
-    bottom: 15px;
+    bottom: 10px;
+    left: 12px;
     box-shadow: inset 0 0 10px #000000;
 
 }
@@ -658,6 +668,7 @@ span {
     left: 230px;
     margin-right: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 
@@ -677,6 +688,7 @@ span {
     left: 230px;
     margin-right: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
     
 
 }
@@ -696,6 +708,7 @@ span {
     left: 230px;
     margin-right: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 
 }
 
@@ -714,6 +727,7 @@ span {
     left: 230px;
     margin-right: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 
 }
 
@@ -732,6 +746,7 @@ span {
     left: 230px;
     margin-right: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .finalbalance {
@@ -760,12 +775,14 @@ span {
     //background-image: url(http://blog.learntoprogram.tv/wp-content/uploads/2013/12/Button.png);
     background-image: url(http://www.promotionalscratchcards.co.uk/images/GameBackgrounds/plain/plain_red_SM.jpg);
     line-height: 100px;
-    margin-right: 19px;
-    margin-top: 20px;
+    margin-right: 25px;
+    margin-top: 25px;
    //  -webkit-text-stroke-width: 1px;
    // -webkit-text-stroke-color: black;
    box-shadow: inset 0 0 15px #000000;
    transition: All 0.5s ease;
+   position: relative;
+   left: 60px;
 
     
 }
@@ -786,6 +803,7 @@ span {
     box-shadow: inset 0 0 15px #000000;
     font-weight: bold;
     transition: All 0.5s ease;
+    cursor: pointer;
 
 }
 
@@ -803,6 +821,7 @@ span {
     transition: All 0.5s ease;
     position: relative;
     bottom: 145px;
+    cursor: pointer;
 
 }
 
@@ -885,13 +904,13 @@ span {
 }
 
 .loginbox {
-    border: 1px solid white;
-    height: 450px;
+    //border: 1px solid white;
+    height: 575px;
     margin: 0 auto;
-    width: 800px;
+    width: 950px;
     position: relative;
     //top: 100px;
-    background-image: url();
+    background-image: url(http://i1127.photobucket.com/albums/l633/BadWolffGraphixx/Animated%20Gifs/FlamesAnimated2wave.gif);
 }
 
 

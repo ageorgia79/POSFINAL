@@ -195,7 +195,7 @@ body {
 
 
 
-.loginpassword {
+.password {
     width: 550px;
     height: 60px;
     display: block;
@@ -545,7 +545,7 @@ span {
 }
 
 .subtotal {
-    height: 25px;
+    height: 30px;
     width: 125px;
     border: 2px solid black;
     background: #FFFFCC;
@@ -554,8 +554,9 @@ span {
     font-size: 25px;
     //color: red;
     //text-indent: 10px;
-    line-height: 25px;
+    line-height: 30px;
     display: block;
+    text-align: center;
 
 
 
@@ -563,7 +564,7 @@ span {
 
 .taxtotal {
     display: block;
-    height: 25px;
+    height: 30px;
     width: 125px;
     margin-left: 15px;
     border: 2px solid black;
@@ -572,12 +573,13 @@ span {
     font-size: 25px;
     //color: red;
     //text-indent: 10px;
-    line-height: 25px;
+    line-height: 30px;
+    text-align: center;
 }
 
 .totaltotal {
     display: block;
-    height: 25px;
+    height: 30px;
     width: 125px;
     margin-left: 15px;
     border: 2px solid black;
@@ -586,7 +588,8 @@ span {
     font-size: 25px;
     //color: red;
     //text-indent: 10px;
-    line-height: 25px;
+    line-height: 30px;
+    text-align: center;
 }
 
 .sendmaster{

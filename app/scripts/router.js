@@ -40,6 +40,7 @@ var ProductRouter = Parse.Router.extend({
     
   loginPage: function(){
     $('.container').html('')
+  
     new LoginView();
   },
 

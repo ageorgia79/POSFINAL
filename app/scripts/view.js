@@ -30,10 +30,10 @@ var LoginView = Parse.View.extend({
 
     var user = new Parse.User();
 
-    Parse.User.logIn($('.userlogin').val(), $('.loginpassword').val(), {
+    Parse.User.logIn($('.userlogin').val(), $('.password').val(), {
       success: function(user) {
         user.set("username", $('.userlogin').val())
-        user.set("password", $('.loginpassword').val())
+        user.set("password", $('.password').val())
         user.save(null, {
           success: function(user) {
             var query = new Parse.Query(Parse.User);
@@ -160,9 +160,9 @@ var OrderView = Parse.View.extend({
   showLoginView: function(){
     var order = new Parse.Object('Order');
     var runner = $('.itemizer').text();
-    var subtotal = $('.subtotal').val();
-    var tax = $('.taxtotal').val();
-    var total = $('.totaltotal').val();
+    var subtotal = $('.subtotal').text();
+    var tax = $('.taxtotal').text();
+    var total = $('.totaltotal').text();
     order.set('runner', runner);
     order.set('subtotal', subtotal);
     order.set('tax', tax);
@@ -182,9 +182,9 @@ var OrderView = Parse.View.extend({
   saveOrder: function(){
      var order = new Parse.Object('Order');
     var runner = $('.itemizer').text();
-    var subtotal = $('.subtotal').val();
-    var tax = $('.taxtotal').val();
-    var total = $('.totaltotal').val();
+    var subtotal = $('.subtotal').text();
+    var tax = $('.taxtotal').text();
+    var total = $('.totaltotal').text();
     order.set('runner', runner);
     order.set('subtotal', subtotal);
     order.set('tax', tax);
@@ -270,9 +270,9 @@ var EntreeView = Parse.View.extend({
     $('.itemizer').append('<br />','<br />')
 
 
-
-    var subtotal = $('.subtotal').val() + this.model.price;
-    console.log($('.subtotal').val() + this.model.price)
+    
+    var subtotal = $('.subtotal').text() + this.model.price;
+    console.log(subtotal)
 
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
     var total = parseFloat(subtotal) + parseFloat(tax);
@@ -331,6 +331,7 @@ var PaymentView = Parse.View.extend({
   showPaymentView: function(){
     var modal = document.getElementById('overlay');
     modal.style.visibility = "hidden";
+
   },
 
  

@@ -39,15 +39,15 @@ var LoginView = Parse.View.extend({
             var query = new Parse.Query(Parse.User);
                 query.get(user.id, {
                   success: function() {
-                    console.log("yeah user set!")
+                    //console.log("yeah user set!")
                   },
                   error: function() {
-                    console.log("failed")
+                    //console.log("failed")
                   }
                 })
           },
           error: function(user, error) {
-            console.log("nope")
+            //console.log("nope")
           }
         })
         currentUser = Parse.User.current();
@@ -56,15 +56,16 @@ var LoginView = Parse.View.extend({
 
           Parse.User.become(currentUser._sessionToken).then(function(user) {
             Parse.User._saveCurrentUser(user);
-              console.log(user.id)
+              //console.log(user.id)
           }, function (error) {
               
           });
+     
 
           router.navigate('#/tables', {trigger: true});
-          console.log(currentUser, currentUser._sessionToken, currentUser.attributes.score)
+          //console.log(currentUser, currentUser._sessionToken, currentUser.attributes.score)
 
-          console.log(currentUser.attributes.username)
+          //console.log(currentUser.attributes.username)
 
         } else {
           
@@ -77,11 +78,15 @@ var LoginView = Parse.View.extend({
   },
 
   showAdminView: function(){
+
     router.navigate('#/admin', {trigger:true});
+     
   }
 
  
 });
+
+    
    
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +119,7 @@ var LayoutView = Parse.View.extend({
   },
 
   showOrderView: function(){
-    router.navigate("#/categories", {trigger: true});
+    router.navigate("#categories", {trigger: true});
   },
 
 });
@@ -238,14 +243,14 @@ var EntreeView = Parse.View.extend({
     var subtotal = $('.subtotal').val() + this.model.price;
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
     var total = parseFloat(subtotal) + parseFloat(tax);
-    var updatetotal = $('.finalbalance').val() + total;
+    
 
 
     $('.subtotal').append(subtotal);
     $('.taxtotal').append(tax);
     $('.totaltotal').append(total); 
-    $('.finalbalance').append(updatetotal);
-    //router.navigate("#/refresh", {trigger: true});
+    
+    
 
   },
 });

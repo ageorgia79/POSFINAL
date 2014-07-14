@@ -9,7 +9,6 @@ var ProductRouter = Parse.Router.extend({
     ""                                         : "loginPage",
     "payment"                                  : "paymentPage",
     "admin"                                    : "adminPage",
-    "refresh"                                  : "refreshPage",
 
     "tables"                                    : "layoutPage",
     "categories"                               : "categoriesPage",
@@ -33,25 +32,30 @@ var ProductRouter = Parse.Router.extend({
     })
 
   },
+
+  adminPage: function(){
+    $('.container').html('')
+    new AdminView();
+  },
     
   loginPage: function(){
     $('.container').html('')
     new LoginView();
   },
- 
+
   layoutPage: function(){
     $('.container').html('')
-     new LayoutView();
-  },
-
-  paymentPage: function(){
-    $('.container').html('')
-    new PaymentView();
-  },
-
-  adminPage: function(){
-    $('.container').html('')
-    new AdminView();
+     var query = new Parse.Query(Data);
+     var tableArray = [];
+     query.find({
+      success: function(results) {
+        results.forEach(function(result){
+          tableArray.push(result.attributes.table)
+          console.log(result.attributes.table)
+        })
+        new LayoutView();
+      }
+     })
   },
 
   categoriesPage: function(){
@@ -93,28 +97,32 @@ var ProductRouter = Parse.Router.extend({
           new EntreeView({model: result.attributes}); 
         })
         
-       
-      }
-    })
+       $('.button').click(function(){
+        $('.menu-buttons').html('')
+        var query = new Parse.Query(Data);
+        var categoryArray = [];
+        query.find({
+          success: function(results) {
+            results.forEach(function(result){
+              categoryArray.push(result.attributes.category)
+            })
+            categoryArray = _.union(categoryArray)
+            categoryArray.forEach(function(category){
+              new ButtonView({model: category})
+            })
+          }
+        })
+      })
+     }//this curly brace and the next two belong to category page prior to $('.button').click//NODELETE//
+  })
+},
+
+    paymentPage: function(){
+    $('.container').html('')
+    new PaymentView();
   },
 
-   // refreshPage: function(){
-  //   $('.menu-buttons').html('')
-  //   var query = new Parse.Query(Data);
-  //   var categoryArray = [];
-  //   query.find({
-  //     success: function(results) {
-  //       results.forEach(function(result){
-  //         categoryArray.push(result.attributes.category)
-  //       })
-  //       categoryArray = _.union(categoryArray)
-  //       categoryArray.forEach(function(category){
-  //         new ButtonView({model: category})
-  //       })
-  //     }
-  //   })
-  // },
-
+ 
 
 
           

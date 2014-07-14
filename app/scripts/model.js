@@ -9,17 +9,25 @@ var Data = Parse.Object.extend("Data");
 
 var User = Parse.Object.extend("User");
 
+var Order = Parse.Object.extend("Order");
 
-var ProductCollection = Parse.Collection.extend({
+
+
+
+var DataCollection = Parse.Collection.extend({
   model: Data
 });
-
-
-//var collection = new ProductCollection();
 
 var UserCollection = Parse.Collection.extend({
   model: User
 });
+
+var OrderCollection = Parse.Collection.extend({
+  model: Order
+});
+
+
+
 
 
 

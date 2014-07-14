@@ -11,11 +11,8 @@ var LoginView = Parse.View.extend({
   events: {
 
     "click .submit"     : "showLayoutView",
-    //"click .yes"        : "showLayoutView",
-    //'click .no'         : "showAlert",
     "click .admin"      : "showAdminView",
    
-    
   },
 
   initialize: function(){
@@ -86,11 +83,6 @@ var LoginView = Parse.View.extend({
  
 });
    
-
-
-
-
-
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,17 +114,10 @@ var LayoutView = Parse.View.extend({
   },
 
   showOrderView: function(){
-    //console.log('button works')
-    $('.table').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)', 'color', 'black')
-
     router.navigate("#/categories", {trigger: true});
-
-   
   },
 
 });
-  
-
     
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,10 +164,6 @@ var OrderView = Parse.View.extend({
     router.navigate("#/payment", {trigger: true});
   },
   
-
- 
- 
-
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -235,8 +216,6 @@ var EntreeView = Parse.View.extend({
 
   },
 
-
-
   initialize: function(){
     $('.menu-buttons').append(this.el);
     this.render();
@@ -266,7 +245,7 @@ var EntreeView = Parse.View.extend({
     $('.taxtotal').append(tax);
     $('.totaltotal').append(total); 
     $('.finalbalance').append(updatetotal);
-    router.navigate("#/refresh", {trigger: true});
+    //router.navigate("#/refresh", {trigger: true});
 
   },
 });

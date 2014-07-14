@@ -135,9 +135,9 @@ var OrderView = Parse.View.extend({
 
   events: {
 
-    "click .go-button"  : "showLoginView",
-    "click .gostaybutton": "saveOrder",
-    "click .pay"       : "showPaymentView",
+    
+    //"click .gostaybutton": "saveOrder",
+    
     
    
     
@@ -157,49 +157,24 @@ var OrderView = Parse.View.extend({
     this.$el.html(renderedTemplate);
   },
 
-  showLoginView: function(){
-    var order = new Parse.Object('Order');
-    var runner = $('.itemizer').text();
-    var subtotal = $('.subtotal').text();
-    var tax = $('.taxtotal').text();
-    var total = $('.totaltotal').text();
-    order.set('runner', runner);
-    order.set('subtotal', subtotal);
-    order.set('tax', tax);
-    order.set('total', total);
+ 
+
+  // saveOrder: function(){
+  //    var order = new Parse.Object('Order');
+  //   var runner = $('.itemizer').text();
+  //   var subtotal = $('.subtotal').text();
+  //   var tax = $('.taxtotal').text();
+  //   var total = $('.totaltotal').text();
+  //   order.set('runner', runner);
+  //   order.set('subtotal', subtotal);
+  //   order.set('tax', tax);
+  //   order.set('total', total);
 
 
-    order.save().done(function(){
+  //   order.save();
+  // },
 
-    Parse.User.logOut();
-    router.navigate("#", {trigger: true});
-    })
-
-  
-
-  },
-
-  saveOrder: function(){
-     var order = new Parse.Object('Order');
-    var runner = $('.itemizer').text();
-    var subtotal = $('.subtotal').text();
-    var tax = $('.taxtotal').text();
-    var total = $('.totaltotal').text();
-    order.set('runner', runner);
-    order.set('subtotal', subtotal);
-    order.set('tax', tax);
-    order.set('total', total);
-
-
-    order.save();
-  },
-
-  showPaymentView: function(){
-  
-
-    router.navigate("#/payment", {trigger: true});
-  },
-  
+ 
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -265,23 +240,35 @@ var EntreeView = Parse.View.extend({
   showPricing: function(){
   console.log('the button works')
 
+    var order = new Parse.Object('Order');
+    var runnername = this.model.name;
+    var runnerprice = this.model.price;
+       
+    order.set('runnername', runnername);
+    order.set('runnerprice', runnerprice);
+
+    
+
+
+    order.save();
+
   
-    $('.itemizer').append(this.model.name + ' ' + '$'+ this.model.price)
-    $('.itemizer').append('<br />','<br />')
+    // $('.itemizer').append(this.model.name + ' ' + '$'+ this.model.price)
+    // $('.itemizer').append('<br />','<br />')
 
 
+
+    // var subtotal = $('.subtotal').text() + this.model.price;
+    // console.log(subtotal)
+
+    // var tax = (subtotal * 6.75 / 100).toFixed(2); 
+    // var total = parseFloat(subtotal) + parseFloat(tax);
     
-    var subtotal = $('.subtotal').text() + this.model.price;
-    console.log(subtotal)
-
-    var tax = (subtotal * 6.75 / 100).toFixed(2); 
-    var total = parseFloat(subtotal) + parseFloat(tax);
-    
 
 
-    $('.subtotal').append(subtotal);
-    $('.taxtotal').append(tax);
-    $('.totaltotal').append(total); 
+    // $('.subtotal').append(subtotal);
+    // $('.taxtotal').append(tax);
+    // $('.totaltotal').append(total); 
     
     
 
@@ -385,9 +372,105 @@ var AdminView = Parse.View.extend({
   },
 
 
+});
 
 
-})
+var RunnerView = Parse.View.extend({
+
+  runnerTemplate: _.template($('.runner-template').text()),
+
+  events: {
+    "click .go-button"  : "showLoginView",
+    "click .gostaybutton": "saveOrder",
+    "click .pay"       : "showPaymentView",
+
+  }, 
+
+  initialize: function(){
+    $('.container').append(this.el);
+    this.render();
+     var collection = new OrderCollection();
+
+    collection.on('add', function(model){});
+
+    collection.fetch({add:true}).done(function(){//FETCHES THE COLLECTION ON ROUTER INITIALIZATION
+      collection.each(function(object){
+        console.log(object)
+
+
+        $('.itemizer').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
+        $('.itemizer').append('<br />', '<br />');
+
+        var subtotal = $('.subtotal').text() + object.attributes.runnerprice;
+        console.log(subtotal)
+
+        var tax = (subtotal * 6.75 / 100).toFixed(2); 
+        var total = parseFloat(subtotal) + parseFloat(tax);
+    
+
+
+        $('.subtotal').append(subtotal);
+        $('.taxtotal').append(tax);
+        $('.totaltotal').append(total);   
+        
+      })
+    })
+
+  },
+
+  render: function(){
+    var renderedTemplate = this.runnerTemplate(this.model);
+    this.$el.html(renderedTemplate);
+    return this;
+  },
+
+  showLoginView: function(){
+
+    // var order = new Parse.Object('Order');
+    // var subtotal = $('.subtotal').text();
+    // var tax = $('.taxtotal').text();
+    // var total = $('.totaltotal').text();
+    // order.set('subtotal', subtotal);
+    // order.set('tax', tax);
+    // order.set('total', total);
+
+
+    // order.save().done(function(){
+     Parse.User.logOut();
+    router.navigate("#", {trigger: true});
+  //})
+
+  },
+
+   saveOrder: function(){
+    // var order = new Parse.Object('Order');
+    // var subtotal = $('.subtotal').text();
+    // var tax = $('.taxtotal').text();
+    // var total = $('.totaltotal').text();
+    // order.set('subtotal', subtotal);
+    // order.set('tax', tax);
+    // order.set('total', total);
+
+
+    // order.save();
+  },
+
+  showPaymentView: function(){
+   
+
+    Parse.User.logOut();
+    router.navigate("#/payment", {trigger: true});
+  
+},
+
+
+
+});
+
+
+
+
+
 
  
 

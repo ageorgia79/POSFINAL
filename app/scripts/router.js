@@ -62,6 +62,7 @@ var ProductRouter = Parse.Router.extend({
   categoriesPage: function(){
     $('.container').html('')
     new OrderView();
+    new RunnerView();
     var query = new Parse.Query(Data);
     var categoryArray = [];
     query.find({        
@@ -110,6 +111,7 @@ var ProductRouter = Parse.Router.extend({
             categoryArray = _.union(categoryArray)
             categoryArray.forEach(function(category){
               new ButtonView({model: category})
+              router.navigate("#categories", {trigger: true});
             })
           }
         })
@@ -125,8 +127,8 @@ var ProductRouter = Parse.Router.extend({
     query.find({
       success: function(results){
         results.forEach(function(result){
-          totalArray.push(result.attributes.total)
-          console.log(result.attributes.total)
+          totalArray.push(result.attributes.runnerprice)
+          console.log(result.attributes.runnerprice)
         })
         totalArray.forEach(function(total){
           $('.finalbalance').append(total)

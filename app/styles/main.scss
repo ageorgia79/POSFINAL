@@ -503,6 +503,8 @@ body {
     width: 400px;
     height: 685px;
     margin: 0 auto;
+    position: relative;
+    bottom: 130px;
     background-image: url(http://www.graphicpanic.com/images/minimalist-orange-background.jpg);
     //  box-shadow: inset 0px 20px 40px -14px black,
     //             inset 0px -20px 40px -14px black;
@@ -612,7 +614,7 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 10px;
+    bottom: 132px;
     left: 12px;
     box-shadow: inset 0 0 10px black;
     cursor: pointer;
@@ -631,7 +633,7 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 10px;
+    bottom: 132px;
     left: 12px;
     box-shadow: inset 0 0 10px black;
 }
@@ -647,7 +649,7 @@ span {
     color: white;
     background-color: red;
     position: relative;
-    bottom: 10px;
+    bottom: 132px;
     left: 12px;
     box-shadow: inset 0 0 10px #000000;
 

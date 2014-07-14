@@ -9,7 +9,6 @@ var ProductRouter = Parse.Router.extend({
     ""                                         : "loginPage",
     "payment"                                  : "paymentPage",
     "admin"                                    : "adminPage",
-
     "tables"                                    : "layoutPage",
     "categories"                               : "categoriesPage",
     "categories/:category"                     : "categoryPage",
@@ -18,6 +17,7 @@ var ProductRouter = Parse.Router.extend({
     
     
  },
+
     
     
   initialize: function(){
@@ -117,8 +117,21 @@ var ProductRouter = Parse.Router.extend({
   })
 },
 
-    paymentPage: function(){
+  paymentPage: function(){
     $('.container').html('')
+    var query = new Parse.Query(Order);
+    var totalArray = [];
+    query.find({
+      success: function(results){
+        results.forEach(function(result){
+          totalArray.push(result.attributes.total)
+          console.log(result.attributes.total)
+        })
+        totalArray.forEach(function(total){
+          $('.finalbalance').append(total)
+        })
+      }
+    })
     new PaymentView();
   },
 

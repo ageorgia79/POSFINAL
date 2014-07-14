@@ -39,15 +39,15 @@ var LoginView = Parse.View.extend({
             var query = new Parse.Query(Parse.User);
                 query.get(user.id, {
                   success: function() {
-                    //console.log("yeah user set!")
+                  
                   },
                   error: function() {
-                    //console.log("failed")
+                    
                   }
                 })
           },
           error: function(user, error) {
-            //console.log("nope")
+            
           }
         })
         currentUser = Parse.User.current();
@@ -56,16 +56,14 @@ var LoginView = Parse.View.extend({
 
           Parse.User.become(currentUser._sessionToken).then(function(user) {
             Parse.User._saveCurrentUser(user);
-              //console.log(user.id)
+            
           }, function (error) {
               
           });
-     
+
 
           router.navigate('#/tables', {trigger: true});
-          //console.log(currentUser, currentUser._sessionToken, currentUser.attributes.score)
-
-          //console.log(currentUser.attributes.username)
+          
 
         } else {
           
@@ -138,6 +136,7 @@ var OrderView = Parse.View.extend({
   events: {
 
     "click .go-button"  : "showLoginView",
+    "click .gostaybutton": "saveOrder",
     "click .pay"       : "showPaymentView",
     
    
@@ -159,13 +158,45 @@ var OrderView = Parse.View.extend({
   },
 
   showLoginView: function(){
+    var order = new Parse.Object('Order');
+    var runner = $('.itemizer').text();
+    var subtotal = $('.subtotal').val();
+    var tax = $('.taxtotal').val();
+    var total = $('.totaltotal').val();
+    order.set('runner', runner);
+    order.set('subtotal', subtotal);
+    order.set('tax', tax);
+    order.set('total', total);
+
+
+    order.save().done(function(){
+
     Parse.User.logOut();
     router.navigate("#", {trigger: true});
+    })
+
   
 
   },
 
+  saveOrder: function(){
+     var order = new Parse.Object('Order');
+    var runner = $('.itemizer').text();
+    var subtotal = $('.subtotal').val();
+    var tax = $('.taxtotal').val();
+    var total = $('.totaltotal').val();
+    order.set('runner', runner);
+    order.set('subtotal', subtotal);
+    order.set('tax', tax);
+    order.set('total', total);
+
+
+    order.save();
+  },
+
   showPaymentView: function(){
+  
+
     router.navigate("#/payment", {trigger: true});
   },
   
@@ -234,13 +265,15 @@ var EntreeView = Parse.View.extend({
   showPricing: function(){
   console.log('the button works')
 
-    
-    $('.itemizer').append(this.model.name + ' ' +  '$'+this.model.price)
-    $('.itemizer').append('<br>','<br>')
+  
+    $('.itemizer').append(this.model.name + ' ' + '$'+ this.model.price)
+    $('.itemizer').append('<br />','<br />')
 
 
 
     var subtotal = $('.subtotal').val() + this.model.price;
+    console.log($('.subtotal').val() + this.model.price)
+
     var tax = (subtotal * 6.75 / 100).toFixed(2); 
     var total = parseFloat(subtotal) + parseFloat(tax);
     

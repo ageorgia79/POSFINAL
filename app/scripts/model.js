@@ -13,6 +13,8 @@ var Order = Parse.Object.extend("Order");
 
 var Table = Parse.Object.extend("Table");
 
+var Report = Parse.Object.extend('Report');
+
 
 
 
@@ -30,6 +32,10 @@ var OrderCollection = Parse.Collection.extend({
 
 var TableCollection = Parse.Collection.extend({
   model: Table
+})
+
+var ReportCollection = Parse.Collection.extend({
+  model: Report
 })
 
 

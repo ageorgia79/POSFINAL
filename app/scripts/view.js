@@ -109,6 +109,7 @@ var LayoutView = Parse.View.extend({
     $('.container').empty();
     $('.container').append(this.el);
     this.render();
+    
   },
 
   render: function(){
@@ -117,9 +118,9 @@ var LayoutView = Parse.View.extend({
   },
 
   showOrderView: function(){
-   
+ 
 
-     //$('.hightop1').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
+
     router.navigate("#categories", {trigger: true});
   },
 
@@ -262,7 +263,20 @@ var EntreeView = Parse.View.extend({
 
     order.save();
 
-  
+    var report = new Parse.Object('Report');
+    var reportname = this.model.name;
+    var reportprice = this.model.price;
+    var repsubtotal = $('.subtotal').text();
+    var reptax = $('.taxtotal').text();
+    var reptotal = $('.totaltotal').text();
+
+    report.set('reportname', reportname);
+    report.set('reportprice', reportprice);
+    report.set('repsubtotal', repsubtotal);
+    report.set('reptax', reptax);
+    report.set('reptotal', reptotal);
+
+    report.save();  
     // $('.itemizer').append(this.model.name + ' ' + '$'+ this.model.price)
     // $('.itemizer').append('<br />','<br />')
 
@@ -337,6 +351,8 @@ var PaymentView = Parse.View.extend({
   },
 
   showPaymentView: function(){
+
+
     var modal = document.getElementById('overlay');
     modal.style.visibility = "hidden";
 
@@ -410,6 +426,10 @@ var RunnerView = Parse.View.extend({
   }, 
 
   initialize: function(){
+    window.setInterval(function() {
+    var elem = document.getElementById('itemizer');
+    elem.scrollTop = elem.scrollHeight;
+    }, 2000);
 
     this.subtotal = 0;
     var that = this;
@@ -425,8 +445,8 @@ var RunnerView = Parse.View.extend({
         console.log(object)
 
 
-        $('.itemizer').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
-        $('.itemizer').append('<br />', '<br />');
+        $('#itemizer').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
+        $('#itemizer').append('<br />', '<br />');
 
         that.subtotal += parseFloat(object.attributes.runnerprice)
         console.log(that.subtotal)

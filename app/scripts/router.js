@@ -110,7 +110,7 @@ var ProductRouter = Parse.Router.extend({
             })
             categoryArray = _.union(categoryArray)
             categoryArray.forEach(function(category){
-              new ButtonView({model: category})
+              //new ButtonView({model: category})
               router.navigate("#categories", {trigger: true});
             })
           }
@@ -121,21 +121,12 @@ var ProductRouter = Parse.Router.extend({
 },
 
   paymentPage: function(){
-    $('.container').html('')
-    var query = new Parse.Query(Order);
-    var totalArray = [];
-    query.find({
-      success: function(results){
-        results.forEach(function(result){
-          totalArray.push(result.attributes.runnerprice)
-          console.log(result.attributes.runnerprice)
-        })
-        totalArray.forEach(function(total){
-          $('.finalbalance').append(total)
-        })
-      }
-    })
+    //$('.container').html('')
+    var total = $('.totaltotal').text();
+    console.log(total)
+   
     new PaymentView();
+    $('.finalbalance').append(total);
   },
 
  

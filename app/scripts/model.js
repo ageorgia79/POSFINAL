@@ -11,6 +11,8 @@ var User = Parse.Object.extend("User");
 
 var Order = Parse.Object.extend("Order");
 
+var Table = Parse.Object.extend("Table");
+
 
 
 
@@ -25,6 +27,10 @@ var UserCollection = Parse.Collection.extend({
 var OrderCollection = Parse.Collection.extend({
   model: Order
 });
+
+var TableCollection = Parse.Collection.extend({
+  model: Table
+})
 
 
 

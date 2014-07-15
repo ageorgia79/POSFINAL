@@ -117,6 +117,9 @@ var LayoutView = Parse.View.extend({
   },
 
   showOrderView: function(){
+   
+
+     $('.hightop1').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
     router.navigate("#categories", {trigger: true});
   },
 
@@ -243,9 +246,15 @@ var EntreeView = Parse.View.extend({
     var order = new Parse.Object('Order');
     var runnername = this.model.name;
     var runnerprice = this.model.price;
+    var subtotal = $('.subtotal').text();
+    var tax = $('.taxtotal').text();
+    var total = $('.totaltotal').text();
        
     order.set('runnername', runnername);
     order.set('runnerprice', runnerprice);
+    order.set('subtotal', subtotal);
+    order.set('tax', tax);
+    order.set('total', total);
 
     
 
@@ -290,6 +299,7 @@ var PaymentView = Parse.View.extend({
     "click .check": "showCashModal",
     "click .gift": "showCashModal",
     "click .manager": "showCashModal",
+    "click .ten": "subtractTen",
     
 
 
@@ -318,6 +328,13 @@ var PaymentView = Parse.View.extend({
   showPaymentView: function(){
     var modal = document.getElementById('overlay');
     modal.style.visibility = "hidden";
+
+  },
+
+  subtractTen: function(){
+    console.log('button')
+    var subtract = 10.00;
+    $('.finalbalance').text() - subtract;
 
   },
 
@@ -387,6 +404,10 @@ var RunnerView = Parse.View.extend({
   }, 
 
   initialize: function(){
+
+    this.subtotal = 0;
+    var that = this;
+
     $('.container').append(this.el);
     this.render();
      var collection = new OrderCollection();
@@ -401,16 +422,20 @@ var RunnerView = Parse.View.extend({
         $('.itemizer').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
         $('.itemizer').append('<br />', '<br />');
 
-        var subtotal = $('.subtotal').text() + object.attributes.runnerprice;
-        console.log(subtotal)
+        that.subtotal += parseFloat(object.attributes.runnerprice)
+        console.log(that.subtotal)
 
-        var tax = (subtotal * 6.75 / 100).toFixed(2); 
-        var total = parseFloat(subtotal) + parseFloat(tax);
+        var tax = parseFloat((that.subtotal * 6.75 / 100).toFixed(2)); 
+        var total = parseFloat((that.subtotal + tax).toFixed(2));
     
 
+        $('.subtotal').empty();
+        $('.subtotal').append(that.subtotal.toFixed(2));
 
-        $('.subtotal').append(subtotal);
+        $('.taxtotal').empty();
         $('.taxtotal').append(tax);
+
+        $('.totaltotal').empty();
         $('.totaltotal').append(total);   
         
       })

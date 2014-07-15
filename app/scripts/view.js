@@ -119,7 +119,7 @@ var LayoutView = Parse.View.extend({
   showOrderView: function(){
    
 
-     $('.hightop1').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
+     //$('.hightop1').css('background-image', 'url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png)')
     router.navigate("#categories", {trigger: true});
   },
 
@@ -249,6 +249,7 @@ var EntreeView = Parse.View.extend({
     var subtotal = $('.subtotal').text();
     var tax = $('.taxtotal').text();
     var total = $('.totaltotal').text();
+
        
     order.set('runnername', runnername);
     order.set('runnerprice', runnerprice);
@@ -299,7 +300,7 @@ var PaymentView = Parse.View.extend({
     "click .check": "showCashModal",
     "click .gift": "showCashModal",
     "click .manager": "showCashModal",
-    "click .ten": "subtractTen",
+    
     
 
 
@@ -309,6 +310,7 @@ var PaymentView = Parse.View.extend({
     $('.container').empty();
     $('.container').append(this.el);
     this.render();
+   
   },
 
   render: function(){
@@ -317,6 +319,15 @@ var PaymentView = Parse.View.extend({
   },
 
   showLoginView: function(){
+  var query = new Parse.Query(Order);
+  query.find({
+    success: function(results) {
+      results.forEach(function(result){
+        console.log(result)
+        result.destroy({});
+      })
+    }
+  })
     router.navigate("#", {trigger: true});
   },
 
@@ -331,12 +342,7 @@ var PaymentView = Parse.View.extend({
 
   },
 
-  subtractTen: function(){
-    console.log('button')
-    var subtract = 10.00;
-    $('.finalbalance').text() - subtract;
-
-  },
+  
 
  
 });
@@ -451,19 +457,11 @@ var RunnerView = Parse.View.extend({
 
   showLoginView: function(){
 
-    // var order = new Parse.Object('Order');
-    // var subtotal = $('.subtotal').text();
-    // var tax = $('.taxtotal').text();
-    // var total = $('.totaltotal').text();
-    // order.set('subtotal', subtotal);
-    // order.set('tax', tax);
-    // order.set('total', total);
 
-
-    // order.save().done(function(){
+    
      Parse.User.logOut();
     router.navigate("#", {trigger: true});
-  //})
+
 
   },
 
@@ -491,23 +489,3 @@ var RunnerView = Parse.View.extend({
 
 
 });
-
-
-
-
-
-
- 
-
- 
-
-
-
-
-
-
-
-
-
-
- 

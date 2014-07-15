@@ -121,12 +121,21 @@ var ProductRouter = Parse.Router.extend({
 },
 
   paymentPage: function(){
-    //$('.container').html('')
-    var total = $('.totaltotal').text();
-    console.log(total)
+    var query = new Parse.Query(Order);
+    var orderArray = [];
+    query.find({
+      success: function(results) {
+        results.forEach(function(result) {
+          orderArray.push(result)
+          console.log(result)
+        })
+        var total = $('.totaltotal').text();
+        console.log(total)
    
-    new PaymentView();
-    $('.finalbalance').append(total);
+        new PaymentView();
+        $('.finalbalance').append('$' + total);
+      }
+    })
   },
 
  
@@ -139,89 +148,3 @@ var ProductRouter = Parse.Router.extend({
  
 var router = new ProductRouter();
 Parse.history.start();
-
-  
- 
-
-
-
-   
-
-      
-
-
-
-  
- 
-
-
-  
-
-
-
-
-
-
-
-
-   
-
-
-  
-   
-   
-
-
-
- 
-  
-  
-        
-
-
-
-        
-        
-
-  
-
-        
-      
-
-
-
-
-        
-      
-  
-
-
- 
-
-
-
-
-
-
-
-
-      
- 
-    
-
-    
-
-
-
-
-
-
-  
-
-
-
-
-  
-
-
-

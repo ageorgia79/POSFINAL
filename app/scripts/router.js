@@ -99,12 +99,7 @@ var ProductRouter = Parse.Router.extend({
          
           new EntreeView({model: result.attributes}); 
         })
-        
-       $('.button').click(function(){
-        $('.menu-buttons').html('')
-        router.navigate("#categories", {trigger: true});
-       
-      })
+      
     }//this curly brace and the next two belong to category page prior to $('.button').click//NODELETE//
   })
 },

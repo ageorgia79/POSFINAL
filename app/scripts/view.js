@@ -268,38 +268,16 @@ var EntreeView = Parse.View.extend({
     
 
 
-    order.save();
+    order.save().done(function(){
+      
+    $('.menu-buttons').html('')
+   router.navigate("#categories", {trigger: true});
+    })
 
-    var report = new Parse.Object('Report');
-    var reportname = this.model.name;
-    var reportprice = this.model.price;
-    var repsubtotal = $('.subtotal').text();
-    var reptax = $('.taxtotal').text();
-    var reptotal = $('.totaltotal').text();
-
-    report.set('reportname', reportname);
-    report.set('reportprice', reportprice);
-    report.set('repsubtotal', repsubtotal);
-    report.set('reptax', reptax);
-    report.set('reptotal', reptotal);
-
-    report.save();  
-    // $('.itemizer').append(this.model.name + ' ' + '$'+ this.model.price)
-    // $('.itemizer').append('<br />','<br />')
+  
 
 
-
-    // var subtotal = $('.subtotal').text() + this.model.price;
-    // console.log(subtotal)
-
-    // var tax = (subtotal * 6.75 / 100).toFixed(2); 
-    // var total = parseFloat(subtotal) + parseFloat(tax);
-    
-
-
-    // $('.subtotal').append(subtotal);
-    // $('.taxtotal').append(tax);
-    // $('.totaltotal').append(total); 
+   
     
     
 
@@ -470,6 +448,8 @@ var RunnerView = Parse.View.extend({
 
         $('.totaltotal').empty();
         $('.totaltotal').append(total);   
+
+
         
       })
     })

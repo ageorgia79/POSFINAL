@@ -12,6 +12,7 @@ var LoginView = Parse.View.extend({
 
     "click .submit"     : "showLayoutView",
     "click .admin"      : "showAdminView",
+    "click .checkout"   : "showReportView",
    
   },
 
@@ -79,7 +80,13 @@ var LoginView = Parse.View.extend({
 
     router.navigate('#/admin', {trigger:true});
      
-  }
+  },
+
+  showReportView: function(){
+   
+
+    router.navigate('#/report', {trigger:true});
+  },
 
  
 });
@@ -509,3 +516,25 @@ var RunnerView = Parse.View.extend({
 
 
 });
+
+var ReportView = Parse.View.extend({
+
+  reportTemplate: _.template($('.report-template').text()),
+
+  events: {
+
+  },
+
+  initialize: function(){
+    $('.container').html('');
+    $('.container').append(this.el);
+    this.render();
+  },
+
+  render: function(){
+    var renderedTemplate = this.reportTemplate(this.model);
+    this.$el.html(renderedTemplate);
+    return this;
+  },
+
+})

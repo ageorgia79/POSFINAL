@@ -12,6 +12,7 @@ var ProductRouter = Parse.Router.extend({
     "tables"                                    : "layoutPage",
     "categories"                               : "categoriesPage",
     "categories/:category"                     : "categoryPage",
+    "report"                                    : "reportsPage",
     
     
     
@@ -128,7 +129,23 @@ var ProductRouter = Parse.Router.extend({
         new PaymentView();
         $('.finalbalance').append('$' + total);
 
-      
+
+  },
+
+  reportsPage: function(){
+    $('.container').empty();
+    var query = new Parse.Query(Report);
+    var reportArray = [];
+    query.find({
+      success: function(results){
+        results.forEach(function(result){
+          reportArray.push(result.attributes.reportname)
+          console.log(result.attributes.reportname)
+          $('.reportpage').append(result.attributes.reportname)
+        })
+      }
+    })
+    new ReportView();
   },
 
  

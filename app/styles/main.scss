@@ -9,9 +9,661 @@ body {
 
 .reportpage {
     width: 100%;
-    height: 500px;
     background-color: white;
 }
+
+.reporttitle {
+    height: 50px;
+    //border: 1px solid blue;
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+}
+
+.ownerdiv {
+    height: 80px;
+    //border: 1px solid blue;
+    margin-top: 40px;
+
+    h1 {
+        margin: 0 auto;
+        text-indent: 80px;
+        
+    }
+}
+
+.daterange {
+    height: 50px;
+    //border: 1px solid blue;
+    margin-top: 40px;
+   
+    h1 {
+        margin: 0 auto;
+        text-indent: 80px;
+    }
+}
+
+.totalsparent {
+    height: 50px;
+    //border: 1px solid blue;
+    margin-top: 40px;
+    h1 {
+        margin: 0 auto;
+        text-indent: 80px;
+    }
+
+}
+
+.paymentcountamount {
+    height: 50px;
+    //border: 1px solid blue;
+
+}
+
+.grandtotalamount {
+    height: 50px;
+}
+
+.paymenttype {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    margin-left: 80px;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 210px;
+}
+
+.grandtotal {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    margin-left: 80px;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 185px;
+}
+
+.count {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 120px;
+}
+
+.grandtotalcount {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 150px;
+}
+
+.amount {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.grandamount {
+    height: 50px;
+    //border: 1px solid blue;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.cashpaymentbody {
+    //border: 1px solid blue;
+}
+
+.itemssoldbody {
+    //border: 1px solid blue;
+}
+
+.entreessoldbody {
+    //border: 1px solid blue;
+}
+
+.basketssoldbody {
+    //border: 1px solid blue;
+}
+
+.saladssoldbody {
+    //border: 1px solid blue;
+}
+
+.appssoldbody {
+
+}
+
+.kidssoldbody {
+
+}
+
+.sidessoldbody {
+
+}
+
+.soupssoldbody {
+
+}
+
+.lowfatsoldbody {
+
+}
+
+.dessertsoldbody {
+
+}
+
+.beveragesoldbody {
+
+}
+
+.beersoldbody {
+
+}
+
+.winesoldbody {
+
+}
+
+.liquorsoldbody {
+
+}
+
+.cocktailsoldbody {
+
+}
+
+.reportcash {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 80px;
+    margin-right: 200px;
+}
+
+.soldbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.saladbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.beveragebox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.lowfatbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.dessertbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.beerbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.winebox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.liquorbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.cocktailbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.soupbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.sidebox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.kidbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+
+.appbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.entreebox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.basketbox {
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.reportcashcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.soldcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.beveragecount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.beercount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.winecount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.liquorcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.cocktailcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.lowfatcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.dessertcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.kidcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.sidecount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.soupcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+.saladcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.appcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.entreecount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.basketcount {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 180px;
+}
+
+.reportcashamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+
+}
+
+.soldamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.beeramount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.wineamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.liquoramount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.cocktailamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.beverageamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.dessertamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.lowfatamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.sideamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+.soupamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.kidamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.saladamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.appamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.entreeamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.basketamount {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    //border: 1px solid blue;
+    font-size: 20px;
+    text-align: right;
+
+}
+  
+
+    
 
 
 .category {

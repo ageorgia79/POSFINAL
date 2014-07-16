@@ -134,17 +134,17 @@ var ProductRouter = Parse.Router.extend({
 
   reportsPage: function(){
     $('.container').empty();
-    var query = new Parse.Query(Report);
-    var reportArray = [];
-    query.find({
-      success: function(results){
-        results.forEach(function(result){
-          reportArray.push(result.attributes.reportname)
-          console.log(result.attributes.reportname)
-          $('.reportpage').append(result.attributes.reportname)
-        })
-      }
-    })
+    // var query = new Parse.Query(Report);
+    // var reportArray = [];
+    // query.find({
+    //   success: function(results){
+    //     results.forEach(function(result){
+    //       reportArray.push(result.attributes.reportname)
+    //       console.log(result.attributes.reportname)
+    //       $('.reportpage').append(result.attributes.reportname)
+    //     })
+    //   }
+    // })
     new ReportView();
   },
 

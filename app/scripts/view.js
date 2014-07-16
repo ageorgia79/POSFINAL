@@ -617,7 +617,7 @@ var AdminView = Parse.View.extend({
   events: {
 
     "click .codeenter": "signUpUser",
-    
+    "click .menuenter": "addMenuItem",
 
   },
 
@@ -652,6 +652,22 @@ var AdminView = Parse.View.extend({
       error: function(user, error) {
         alert("Error" + error.code + " " + error.message);
       } 
+    })
+  },
+
+  addMenuItem: function(){
+    var data = new Parse.Object('Data');
+
+    var category = $('.categorytitle').val();
+    var name = $('.categoryname').val();
+    var price = $('.price').val();
+
+    data.set("category", category);
+    data.set("name", name);
+    data.set("price", price);
+
+    data.save().done(function(){
+      router.navigate('#', {trigger: true});
     })
   },
 

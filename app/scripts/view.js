@@ -138,6 +138,8 @@ var LayoutView = Parse.View.extend({
   },
 
   showHightop1: function(){
+   
+    
     var table = new Parse.Object('Table');
     var hightop1 = $('.hightop1').text();
    

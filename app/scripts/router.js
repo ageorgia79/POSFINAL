@@ -102,22 +102,10 @@ var ProductRouter = Parse.Router.extend({
         
        $('.button').click(function(){
         $('.menu-buttons').html('')
-        var query = new Parse.Query(Data);
-        var categoryArray = [];
-        query.find({
-          success: function(results) {
-            results.forEach(function(result){
-              categoryArray.push(result.attributes.category)
-            })
-            categoryArray = _.union(categoryArray)
-            categoryArray.forEach(function(category){
-              //new ButtonView({model: category})
-              router.navigate("#categories", {trigger: true});
-            })
-          }
-        })
+        router.navigate("#categories", {trigger: true});
+       
       })
-     }//this curly brace and the next two belong to category page prior to $('.button').click//NODELETE//
+    }//this curly brace and the next two belong to category page prior to $('.button').click//NODELETE//
   })
 },
 

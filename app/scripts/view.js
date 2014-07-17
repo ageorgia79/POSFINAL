@@ -25,6 +25,12 @@ var LoginView = Parse.View.extend({
   render: function(){
     var renderedTemplate = this.loginTemplate();
     this.$el.html(renderedTemplate);
+
+    $('.password').keypress(function(key){
+      if (key.which === 13) {
+        $('.submit').click();
+      }
+    })
   },
 
   showLayoutView: function() {
@@ -620,6 +626,7 @@ var AdminView = Parse.View.extend({
 
     "click .codeenter": "signUpUser",
     "click .menuenter": "addMenuItem",
+    "click .menudone": "exitMenu",
 
   },
 
@@ -632,7 +639,19 @@ var AdminView = Parse.View.extend({
   render: function(){
     var renderedTemplate = this.adminTemplate(this.model);
     this.$el.html(renderedTemplate);
-    return this;
+    //return this;
+
+     $('.userpassword').keypress(function(key){
+      if (key.which === 13) {
+        $('.codeenter').click();
+      }
+    })
+
+      $('.price').keypress(function(key){
+      if (key.which === 13) {
+        $('.menuenter').click();
+      }
+    })
   },
 
   signUpUser: function() {
@@ -668,9 +687,14 @@ var AdminView = Parse.View.extend({
     data.set("name", name);
     data.set("price", price);
 
-    data.save().done(function(){
-      router.navigate('#', {trigger: true});
-    })
+    data.save()
+    alert("New Menu Item Added Successfully")
+    
+    
+  },
+
+  exitMenu: function(){
+    router.navigate('#', {trigger: true});
   },
 
 
@@ -683,7 +707,7 @@ var RunnerView = Parse.View.extend({
 
   events: {
     "click .go-button"  : "showLoginView",
-    "click .gostaybutton": "saveOrder",
+    "click .gostaybutton": "showReceiptView",
     "click .pay"       : "showPaymentView",
 
   }, 
@@ -750,17 +774,8 @@ var RunnerView = Parse.View.extend({
 
   },
 
-   saveOrder: function(){
-    // var order = new Parse.Object('Order');
-    // var subtotal = $('.subtotal').text();
-    // var tax = $('.taxtotal').text();
-    // var total = $('.totaltotal').text();
-    // order.set('subtotal', subtotal);
-    // order.set('tax', tax);
-    // order.set('total', total);
-
-
-    // order.save();
+   showReceiptView: function(){
+    router.navigate("#/receipt", {trigger: true})
   },
 
   showPaymentView: function(){
@@ -795,4 +810,72 @@ var ReportView = Parse.View.extend({
     return this;
   },
 
+});
+
+var ReceiptView = Parse.View.extend({
+
+  receiptTemplate: _.template($('.receipt-template').text()),
+
+  events: {
+
+    "click .printandstaybutton": "showOrderView",
+    "click .printbutton": "showLoginView",
+
+  }, 
+
+  initialize: function(){
+
+    this.subtotal = 0;
+    var that = this;
+
+    $('.container').html('');
+    $('.container').append(this.el);
+    this.render();
+     var collection = new OrderCollection();
+
+    collection.on('add', function(model){});
+
+    collection.fetch({add:true}).done(function(){//FETCHES THE COLLECTION ON ROUTER INITIALIZATION
+      collection.each(function(object){
+        console.log(object)
+
+         $('.namebox').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
+        $('.namebox').append('<br />', '<br />');
+
+         that.subtotal += parseFloat(object.attributes.runnerprice)
+        console.log(that.subtotal)
+
+        var tax = parseFloat((that.subtotal * 6.75 / 100).toFixed(2)); 
+        var total = parseFloat((that.subtotal + tax).toFixed(2));
+
+         $('.subtotalbox').empty();
+        $('.subtotalbox').append('$' + ' ' + that.subtotal.toFixed(2));
+
+        $('.taxbox').empty();
+        $('.taxbox').append('$' + ' ' + tax);
+
+        $('.receipttotal').empty();
+        $('.receipttotal').append('$' + ' ' + total);   
+
+
+
+
+
+      })
+    })
+  },
+
+  render: function(){
+    var renderedTemplate = this.receiptTemplate(this.model);
+    this.$el.html(renderedTemplate);
+    return this;
+  },
+
+  showOrderView: function(){
+    router.navigate("#/categories", {trigger: true});
+  },
+
+  showLoginView: function(){
+    router.navigate("#", {trigger: true});
+  },
 })

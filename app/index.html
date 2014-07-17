@@ -64,10 +64,27 @@
     </div>
     <div class="addamenu">
         <h1>Add a New Menu Item:</h1>
-        <input class="categorytitle" placeholder="Add Category"></input>
+        <select class="categorytitle" placeholder="Add Category">
+            <option value="Entrees">Entrees</option>
+            <option value="Baskets">Baskets</option>
+            <option value="Salads">Salads</option>
+            <option value="Soups">Soups</option>
+            <option value="Appetizers">Appetizers</option>
+            <option value="Kids">Kids</option>
+            <option value="Low-Fat">Low-Fat</option>
+            <option value="SideItems">SideItems</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Beer">Beer</option>
+            <option value="Liquor">Liquor</option>
+            <option value="Wine">Wine</option>
+            <option value="Cocktails">Cocktails</option>
+            
+        </select>
         <input class="categoryname" placeholder="Add Name"></input>
         <input class="price" placeholder="Add Price w/o '$'"></input>
         <div class="menuenter">Enter</div>
+        <div class="menudone">Done</div>
     </div>
     </script>
 
@@ -163,7 +180,7 @@
                     <div class="sendmaster">
                         <ul class="sendoptions">
                             <li class="sent go-button">Send</li>
-                            <li class="sent gostaybutton">Send & Stay</li>
+                            <li class="sent gostaybutton">Print Check</li>
                             <li class="pay">$Pay$</li>
                         </ul>
                     </div>
@@ -203,7 +220,7 @@
                         <h1>Employee: Andy Georgia</h1>
                    </div>
                    <div class="daterange">
-                        <h1>Date Range: 7/16/2014 - 7/16/2014</h1>
+                        <h1>Date Range: 7/16/2014 - 7/18/2014</h1>
                    </div>
                    <div class="totalsparent">
                         <h1>Sales Order Totals</h1>
@@ -295,6 +312,35 @@
                         <div class="grandamount">$2264.37</div>
                    </div>
                 </div>
+        </script>
+
+        <script type="text/template" class="receipt-template">
+            <div class="printandstaybutton">Print & Stay</div>
+            <div class="printbutton">Print & Done</div>
+
+
+            <div class="receiptcontainer">
+                <p>Andy's Chargrille</p>
+                <p>17 NutLeaf Lane</p>
+                <p>Greenville, SC 29605</p>
+                <p>(864) 376-5721</p>
+                <div class="tablenumber">#301</div>
+                <div class="namebox"></div>
+                
+                <h1>.................................................</h1>
+                <span>Subtotal:</span><div class="subtotalbox"></div>
+                <span>Tax:</span><div class="taxbox"></div>
+                <span>Total:</span><div class="receipttotal"></div>
+                <h1>.................................................</h1>
+                <h1>.................................................</h1>
+                <p>Take our survey at www.andyschargrill.com</p>
+                <p>for your chance to win $500</p>
+                <h2>.....</h2>
+                <p>Don't forget to ask about gift certificates</p>
+                
+
+            </div>
+
         </script>
 
 

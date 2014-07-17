@@ -13,6 +13,7 @@ var ProductRouter = Parse.Router.extend({
     "categories"                               : "categoriesPage",
     "categories/:category"                     : "categoryPage",
     "report"                                    : "reportsPage",
+    "receipt"                                   : "receiptPage",
     
     
     
@@ -130,6 +131,11 @@ var ProductRouter = Parse.Router.extend({
     // })
     new ReportView();
   },
+
+  receiptPage: function(){
+    $('.container').empty();
+    new ReceiptView();
+  }
 
  
 

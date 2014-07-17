@@ -7,6 +7,10 @@ body {
     color: #333;
 }
 
+.container {
+    position: fixed;
+}
+
 .myClass {
    
     background-image: url(http://img2.findthebest.com/sites/default/files/2307/media/images/Bright_Green_429748_i0.png);
@@ -1472,6 +1476,8 @@ span {
     font-weight: bold;
     transition: All 0.5s ease;
     cursor: pointer;
+    position: relative;
+    right: 15px;
 
 }
 
@@ -1513,27 +1519,33 @@ span {
 
 
 .code {
-    height: 50px;
+    height: 45px;
     width: 500px;
     font-size: 30px;
+    border-radius: 8px;
 }
 
 .categorytitle {
+    -webkit-appearance: menulist-button;
     height: 50px;
     width: 325px;
     font-size: 30px;
+    border-radius: 8px;
+
 }
 
-.categoryname {
-    height: 50px;
+.categoryname  {
+    height: 45px;
     width: 325px;
     font-size: 30px;
+    border-radius: 8px;
 }
 
 .price {
-    height: 50px;
+    height: 45px;
     width: 325px;
     font-size: 30px;
+    border-radius: 8px;
 }
 
 .codeenter {
@@ -1549,7 +1561,7 @@ span {
     position: relative;
     top: 10px;
     box-shadow: inset 0 0 10px #000000;
-
+    cursor: pointer;
 }
 
 .menuenter {
@@ -1563,13 +1575,32 @@ span {
     line-height: 45px;
     position: relative;
     top: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.menudone {
+      height: 50px;
+      cursor: pointer;
+    width: 175px;
+    display: inline-block;
+    //border: 1px solid white;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 45px;
+    position: relative;
+    top: 20px;
     box-shadow: inset 0 0 10px #000000;
 }
 
 .userpassword {
-    height: 50px;
+    height: 45px;
     width: 500px;
     font-size: 30px;
+    border-radius: 8px;
 }
 
 .loginbox {
@@ -1581,6 +1612,143 @@ span {
     //top: 100px;
     background-image: url(http://i1127.photobucket.com/albums/l633/BadWolffGraphixx/Animated%20Gifs/FlamesAnimated2wave.gif);
 }
+
+.receiptcontainer {
+    height: 650px;
+    width: 500px;
+    background-color: white;
+    //margin: 0 auto;
+    overflow: scroll;
+    position: relative;
+    left: 450px;
+    bottom: 180px;
+
+
+    p {
+        text-align: center;
+        line-height: 15px;
+        font-size: 20px;
+    }
+    h1 {
+        margin-left: 30px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    h2 {
+        margin-left: 225px;
+    }
+
+}
+
+.namebox {
+    //height: 50px;
+    width: 250px;
+    //border: 1px solid blue;
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.pricebox {
+    //height: 50px;
+    width: 150px;
+    //border: 1px solid blue;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: right;
+}
+
+.tablenumber {
+    font-size: 30px;
+    margin-left: 40px;
+    position: relative;
+    top: 30px;
+    font-weight: bolder;
+}
+
+.subtotalbox {
+    height: 30px;
+    width: 110px;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 100px;
+    bottom: 23px;
+    text-align: right;
+}
+
+.taxbox {
+    height: 30px;
+    width: 110px;
+    //border: 1px solid blue;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 100px;
+    bottom: 23px;
+    text-align: right;
+}
+
+.receipttotal {
+    height: 30px;
+    width: 110px;
+    //border: 1px solid blue;
+    font-size: 30px;
+    position: relative;
+    left: 100px;
+    bottom: 35px;
+    text-align: right;
+}
+
+.printandstaybutton {
+    
+    height: 100px;
+    width: 175px;
+    border-radius: 18px;
+    border: 1px solid black;
+    font-size: 28px;
+    text-align: center;
+    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
+    line-height: 100px;
+    box-shadow: inset 0 0 15px #000000;
+    font-weight: bold;
+    transition: All 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 120px;
+
+
+}
+
+.printbutton {
+    
+    height: 100px;
+    width: 175px;
+    border-radius: 18px;
+    border: 1px solid black;
+    font-size: 28px;
+    text-align: center;
+    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
+    line-height: 100px;
+    box-shadow: inset 0 0 15px #000000;
+    font-weight: bold;
+    transition: All 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    left: 120px;
+
+}
+
+
+
 
 
 

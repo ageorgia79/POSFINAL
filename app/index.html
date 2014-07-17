@@ -38,7 +38,8 @@
         </div>
         
             <div class="loginbox">
-                <input class="userlogin" placeholder="Username"></input>
+                <input class="userlogin" placeholder="Username" autofocus="autofocus"></input>
+                
                 <input type="password" name="password" class="password" placeholder="4-Digit Password"></input>
             
                     <div class="submit">Login</div>
@@ -58,12 +59,13 @@
     <div class="userfield">
         <h1>Add New User:</h1>
         <input class="code" placeholder="Add Username"></input>
+
         <input class="userpassword" placeholder="Add Four Digit Password"></div>
         <div class="codeenter">Enter</div>
         
     </div>
     <div class="addamenu">
-        <h1>Add a New Menu Item:</h1>
+        <h1>Add a New Menu Item In Existing Category:</h1>
         <select class="categorytitle" placeholder="Add Category">
             <option value="Entrees">Entrees</option>
             <option value="Baskets">Baskets</option>
@@ -85,6 +87,13 @@
         <input class="price" placeholder="Add Price w/o '$'"></input>
         <div class="menuenter">Enter</div>
         <div class="menudone">Done</div>
+    </div>
+    <div class="customcategory">
+        <h1>Add a Unique Category Menu Item:</h1>
+        <input class="customcat" placeholder="Add a Unique Category"></input>
+        <input class="customname" placeholder="Add Name"></input>
+        <input class="customprice" placeholder="Add Price w/o '$'"></input>
+        <div class="customdone">Enter</div>
     </div>
     </script>
 
@@ -148,7 +157,8 @@
             </div>
                 <div id="overlay">
                     <div id="modaloverlay">
-                        <input class="modalpassword" placeholder="Enter Amount"></input>
+                        <div class="amountpaid"></div>
+                        <div class="paid">Paid!</div>
                         <div class="number numberenter">Enter</div>
                     </div>
                 </div>
@@ -320,10 +330,15 @@
 
 
             <div class="receiptcontainer">
-                <p>Andy's Chargrille</p>
-                <p>17 NutLeaf Lane</p>
-                <p>Greenville, SC 29605</p>
-                <p>(864) 376-5721</p>
+                <p class="receiptheader">
+                    Andy's Chargrille
+                    <br>
+                    17 NutLeaf Lane
+                    <br>
+                    Greenville, SC 29605
+                    <br>
+                    (864) 376-5721
+                </p>
                 <div class="tablenumber">#301</div>
                 <div class="namebox"></div>
                 

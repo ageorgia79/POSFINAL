@@ -863,9 +863,9 @@ body {
 
 .password {
     width: 550px;
-    height: 60px;
+    height: 100px;
     display: block;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bolder;
     background-color: #FFFFCC;
     border: 1px solid black;
@@ -876,7 +876,7 @@ body {
     text-align: center;
     margin-left: 200px;
     position: relative;
-    top: 60px;
+    top: 90px;
     
 
 }
@@ -886,8 +886,8 @@ body {
     display: block;
     margin-left: 200px;
     width: 550px;
-    height: 60px;
-    font-size: 30px;
+    height: 100px;
+    font-size: 50px;
     font-weight: bolder;
     background-color: #FFFFCC;
     border: 1px solid black;
@@ -895,7 +895,8 @@ body {
     line-height: 55px;
     text-align: center;
     position: relative;
-    top: 50px;
+    top: 80px;
+    //visibility: hidden;
 }
 
 .modalpassword {
@@ -927,7 +928,7 @@ body {
     transition: All 0.5s ease;
     margin-left: 390px;
     position: relative;
-    top: 80px;
+    top: 130px;
 
     //right: 40px;
     
@@ -1281,8 +1282,8 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 135px;
-    left: 12px;
+    bottom: 145px;
+    left: 10px;
     box-shadow: inset 0 0 10px black;
     cursor: pointer;
 
@@ -1300,8 +1301,8 @@ span {
     //color: white;
     background-image: url(http://dev.w3.org/csswg/css-images-3/radial1.png);
     position: relative;
-    bottom: 135px;
-    left: 12px;
+    bottom: 140px;
+    left: 10px;
     box-shadow: inset 0 0 10px black;
 }
 
@@ -1317,7 +1318,7 @@ span {
     background-color: red;
     position: relative;
     bottom: 135px;
-    left: 12px;
+    left: 10px;
     box-shadow: inset 0 0 10px #000000;
 
 }
@@ -1460,6 +1461,7 @@ span {
 
 .button:hover {
     background-image: url(http://media.tumblr.com/3835a698ad0155fc3240c9e81c07b95c/tumblr_inline_mqaogeq7xE1qz4rgp.jpg);
+    color: black;
 }
 
 .admin {
@@ -1514,6 +1516,9 @@ span {
 .addamenu {
     h1 {
         color: white;
+        position: relative;
+        bottom: 20px;
+
     }
 }   
 
@@ -1523,6 +1528,10 @@ span {
     width: 500px;
     font-size: 30px;
     border-radius: 8px;
+    position: relative;
+    bottom: 20px;
+    margin-right: 20px;
+    //visibility: hidden;
 }
 
 .categorytitle {
@@ -1531,6 +1540,9 @@ span {
     width: 325px;
     font-size: 30px;
     border-radius: 8px;
+    position: relative;
+    bottom: 40px;
+    margin-right: 20px;
 
 }
 
@@ -1539,6 +1551,9 @@ span {
     width: 325px;
     font-size: 30px;
     border-radius: 8px;
+    position: relative;
+    bottom: 40px;
+    margin-right: 20px;
 }
 
 .price {
@@ -1546,6 +1561,8 @@ span {
     width: 325px;
     font-size: 30px;
     border-radius: 8px;
+    position: relative;
+    bottom: 40px;
 }
 
 .codeenter {
@@ -1559,7 +1576,7 @@ span {
     font-size: 30px;
     line-height: 45px;
     position: relative;
-    top: 10px;
+    bottom: 15px;
     box-shadow: inset 0 0 10px #000000;
     cursor: pointer;
 }
@@ -1574,7 +1591,7 @@ span {
     font-size: 30px;
     line-height: 45px;
     position: relative;
-    top: 10px;
+    bottom: 35px;
     cursor: pointer;
     box-shadow: inset 0 0 10px #000000;
 }
@@ -1592,7 +1609,8 @@ span {
     font-size: 30px;
     line-height: 45px;
     position: relative;
-    top: 20px;
+    bottom: 85px;
+    left: 190px;
     box-shadow: inset 0 0 10px #000000;
 }
 
@@ -1601,6 +1619,9 @@ span {
     width: 500px;
     font-size: 30px;
     border-radius: 8px;
+    position: relative;
+    bottom: 20px;
+    //bottom: 60px;
 }
 
 .loginbox {
@@ -1610,7 +1631,7 @@ span {
     width: 950px;
     position: relative;
     //top: 100px;
-    background-image: url(http://i1127.photobucket.com/albums/l633/BadWolffGraphixx/Animated%20Gifs/FlamesAnimated2wave.gif);
+    //background-image: url(http://i1127.photobucket.com/albums/l633/BadWolffGraphixx/Animated%20Gifs/FlamesAnimated2wave.gif);
 }
 
 .receiptcontainer {
@@ -1622,13 +1643,10 @@ span {
     position: relative;
     left: 450px;
     bottom: 180px;
+    box-shadow: inset 0 0 15px black;
 
 
-    p {
-        text-align: center;
-        line-height: 15px;
-        font-size: 20px;
-    }
+   
     h1 {
         margin-left: 30px;
         margin-top: 0px;
@@ -1637,6 +1655,19 @@ span {
     h2 {
         margin-left: 225px;
     }
+      p {
+        text-align: center;
+        //line-height: 15px;
+        font-size: 30px;
+    }
+
+}
+
+.receiptheader {
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bolder;
 
 }
 
@@ -1697,11 +1728,11 @@ span {
 
 .receipttotal {
     height: 30px;
-    width: 110px;
+    width: 140px;
     //border: 1px solid blue;
     font-size: 30px;
     position: relative;
-    left: 100px;
+    left: 70px;
     bottom: 35px;
     text-align: right;
 }
@@ -1746,6 +1777,84 @@ span {
     left: 120px;
 
 }
+
+.amountpaid {
+    height: 100px;
+    width: 400px;
+    //border: 1px solid blue;
+    font-size: 100px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bolder;   
+}
+
+.paid {
+    height: 100px;
+    //border: 1px solid blue;
+    display: inline-block;
+    width: 400px;
+    margin-top: 20px;
+    font-size: 100px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.customcategory {
+    h1 {
+        color: white;
+        position: relative;
+        bottom: 90px;
+    }
+}
+
+.customcat {
+    height: 50px;
+    width: 325px;
+    font-size: 29px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 105px;
+    margin-right: 20px;
+}
+
+.customname {
+    height: 50px;
+    width: 325px;
+    font-size: 29px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 105px;
+    margin-right: 20px;
+}
+
+.customprice {
+    height: 50px;
+    width: 325px;
+    font-size: 29px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 105px;
+}
+
+.customdone {
+      height: 50px;
+    width: 175px;
+    //border: 1px solid white;
+    background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 45px;
+    position: relative;
+    bottom: 100px;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px #000000;
+
+}
+
 
 
 

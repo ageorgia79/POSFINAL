@@ -112,6 +112,7 @@ var ProductRouter = Parse.Router.extend({
    
         new PaymentView();
         $('.finalbalance').append('$' + total);
+        $('.amountpaid').append('$' + total);
 
 
   },

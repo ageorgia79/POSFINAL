@@ -39,7 +39,7 @@ var LoginView = Parse.View.extend({
 
     Parse.User.logIn($('.userlogin').val(), $('.password').val(), {
       success: function(user) {
-        user.set("username", $('.userlogin').val())
+        user.set("username", $('.userlogin').text())
         user.set("password", $('.password').val())
         user.save(null, {
           success: function(user) {
@@ -563,10 +563,10 @@ var PaymentView = Parse.View.extend({
     "click .credit-master": "showLoginView",
     "click .credit-discover": "showLoginView",
     "click .cash": "showCashModal",
-    "click .numberenter": "showPaymentView",
     "click .check": "showCashModal",
     "click .gift": "showCashModal",
     "click .manager": "showCashModal",
+    "click .numberenter": "showPaymentView",
     
     
 
@@ -583,6 +583,12 @@ var PaymentView = Parse.View.extend({
   render: function(){
     var renderedTemplate = this.paymentTemplate(this.model);
     this.$el.html(renderedTemplate);
+
+       $('#modaloverlay').keypress(function(key){
+      if (key.which === 13) {
+        $('.numberenter').click();
+      }
+    })
   },
 
   showLoginView: function(){
@@ -599,17 +605,26 @@ var PaymentView = Parse.View.extend({
   },
 
   showCashModal: function(){
-     var modal = document.getElementById('overlay');
+   var modal = document.getElementById('overlay');
     modal.style.visibility = (modal.style.visibility == "visible") ? "hidden":"visible";
+  
   },
 
   showPaymentView: function(){
-
-
-    var modal = document.getElementById('overlay');
-    modal.style.visibility = "hidden";
+      var query = new Parse.Query(Order);
+  query.find({
+    success: function(results) {
+      results.forEach(function(result){
+        console.log(result)
+        result.destroy({});
+      })
+    }
+  })
+    router.navigate("#", {trigger: true});
 
   },
+
+  
 
   
 
@@ -627,6 +642,7 @@ var AdminView = Parse.View.extend({
     "click .codeenter": "signUpUser",
     "click .menuenter": "addMenuItem",
     "click .menudone": "exitMenu",
+    "click .customdone": "addCustom",
 
   },
 
@@ -691,6 +707,22 @@ var AdminView = Parse.View.extend({
     alert("New Menu Item Added Successfully")
     
     
+  },
+
+  addCustom: function(){
+      var data = new Parse.Object('Data');
+
+    var category = $('.customcat').val();
+    var name = $('.customname').val();
+    var price = $('.customprice').val();
+
+    data.set("category", category);
+    data.set("name", name);
+    data.set("price", price);
+
+    data.save()
+    alert("New Menu Item Added Successfully")
+
   },
 
   exitMenu: function(){

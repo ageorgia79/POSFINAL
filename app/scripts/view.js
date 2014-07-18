@@ -765,7 +765,7 @@ var RunnerView = Parse.View.extend({
 
 
         $('#itemizer').append(object.attributes.runnername + ' ' + '$'+ object.attributes.runnerprice);
-        $('#itemizer').append('<br />', '<br />');
+        $('#itemizer').append('<br />');
 
         that.subtotal += parseFloat(object.attributes.runnerprice)
         console.log(that.subtotal)

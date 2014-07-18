@@ -1241,12 +1241,15 @@ body {
     margin: 0 auto;
     margin-top: 8px;
     width: 365px;
-    height: 515px;
+    height: 500px;
     border: 2px solid black;
     background-color: #FFFFCC;
     //box-shadow: inset 0 0 15px black;
     position: relative;
     overflow: scroll;
+    padding-left: 15px;
+    padding-top: 15px;
+    line-height: 45px;
     //text-indent: 10px;
     //color: #0000CC;
 

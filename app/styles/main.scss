@@ -924,7 +924,7 @@ body {
     text-align: center;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
     line-height: 100px;
-    box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
     font-weight: bold;
     transition: All 0.5s ease;
     margin-left: 390px;
@@ -964,20 +964,22 @@ body {
 }
 
 .table {
-    color: white;
+    //color: white;
     list-style-type: none;
     cursor: pointer;
     height: 100px;
     width: 100px;
     display: block;
     margin-top: 60px;
-    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
+    background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     text-align: center;
     border: 1px solid black;
     transform: rotate(45deg);
     position: relative;
     //box-shadow: 3px 3px 10px 2px orange;
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0px 0px 11px 0px #fed897;
+      -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
     
     
 }
@@ -996,7 +998,26 @@ body {
     width: 200px;
     height: 600px;
     //border: 1px solid white;
-    background-image: url(http://www.krworkshops.com/images/BackgroundLeft2.gif);
+    background-color: #663300;
+    box-shadow: inset 0px 0px 11px -1px #fed897;
+    span {
+        position: relative;
+        right: 880px;
+        top: 148px;
+        font-size: 80px;
+        font-family: 'Permanent Marker', cursive;
+         text-shadow: 0 0 10px #fefcc9, 0 0 20px #feec85, 0 0 30px #ffae34, 0 0 40px #ec760c, 0 0 70px #cd4606, 0 0 80px #973716, 0 0 100px #451b0e, 0 0 150px #ff00de;
+    }
+    span2 {
+          position: relative;
+        right: 950px;
+        top: 148px;
+        font-size: 80px;
+        color: black;
+        font-family: 'Permanent Marker', cursive;
+         text-shadow: 0 0 10px #fefcc9, 0 0 20px #feec85, 0 0 30px #ffae34, 0 0 40px #ec760c, 0 0 70px #cd4606, 0 0 80px #973716, 0 0 100px #451b0e, 0 0 150px #ff00de;
+
+    }
 
 
 }
@@ -1016,9 +1037,11 @@ body {
     line-height: 45px;
     position: relative;
     right: 110px;
-    bottom: 300px;
+    bottom: 530px;
     border-radius: 100px;
-    box-shadow: inset 0px 0px 5px black;
+    box-shadow: inset 0px 0px 11px -1px #fed897;
+      -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
 
 
   
@@ -1034,14 +1057,16 @@ body {
     cursor: pointer;
     width: 90px;
     border: 1px solid black;
-    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
-    color: white;
+    background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
+    //color: white;
     font-size: 30px;
     font-weight: bold;
     line-height: 150px;
     text-align: center;
     //box-shadow: 2px 3px 6px 2px orange;
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0px 0px 11px 0px #fed897;
+      -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
     
 }
 
@@ -1053,41 +1078,47 @@ body {
 
 .hightop1 {
     list-style-type: none;
-    color: white;
+    //color: white;
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
     cursor: pointer;
     line-height: 150px;
     position: relative;
-    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
+    background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     right: 550px;
-    top: 50px;
+    //top: 50px;
+    bottom: 200px;
     height: 150px;
     width: 150px;
     border: 1px solid black;
     border-radius: 100px;
     //box-shadow: 2px 3px 9px 0px orange;
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0px 0px 11px -1px #fed897;
+     -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
 }
 
 .hightop2 {
     position: relative;
     right: 375px;
-    top: 75px;
+    //top: 75px;
+    bottom: 200px;
     height: 150px;
     cursor: pointer;
     width: 150px;
     border: 1px solid black;
     border-radius: 100px;
-    background-image: url(http://www.ipad-wallpapers.us/bgs/red-grid-pattern-ipad-background-h.jpg);
+    background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     list-style-type: none;
-    color: white;
+    //color: white;
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
     line-height: 150px;
-    box-shadow: inset 0 0 10px black;
+    box-shadow: inset 0px 0px 11px -1px #fed897;
+     -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
     //  box-shadow: 2px 3px 9px 0px orange;
 }
 
@@ -1462,15 +1493,15 @@ span {
     font-size: 28px;
     //color: white;
     text-align: center;
-    //border: 1px solid blue;
-    //background-image: url(http://blog.learntoprogram.tv/wp-content/uploads/2013/12/Button.png);
+    
     background-image: url(http://www.promotionalscratchcards.co.uk/images/GameBackgrounds/plain/plain_red_SM.jpg);
     line-height: 100px;
     margin-right: 25px;
     margin-top: 25px;
    //  -webkit-text-stroke-width: 1px;
    // -webkit-text-stroke-color: black;
-   box-shadow: inset 0px 4px 14px 0px #f29c93;
+   //box-shadow: inset 0px 4px 14px 0px #f29c93;
+   box-shadow: inset 0px -3px 14px -1px #fed897;
    transition: All 0.5s ease;
    position: relative;
    left: 60px;
@@ -1493,7 +1524,7 @@ span {
     text-align: center;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
     line-height: 100px;
-    box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 3px -2px 14px -1px #fed897;
     font-weight: bold;
     transition: All 0.5s ease;
     cursor: pointer;
@@ -1513,7 +1544,7 @@ span {
     text-align: center;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
     line-height: 100px;
-    box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset -3px -2px 14px -1px #fed897;
     font-weight: bold;
     transition: All 0.5s ease;
     position: relative;

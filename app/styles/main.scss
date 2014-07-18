@@ -713,7 +713,9 @@ body {
         font-size: 100px;
         margin: 0 auto;
         margin-left: 280px;
-        //color: white;
+        //color: #330033;
+        //   -webkit-text-stroke-width: 1px;
+        // -webkit-text-stroke-color: black;
         //text-shadow: blue -1px -2px 10px,0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
        text-shadow: 0 0 10px #fefcc9, 0 0 20px #feec85, 0 0 30px #ffae34, 0 0 40px #ec760c, 0 0 70px #cd4606, 0 0 80px #973716, 0 0 100px #451b0e, 0 0 150px #ff00de;
 
@@ -987,9 +989,9 @@ body {
 
 .table  h1 {
         //color: white;
-        font-size: 30px;
+        font-size: 35px;
         text-align: center;
-        line-height: 60px;
+        line-height: 58px;
         transform: rotate(-45deg);
 }
 
@@ -1059,7 +1061,7 @@ body {
     border: 1px solid black;
     background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     //color: white;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     line-height: 150px;
     text-align: center;
@@ -1079,7 +1081,7 @@ body {
 .hightop1 {
     list-style-type: none;
     //color: white;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bolder;
     text-align: center;
     cursor: pointer;
@@ -1112,7 +1114,7 @@ body {
     background-image: url(http://www.actioncat.com/platinum/backs/background-orange.gif);
     list-style-type: none;
     //color: white;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bolder;
     text-align: center;
     line-height: 150px;
@@ -1240,9 +1242,9 @@ body {
     margin-top: 8px;
     width: 365px;
     height: 515px;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: #FFFFCC;
-    box-shadow: inset 0 0 15px black;
+    //box-shadow: inset 0 0 15px black;
     position: relative;
     overflow: scroll;
     //text-indent: 10px;
@@ -1329,7 +1331,7 @@ span {
     position: relative;
     bottom: 155px;
     left: 10px;
-    box-shadow: inset 0 0 10px black;
+    //box-shadow: inset 0 0 10px black;
     cursor: pointer;
     font-size: 23px;
     border-radius: 8px;
@@ -1350,7 +1352,7 @@ span {
     position: relative;
     bottom: 145px;
     left: 10px;
-    box-shadow: inset 0 0 10px black;
+    //box-shadow: inset 0 0 10px black;
     font-size: 23px;
     border-radius: 8px;
 }
@@ -1367,7 +1369,7 @@ span {
     position: relative;
     bottom: 135px;
     left: 10px;
-    box-shadow: inset 0 0 10px #000000;
+    //box-shadow: inset 0 0 10px #000000;
     font-size: 23px;
     border-radius: 8px;
 
@@ -1501,7 +1503,7 @@ span {
    //  -webkit-text-stroke-width: 1px;
    // -webkit-text-stroke-color: black;
    //box-shadow: inset 0px 4px 14px 0px #f29c93;
-   box-shadow: inset 0px -3px 14px -1px #fed897;
+   box-shadow: inset 0px 4px 14px -1px #fed897;
    transition: All 0.5s ease;
    position: relative;
    left: 60px;
@@ -1582,6 +1584,7 @@ span {
     position: relative;
     bottom: 20px;
     margin-right: 20px;
+    background-color: #FFFFCC;
     //visibility: hidden;
 }
 
@@ -1594,6 +1597,7 @@ span {
     position: relative;
     bottom: 40px;
     margin-right: 20px;
+    background-color: #FFFFCC;
 
 }
 
@@ -1605,6 +1609,7 @@ span {
     position: relative;
     bottom: 40px;
     margin-right: 20px;
+    background-color: #FFFFCC;
 }
 
 .price {
@@ -1614,6 +1619,7 @@ span {
     border-radius: 8px;
     position: relative;
     bottom: 40px;
+    background-color: #FFFFCC;
 }
 
 .codeenter {
@@ -1628,7 +1634,7 @@ span {
     line-height: 45px;
     position: relative;
     bottom: 15px;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
     cursor: pointer;
 }
 
@@ -1644,7 +1650,7 @@ span {
     position: relative;
     bottom: 35px;
     cursor: pointer;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
 }
 
 .menudone {
@@ -1653,8 +1659,8 @@ span {
     width: 175px;
     display: inline-block;
     //border: 1px solid white;
-    background-color: red;
-    color: white;
+    background-color: #66FF00;
+    //color: white;
     border-radius: 8px;
     text-align: center;
     font-size: 30px;
@@ -1671,7 +1677,8 @@ span {
     font-size: 40px;
     border-radius: 8px;
     position: relative;
-    bottom: 20px;
+    bottom: 17px;
+    background-color: #FFFFCC;
     //bottom: 60px;
 }
 
@@ -1694,7 +1701,8 @@ span {
     position: relative;
     left: 450px;
     bottom: 180px;
-    box-shadow: inset 0 0 15px black;
+    box-shadow: inset 0 0 10px black;
+    border: 1px solid orange;
 
 
    
@@ -1798,7 +1806,7 @@ span {
     text-align: center;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
     line-height: 100px;
-    box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
     font-weight: bold;
     transition: All 0.5s ease;
     cursor: pointer;
@@ -1819,7 +1827,7 @@ span {
     text-align: center;
     background-image: url(http://www.euvox.eu/vaaCommon/images/ieButtonHoverBackground.png); 
     line-height: 100px;
-    box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
     font-weight: bold;
     transition: All 0.5s ease;
     cursor: pointer;
@@ -1869,6 +1877,7 @@ span {
     position: relative;
     bottom: 105px;
     margin-right: 20px;
+    background-color: #FFFFCC;
 }
 
 .customname {
@@ -1879,6 +1888,7 @@ span {
     position: relative;
     bottom: 105px;
     margin-right: 20px;
+    background-color: #FFFFCC;
 }
 
 .customprice {
@@ -1888,6 +1898,7 @@ span {
     border-radius: 8px;
     position: relative;
     bottom: 105px;
+    background-color: #FFFFCC;
 }
 
 .customdone {
@@ -1902,12 +1913,13 @@ span {
     position: relative;
     bottom: 100px;
     cursor: pointer;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0px -2px 14px -1px #fed897;
 
 }
 
 ::-webkit-input-placeholder {
-    color: #ffae34;
+    color: #FF9900;
+
 }
 
  //text-shadow: 0 0 10px #fefcc9, 0 0 20px #feec85, 0 0 30px #ffae34, 0 0 40px #ec760c, 0 0 70px #cd4606, 0 0 80px #973716, 0 0 100px #451b0e, 0 0 150px #ff00de;

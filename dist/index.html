@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>POSFINAL</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/6df2b309.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/8ee38517.main.css><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><div class=container></div><script type=text/template class=login-template><div class="header">
+                <span>Andy's Chargrille</span>
+        <div class="admin">Admin</div>
+        <div class="checkout">Checkout</div>
+        </div>
+        
+            <div class="loginbox">
+                <input class="userlogin" placeholder="Username" autofocus="autofocus"></input>
+                
+                <input type="password" name="password" class="password" placeholder="4-Digit Password"></input>
+            
+                    <div class="submit">Login</div>
+
+            </div></script><!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=admin-template><div class='admin-header'>
+        <span>Andy's Chargrille</span>
+    <div>
+
+    <div class="userfield">
+        <h1>Add New User:</h1>
+        <input class="code" placeholder="Add Username"></input>
+
+        <input class="userpassword" placeholder="Add Four Digit Password"></div>
+        <div class="codeenter">Enter</div>
+        
+    </div>
+    <div class="addamenu">
+        <h1>Add a New Menu Item In Existing Category:</h1>
+        <select class="categorytitle" placeholder="Add Category">
+            <option value="Entrees">Entrees</option>
+            <option value="Baskets">Baskets</option>
+            <option value="Salads">Salads</option>
+            <option value="Soups">Soups</option>
+            <option value="Appetizers">Appetizers</option>
+            <option value="Kids">Kids</option>
+            <option value="Low-Fat">Low-Fat</option>
+            <option value="SideItems">SideItems</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Beer">Beer</option>
+            <option value="Liquor">Liquor</option>
+            <option value="Wine">Wine</option>
+            <option value="Cocktails">Cocktails</option>
+            
+        </select>
+        <input class="categoryname" placeholder="Add Name"></input>
+        <input class="price" placeholder="Add Price w/o '$'"></input>
+        <div class="menuenter">Enter</div>
+        <div class="menudone">Done</div>
+    </div>
+    <div class="customcategory">
+        <h1>Add a Unique Category Menu Item:</h1>
+        <input class="customcat" placeholder="Add a Unique Category"></input>
+        <input class="customname" placeholder="Add Name"></input>
+        <input class="customprice" placeholder="Add Price w/o '$'"></input>
+        <div class="customdone">Enter</div>
+    </div></script><!--//////////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=layout-template><div class="bar"> 
+            <span>Andy's</span>
+            <span2>Chargrille</span2>
+
+            <ul class="hightops">
+                <div class="hightop1">301</div>
+                <div class="hightop2">302</div>
+            </ul>
+            
+            <ul class="stools">
+                <div class="stool stool1">1</div>
+                <div class="stool stool2">2</div>
+                <div class="stool stool3">3</div>
+                <div class="stool stool4">4</div>
+                <div class="stool stool5">5</div>
+                <div class="stool stool6">6</div>
+                <div class="stool stool7">7</div>
+                <div class="stool stool8">8</div>
+
+            </ul>
+
+            </div>
+            <ul class="angletables">
+                <div class="table table101">
+                    <h1>101</h1>
+                </div>
+                <div class="table table102">
+                    <h1>102</h1>
+                </div>
+                <div class="table table103">
+                    <h1>103</h1>
+                </div>
+                <div class="table table104">
+                    <h1>104</h1>
+                </div>
+            </ul>
+            <ul class="booths">
+                <li class="booth booth201">201</li>
+                <li class="booth booth202">202</li>
+                <li class="booth booth203">203</li>
+                <li class="booth booth204">204</li>
+            </ul></script><!--///////////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=order-template><div class="order-header">
+                <span>Andy's Chargrille</span>
+            </div>
+              
+                <div class="menu-buttons"></div></script><!--/////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=payment-template><div class="header">
+                <span>Andy's Chargrille</span>
+            </div>
+                <div id="overlay">
+                    <div id="modaloverlay">
+                        <div class="amountpaid"></div>
+                        <div class="paid">Paid!</div>
+                        <div class="number numberenter">Enter</div>
+                    </div>
+                </div>
+            <div class="finalbalance"></div>
+            <ul class="payments">
+               
+                <li class="payment cash">Cash</li>
+                <li class="payment check">Check</li>
+                <li class="payment gift">Giftcard</li>
+                <li class="payment manager">Comp</li>
+                <br>
+                <li class="credit-visa"></li>
+                <li class="credit-master"></li>
+                <li class="credit-discover"></li>
+                <li class="credit-amex"></li>
+            </ul></script><!--//////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=runner-template><div class="total-box">
+                    <div class="totalbox">
+                        <div id="itemizer"></div>
+                        <span>Subtotal:<div class="subtotal"></div>
+                        <span>Tax%:<div class="taxtotal"></textarea></div>
+                        <span>Total:<div class="totaltotal"></textarea></div>
+                    </div>
+                    <div class="sendmaster">
+                        <ul class="sendoptions">
+                            <li class="sent go-button">Send</li>
+                            <li class="sent gostaybutton">Print Check</li>
+                            <li class="pay">$Pay$</li>
+                        </ul>
+                    </div>
+                </div></script><!--//////////////////////////////////////////////////////////////////////////////////////////////////--><!--//////////////////////////////////////////////////////////////////////////////////////////////////--><script type=text/template class=button-template><%= this.model %></script><script type=text/template class=entree-template><%= this.model.name %></script><script type=text/template class=report-template><div class="reportpage">
+                   <div class="reporttitle">
+                        <h1>End Of Day Sales Order Totals</h1>
+                   </div>
+                   <div class="ownerdiv">
+                        <h1>Restaurant Name: Andys Chargrille</h1>
+                        <h1>Employee: Andy Georgia</h1>
+                   </div>
+                   <div class="daterange">
+                        <h1>Date Range: 7/16/2014 - 7/18/2014</h1>
+                   </div>
+                   <div class="totalsparent">
+                        <h1>Sales Order Totals</h1>
+                   </div>
+                   <div class="paymentcountamount">
+                        <div class="paymenttype">Category</div>
+                        <div class="count">Count</div>
+                        <div class="amount">Amount</div>
+                   </div>
+                  
+                   <div class="itemssoldbody">
+                        <div class="soldbox">Items Sold:</div>
+                        <div class="soldcount">376</div>
+                        <div class="soldamount">$2264.37</div>
+                   </div>
+                    <div class="entreessoldbody">
+                        <div class="entreebox">Entrees Sold:</div>
+                        <div class="entreecount">11</div>
+                        <div class="entreeamount">$439.12</div>
+                   </div>
+                    <div class="basketssoldbody">
+                        <div class="basketbox">Baskets Sold:</div>
+                        <div class="basketcount">3</div>
+                        <div class="basketamount">$39.26</div>
+                   </div>
+                    <div class="saladssoldbody">
+                        <div class="saladbox">Salads Sold:</div>
+                        <div class="saladcount">1</div>
+                        <div class="saladamount">$14.95</div>
+                   </div>
+                   <div class="soupssoldbody">
+                        <div class="soupbox">Soups Sold:</div>
+                        <div class="soupcount">4</div>
+                        <div class="soupamount">$18.61</div>
+                   </div>
+                    <div class="appssoldbody">
+                        <div class="appbox">Appetizers Sold:</div>
+                        <div class="appcount">3</div>
+                        <div class="appamount">$23.41</div>
+                   </div>
+                    <div class="kidssoldbody">
+                        <div class="kidbox">Kid Meals Sold:</div>
+                        <div class="kidcount">1</div>
+                        <div class="kidamount">$5.95</div>
+                   </div>
+                    <div class="sidessoldbody">
+                        <div class="sidebox">Side Items Sold:</div>
+                        <div class="sidecount">13</div>
+                        <div class="sideamount">$51.11</div>
+                   </div>
+                    <div class="lowfatsoldbody">
+                        <div class="lowfatbox">Lo-Fat Sold:</div>
+                        <div class="lowfatcount">4</div>
+                        <div class="lowfatamount">$31.93</div>
+                   </div>
+                    <div class="dessertsoldbody">
+                        <div class="dessertbox">Desserts Sold:</div>
+                        <div class="dessertcount">8</div>
+                        <div class="dessertamount">$47.65</div>
+                   </div>
+                    <div class="beveragesoldbody">
+                        <div class="beveragebox">Beverages Sold:</div>
+                        <div class="beveragecount">73</div>
+                        <div class="beverageamount">$211.01</div>
+                   </div>
+                    <div class="beersoldbody">
+                        <div class="beerbox">Beer Sold:</div>
+                        <div class="beercount">81</div>
+                        <div class="beeramount">$265.03</div>
+                   </div>
+                    <div class="winesoldbody">
+                        <div class="winebox">Wine Sold:</div>
+                        <div class="winecount">45</div>
+                        <div class="wineamount">$349.12</div>
+                   </div>
+                    <div class="liquorsoldbody">
+                        <div class="liquorbox">Liquor Sold:</div>
+                        <div class="liquorcount">111</div>
+                        <div class="liquoramount">$567.43</div>
+                   </div>
+                    <div class="cocktailsoldbody">
+                        <div class="cocktailbox">Cocktails Sold:</div>
+                        <div class="cocktailcount">18</div>
+                        <div class="cocktailamount">$199.79</div>
+                   </div>
+                    <div class="grandtotalamount">
+                        <div class="grandtotal">Grand Total:</div>
+                        <div class="grandtotalcount">376</div>
+                        <div class="grandamount">$2264.37</div>
+                   </div>
+                </div></script><script type=text/template class=receipt-template><div class="printandstaybutton">Print & Stay</div>
+            <div class="printbutton">Print & Done</div>
+
+
+            <div class="receiptcontainer">
+                <p class="receiptheader">
+                    Andy's Chargrille
+                    <br>
+                    17 NutLeaf Lane
+                    <br>
+                    Greenville, SC 29605
+                    <br>
+                    (864) 376-5721
+                </p>
+                <div class="tablenumber">#301</div>
+                <div class="namebox"></div>
+                
+                <h1>.................................................</h1>
+                <span>Subtotal:</span><div class="subtotalbox"></div>
+                <span>Tax:</span><div class="taxbox"></div>
+                <span>Total:</span><div class="receipttotal"></div>
+                <h1>.................................................</h1>
+                <h1>.................................................</h1>
+                <p>Take our survey at www.andyschargrill.com</p>
+                <p>for your chance to win $500</p>
+                <h2>.....</h2>
+                <p>Don't forget to ask about gift certificates</p>
+                
+
+            </div></script><script src=scripts/d41d8cd9.vendor.js></script><script src=//www.parsecdn.com/js/parse-1.2.18.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/48fd48b7.main.js></script>

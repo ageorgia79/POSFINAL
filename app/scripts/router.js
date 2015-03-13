@@ -78,6 +78,7 @@ var ProductRouter = Parse.Router.extend({
         categoryArray.forEach(function(category){
         
             new ButtonView({model: category})
+            
           
 
         }) 

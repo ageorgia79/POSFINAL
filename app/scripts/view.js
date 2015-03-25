@@ -67,6 +67,7 @@ var LoginView = Parse.View.extend({
           }, function (error) {
               
           });
+          
 
 
           router.navigate('#/tables', {trigger: true});

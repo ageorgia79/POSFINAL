@@ -93,7 +93,7 @@ var LoginView = Parse.View.extend({
    
 
     router.navigate('#/report', {trigger:true});
-    
+
   },
 
  
@@ -248,6 +248,7 @@ var LayoutView = Parse.View.extend({
    showBooth202: function(){
     var table = new Parse.Object('Table');
     var booth202 = $('.booth202').text();
+    
    
 
     table.set("booth202", booth202);

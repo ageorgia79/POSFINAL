@@ -93,6 +93,7 @@ var LoginView = Parse.View.extend({
    
 
     router.navigate('#/report', {trigger:true});
+    
   },
 
  
